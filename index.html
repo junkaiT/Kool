@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kool Aircon — Professional Aircon Servicing Singapore</title>
+<meta name="description" content="Professional aircon servicing, chemical wash, installation and repair for homes and businesses across Singapore. BCA registered. Call +65 8815 0254.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET ─── */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:#111;background:#fff;-webkit-font-smoothing:antialiased;font-size:14px}
+img{display:block;max-width:100%}
+button{cursor:pointer;font-family:inherit}
+a{text-decoration:none;color:inherit}
+
+/* ─── TOKENS ─── */
+:root{
+  --blue:#4a90e2;
+  --teal:#5BAD92;
+  --teal-bg:#EBF7F2;
+  --black:#111;
+  --dark:#222;
+  --grey:#555;
+  --muted:#888;
+  --border:#E5E5E5;
+  --bg:#F8F8F8;
+  --wa:#25D366;
+  --amber:#E6A817;
+  --amber-bg:#FFF8ED;
+  --white:#fff;
+  --green-bg:#f0fbf5;
+  --green-border:#b2e4cb;
+  --green:#22a760;
+}
+
+/* ─── LAYOUT ─── */
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.sec{border-bottom:1px solid var(--border)}
+.sec-pad{padding:48px 0}
+
+/* ─── BUTTONS ─── */
+.btn-wa{background:var(--wa);color:#fff;border:none;border-radius:8px;padding:13px 22px;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.btn-dark{background:var(--dark);color:#fff;border:none;border-radius:8px;padding:13px 22px;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.btn-outline{background:#fff;color:var(--dark);border:1.5px solid var(--dark);border-radius:8px;padding:12px 22px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.btn-outline-blue{background:transparent;color:var(--blue);border:1.5px solid var(--blue);border-radius:8px;padding:10px 18px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+
+/* WhatsApp icon SVG */
+.wa-svg{width:16px;height:16px;flex-shrink:0}
+
+/* ─── NAV ─── */
+.nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:8px}
+.logo-name{font-size:20px;font-weight:800;color:var(--blue);letter-spacing:-0.3px;line-height:1}
+.logo-sub{font-size:8.5px;color:var(--teal);font-weight:500;letter-spacing:0.3px;margin-top:2px}
+.nav-links{display:none;gap:2px;flex:1;justify-content:center}
+.nav-link{font-size:13px;color:var(--grey);padding:7px 14px;border-radius:6px;font-weight:500;cursor:pointer}
+.nav-link:hover,.nav-link.active{color:var(--black);font-weight:600}
+/* hamburger */
+.ham{background:none;border:none;padding:4px;display:flex;flex-direction:column;gap:5px;cursor:pointer}
+.ham span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:all 0.2s}
+.nav-wa-desktop{display:none}
+/* mobile menu */
+.mob-menu{display:none;flex-direction:column;border-top:1px solid var(--border);background:#fff}
+.mob-menu.open{display:flex}
+.mob-menu a{font-size:15px;font-weight:600;color:var(--dark);padding:14px 20px;border-bottom:1px solid var(--border)}
+.mob-menu-cta{margin:14px 20px 18px;background:var(--wa);color:#fff;border:none;border-radius:9px;padding:14px;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}
+
+@media(min-width:900px){
+  .nav-links{display:flex}
+  .nav-wa-desktop{display:inline-flex}
+  .ham{display:none}
+}
+
+/* ─── HERO ─── */
+/* Mobile: image top, content below */
+.hero{border-bottom:1px solid var(--border)}
+.hero-img-mob{width:100%;height:220px;object-fit:cover;object-position:center top;display:block}
+.hero-content{padding:22px 18px 26px}
+.hero-eyebrow{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:0.5px;margin-bottom:10px}
+.hero-h1{font-size:24px;font-weight:800;color:var(--black);line-height:1.2;margin-bottom:12px;letter-spacing:-0.4px}
+.hero-body{font-size:13px;color:var(--grey);line-height:1.65;margin-bottom:18px;max-width:480px}
+.hero-btns{display:flex;flex-direction:column;gap:9px}
+/* Desktop: 2-col grid */
+@media(min-width:900px){
+  .hero-img-mob{display:none}
+  .hero-inner{max-width:1280px;margin:0 auto;padding:64px 40px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .hero-content{padding:0}
+  .hero-h1{font-size:40px;margin-bottom:16px}
+  .hero-body{font-size:15px;margin-bottom:26px}
+  .hero-btns{flex-direction:row}
+  .hero-img-desk{display:block;border-radius:12px;width:100%;height:360px;object-fit:cover;object-position:center}
+}
+.hero-img-desk{display:none}
+
+/* ─── TRUST BAR ─── */
+.trust-bar{background:var(--bg);border-bottom:1px solid var(--border);padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.trust-item{background:#fff;border:1px solid var(--border);border-radius:9px;padding:11px 13px;display:flex;align-items:center;gap:9px}
+.trust-icon{font-size:19px;flex-shrink:0}
+.trust-val{font-size:13px;font-weight:700;color:var(--black);line-height:1.2}
+.trust-lbl{font-size:10px;color:var(--muted);margin-top:2px}
+@media(min-width:900px){
+  .trust-bar{max-width:1280px;margin:0 auto;border:none;background:transparent;grid-template-columns:repeat(4,1fr);padding:28px 40px;gap:16px}
+  .trust-bar-wrap{background:var(--bg);border-bottom:1px solid var(--border)}
+  .trust-item{padding:16px 18px}
+  .trust-icon{font-size:22px}
+  .trust-val{font-size:14px}
+  .trust-lbl{font-size:11px}
+}
+
+/* ─── WHY CHOOSE US ─── */
+.why{padding:28px 18px;border-bottom:1px solid var(--border)}
+.why-h{font-size:20px;font-weight:800;color:var(--black);margin-bottom:5px;letter-spacing:-0.3px}
+.why-sub{font-size:13px;color:var(--grey);line-height:1.6;margin-bottom:18px}
+/* 3 pillar cards — stacked mobile, 3-col desktop */
+.pillars{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.pillar{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px}
+.pillar-num{font-size:9px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:7px}
+.pillar-h{font-size:14px;font-weight:700;color:var(--black);margin-bottom:6px;line-height:1.3}
+.pillar-body{font-size:12px;color:var(--grey);line-height:1.6}
+.pillar-img{background:#EBEBEB;border:1px dashed #CCC;border-radius:6px;height:60px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#AAA;margin-top:12px;text-align:center;padding:8px}
+/* 4 secondary trust items — 2-col mobile, 4-col desktop */
+.secondary{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sec-item{background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start}
+.sec-item-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.sec-item-h{font-size:12px;font-weight:700;color:var(--black);margin-bottom:3px}
+.sec-item-body{font-size:11px;color:var(--grey);line-height:1.5}
+@media(min-width:900px){
+  .why{padding:56px 0}
+  .why-inner{max-width:1280px;margin:0 auto;padding:0 40px}
+  .why-h{font-size:26px;margin-bottom:6px}
+  .why-sub{font-size:14px;margin-bottom:28px}
+  .pillars{flex-direction:row;gap:16px;margin-bottom:20px}
+  .pillar{flex:1;padding:20px}
+  .pillar-h{font-size:15px}
+  .pillar-body{font-size:13px}
+  .secondary{grid-template-columns:repeat(4,1fr);gap:12px}
+  .sec-item{padding:14px 16px}
+  .sec-item-h{font-size:13px}
+  .sec-item-body{font-size:12px}
+}
+
+/* ─── SLEEP BETTER ─── */
+.sleep{padding:16px 18px;background:var(--amber-bg);border-top:1px solid #f0d090;border-bottom:1px solid #f0d090;display:flex;align-items:center;gap:12px}
+.sleep-icon{font-size:26px;flex-shrink:0;background:rgba(230,168,23,0.12);border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+.sleep-tag{background:var(--amber);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;display:inline-block;margin-bottom:4px}
+.sleep-h{font-size:13px;font-weight:700;color:var(--black);margin-bottom:2px}
+.sleep-desc{font-size:11px;color:var(--grey)}
+.sleep-chevron{color:#CCC;font-size:20px;flex-shrink:0}
+.sleep-btn-desk{display:none}
+@media(min-width:900px){
+  .sleep{max-width:100%;padding:20px 40px;justify-content:space-between}
+  .sleep-left{display:flex;align-items:center;gap:16px;flex:1}
+  .sleep-h{font-size:15px}
+  .sleep-desc{font-size:13px}
+  .sleep-chevron{display:none}
+  .sleep-btn-desk{display:inline-flex;white-space:nowrap}
+}
+
+/* ─── SERVICES ─── */
+.services{padding:28px 18px;border-bottom:1px solid var(--border);background:var(--bg)}
+.services-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;flex-wrap:wrap;gap:8px}
+.services-h{font-size:20px;font-weight:800;color:var(--black);letter-spacing:-0.3px}
+.services-link{font-size:12px;color:var(--blue);font-weight:600}
+.services-sub{font-size:13px;color:var(--grey);line-height:1.6;margin-bottom:16px}
+/* Mobile: list rows */
+.svc-list{display:flex;flex-direction:column;gap:8px}
+.svc-row{background:#fff;border:1px solid var(--border);border-radius:9px;padding:13px 15px;display:flex;justify-content:space-between;align-items:center}
+.svc-name{font-size:13px;font-weight:700;color:var(--black);margin-bottom:3px;display:flex;align-items:center;gap:6px}
+.svc-desc{font-size:11px;color:var(--muted)}
+.svc-price{font-size:15px;font-weight:800;color:var(--black);text-align:right;white-space:nowrap}
+.svc-more{font-size:11px;color:var(--blue);text-align:right;margin-top:3px}
+.tag-new{display:inline-block;background:#D4EDDA;color:#155724;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px}
+/* Desktop: 3-col card grid */
+.svc-grid{display:none}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px}
+.svc-card-icon{font-size:26px;margin-bottom:12px}
+.svc-card-name{font-size:14px;font-weight:700;color:var(--black);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.svc-card-desc{font-size:12px;color:var(--muted);margin-bottom:12px}
+.svc-card-price{font-size:17px;font-weight:800;color:var(--black);margin-bottom:8px}
+.svc-card-link{font-size:12px;color:var(--blue)}
+@media(min-width:900px){
+  .services{padding:56px 0}
+  .services-inner{max-width:1280px;margin:0 auto;padding:0 40px}
+  .services-h{font-size:26px}
+  .services-sub{font-size:14px;margin-bottom:24px}
+  .svc-list{display:none}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+}
+
+/* ─── BRANDS ─── */
+.brands{padding:22px 18px;border-bottom:1px solid var(--border)}
+.brands-h{font-size:17px;font-weight:800;color:var(--black);margin-bottom:14px;letter-spacing:-0.2px}
+.brands-row{display:flex;flex-wrap:wrap;gap:8px}
+.brand-pill{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:7px 14px;font-size:12px;color:var(--grey);font-weight:500}
+.brands-note{font-size:11px;color:#bbb;font-style:italic;margin-top:10px}
+@media(min-width:900px){
+  .brands{padding:40px 0}
+  .brands-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center;gap:32px}
+  .brands-h{margin-bottom:0;font-size:20px;white-space:nowrap}
+  .brands-right{flex:1}
+}
+
+/* ─── TESTIMONIALS ─── */
+.testi{padding:28px 18px;border-bottom:1px solid var(--border);background:var(--bg)}
+.testi-h{font-size:20px;font-weight:800;color:var(--black);margin-bottom:16px;letter-spacing:-0.3px}
+.review-ph{background:#EBEBEB;border:1px dashed #CCC;border-radius:10px;height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;margin-bottom:10px;color:var(--muted)}
+.review-ph:last-of-type{margin-bottom:14px}
+.review-ph-icon{font-size:22px}
+.review-ph-label{font-size:13px;font-weight:600;color:#888}
+.review-ph-meta{font-size:11px;color:#aaa}
+.bca-strip{background:#fff;border:1px solid var(--border);border-radius:9px;padding:13px 16px;display:flex;align-items:center;gap:12px}
+.google-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+.google-badge{background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px}
+.google-g{width:28px;height:28px;border-radius:50%;background:#4285f4;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
+@media(min-width:900px){
+  .testi{padding:56px 0}
+  .testi-inner{max-width:1280px;margin:0 auto;padding:0 40px}
+  .testi-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px}
+  .testi-h{margin-bottom:0}
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px}
+  .review-ph{margin-bottom:0;height:160px}
+  .review-ph:last-of-type{margin-bottom:0}
+}
+
+/* ─── FAQ ─── */
+.faq{padding:28px 18px;border-bottom:1px solid var(--border)}
+.faq-h{font-size:20px;font-weight:800;color:var(--black);margin-bottom:6px;letter-spacing:-0.3px}
+.faq-sub{font-size:13px;color:var(--grey);margin-bottom:18px;line-height:1.6}
+.faq-item{padding:13px 0;border-bottom:1px solid var(--border)}
+.faq-item:last-of-type{border-bottom:none}
+.faq-q{font-size:13px;font-weight:600;color:var(--black);display:flex;justify-content:space-between;align-items:flex-start;gap:12px;cursor:pointer}
+.faq-chev{color:var(--muted);flex-shrink:0;font-size:15px;margin-top:1px;transition:transform 0.18s}
+.faq-a{font-size:13px;color:var(--grey);line-height:1.65;margin-top:8px;display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-chev{transform:rotate(90deg)}
+.faq-wa{margin-top:16px;width:100%}
+@media(min-width:900px){
+  .faq{padding:56px 0}
+  .faq-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 2fr;gap:64px}
+  .faq-sidebar-h{font-size:22px;font-weight:800;color:var(--black);margin-bottom:10px;letter-spacing:-0.3px}
+  .faq-sidebar-sub{font-size:14px;color:var(--grey);line-height:1.7;margin-bottom:20px}
+  .faq-wa{width:auto}
+  .faq-all{display:block;font-size:13px;color:var(--blue);margin-top:12px}
+  .faq-h,.faq-sub{display:none}
+}
+
+/* ─── FINAL CTA ─── */
+.cta{padding:32px 18px;border-bottom:1px solid var(--border);background:var(--bg)}
+.cta-h{font-size:21px;font-weight:800;color:var(--black);line-height:1.25;margin-bottom:8px;letter-spacing:-0.3px}
+.cta-body{font-size:13px;color:var(--grey);line-height:1.65;margin-bottom:18px}
+.cta-call{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+@media(min-width:900px){
+  .cta{padding:64px 0}
+  .cta-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .cta-h{font-size:30px}
+  .cta-body{font-size:15px}
+  .cta-btns{display:flex;gap:12px}
+  .cta-call{text-align:left}
+  .cta-img{border-radius:12px;width:100%;height:260px;object-fit:cover}
+}
+
+/* ─── FOOTER ─── */
+.footer{background:#111;padding:36px 18px;color:#888}
+.footer-logo{font-size:16px;font-weight:800;color:var(--blue);margin-bottom:3px}
+.footer-tagline{font-size:9px;color:var(--teal);margin-bottom:14px;font-weight:500}
+.footer-contact{font-size:12px;color:#666;line-height:2;margin-bottom:20px}
+.footer-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.footer-col-h{font-size:11px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.footer-link{display:block;font-size:12px;color:#666;line-height:2.3}
+.footer-bottom{padding-top:14px;border-top:1px solid #222;font-size:11px;color:#444;line-height:1.8}
+@media(min-width:900px){
+  .footer{padding:48px 0}
+  .footer-inner{max-width:1280px;margin:0 auto;padding:0 40px}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:28px}
+  .footer-cols{display:contents}
+  .footer-bottom{display:flex;justify-content:space-between}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="M5 22 Q4 15 9 10 Q11 8 15 9 Q10 14 10 19 Q10 23 12 24 Q8 25 5 22Z" fill="#5BAD92" opacity="0.9"/>
+        <path d="M9 26 Q7 18 13 12 Q15 10 19 11 Q14 17 14 22 Q14 26 17 27 Q12 28 9 26Z" fill="#5BAD92" opacity="0.65"/>
+        <path d="M14 28 Q12 20 18 14 Q20 12 24 13 Q19 19 19 24 Q19 28 22 29 Q17 30 14 28Z" fill="#5BAD92" opacity="0.4"/>
+      </svg>
+      <div>
+        <div class="logo-name">KooL</div>
+        <div class="logo-sub">Cool Air, Cool Life</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="/" class="nav-link active">Home</a>
+      <a href="#services" class="nav-link">Services ▾</a>
+      <a href="prices.html" class="nav-link">Prices</a>
+      <a href="articles.html" class="nav-link">Articles</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+    <a href="https://wa.me/6588150254" class="btn-wa nav-wa-desktop" target="_blank" rel="noopener">
+      <svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.524 5.843L.054 23.445a.75.75 0 0 0 .918.931l5.733-1.498A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.66-.487-5.197-1.34l-.374-.217-3.877 1.015 1.032-3.772-.24-.386A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      WhatsApp us
+    </a>
+    <button class="ham" id="ham" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mob-menu" id="mobMenu">
+    <a href="/">Home</a>
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="prices.html">Prices</a>
+    <a href="articles.html">Articles</a>
+    <a href="about.html">About</a>
+    <a href="https://wa.me/6588150254" target="_blank" rel="noopener" class="mob-menu-cta">
+      <svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.524 5.843L.054 23.445a.75.75 0 0 0 .918.931l5.733-1.498A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.66-.487-5.197-1.34l-.374-.217-3.877 1.015 1.032-3.772-.24-.386A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      WhatsApp us
+    </a>
+  </div>
+</header>
+
+<!-- ─── 1. HERO ─── -->
+<section class="hero">
+  <img class="hero-img-mob"
+    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=440&fit=crop&crop=center&q=80"
+    alt="Aircon technician servicing unit in Singapore home">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Singapore's trusted aircon specialist</div>
+      <h1 class="hero-h1">Quality aircon servicing you can see and measure.</h1>
+      <p class="hero-body">We service, repair, and install aircons for homes and businesses across Singapore — with real proof that your aircon is performing better after every visit.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/6588150254" class="btn-wa" target="_blank" rel="noopener">
+          <svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.524 5.843L.054 23.445a.75.75 0 0 0 .918.931l5.733-1.498A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.66-.487-5.197-1.34l-.374-.217-3.877 1.015 1.032-3.772-.24-.386A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          WhatsApp us
+        </a>
+        <a href="#services" class="btn-outline">View our services</a>
+      </div>
+    </div>
+    <img class="hero-img-desk"
+      src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&h=720&fit=crop&crop=center&q=80"
+      alt="Aircon technician servicing unit in Singapore home">
+  </div>
+</section>
+
+<!-- ─── 2. TRUST BAR ─── -->
+<div class="trust-bar-wrap">
+  <div class="trust-bar">
+    <div class="trust-item"><span class="trust-icon">⭐</span><div><div class="trust-val">4.9 stars on Google</div><div class="trust-lbl">[X] verified reviews</div></div></div>
+    <div class="trust-item"><span class="trust-icon">👍</span><div><div class="trust-val">90% recommend</div><div class="trust-lbl">Facebook rating</div></div></div>
+    <div class="trust-item"><span class="trust-icon">🕐</span><div><div class="trust-val">10 years experience</div><div class="trust-lbl">Serving Singapore homes</div></div></div>
+    <div class="trust-item"><span class="trust-icon">🛡</span><div><div class="trust-val">BCA registered</div><div class="trust-lbl">bizSAFE Level 2 certified</div></div></div>
+  </div>
+</div>
+
+<!-- ─── 3. WHY CHOOSE US ─── -->
+<section class="sec why">
+  <div class="why-inner">
+    <h2 class="why-h">Every service comes with</h2>
+    <p class="why-sub">Three things you won't find at any other aircon company in Singapore.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">Kool Investment</div>
+        <div class="pillar-h">We show you proof your aircon is colder.</div>
+        <p class="pillar-body">We measure cold air output before and after every service — ΔT reading. Real numbers, not just our word for it. Most services show a saving of $20–30/month on electricity.</p>
+        <div class="pillar-img">📊 Before/after ΔT reading — 5°C → 10°C · ~$20–30/month saving</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">Full service report</div>
+        <div class="pillar-h">We show you exactly what was done, room by room.</div>
+        <p class="pillar-body">Within 20 minutes you receive a WhatsApp report — before/after photos of every unit, labelled by room, plus any issues found and recommendations.</p>
+        <div class="pillar-img">📱 Sample WhatsApp report — before/after photos, room labels</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">Safe, premium cleaning agents</div>
+        <div class="pillar-h">Safe for your elderly, children, and pets.</div>
+        <p class="pillar-body">Most aircon companies use cheap alkaline chemicals. We use certified bio-enzyme agents — non-toxic and biodegradable. First in Singapore to make this standard.</p>
+        <div class="pillar-img" style="font-style:italic;color:#888;font-size:11px">"Most companies use harsh alkaline chemicals. We use premium bio-enzyme agents — because your family deserves it."</div>
+      </div>
+    </div>
+    <div class="secondary">
+      <div class="sec-item"><span class="sec-item-icon">📅</span><div><div class="sec-item-h">Fast booking</div><div class="sec-item-body">WhatsApp us. Same-day slots available.</div></div></div>
+      <div class="sec-item"><span class="sec-item-icon">👷</span><div><div class="sec-item-h">Experienced technicians</div><div class="sec-item-body">Trained, uniformed, background-checked.</div></div></div>
+      <div class="sec-item"><span class="sec-item-icon">🛡</span><div><div class="sec-item-h">Service guarantee</div><div class="sec-item-body">Issues after your visit? We return within 48 hrs at no charge.</div></div></div>
+      <div class="sec-item"><span class="sec-item-icon">😊</span><div><div class="sec-item-h">No hard selling</div><div class="sec-item-body">We recommend only what your aircon needs.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SLEEP BETTER BANNER ─── -->
+<div class="sleep">
+  <div class="sleep-icon">🌙</div>
+  <div class="sleep-left" style="flex:1">
+    <div>
+      <span class="sleep-tag">Free for 3 units and above</span>
+      <div class="sleep-h">Free Sleep Better bedroom audit with every qualifying booking</div>
+      <div class="sleep-desc">Dust, mould, and light quality check included at no extra cost.</div>
+    </div>
+  </div>
+  <span class="sleep-chevron">›</span>
+  <a href="sleep-better.html" class="btn-outline sleep-btn-desk" style="font-size:13px;padding:10px 18px">Find out more →</a>
+</div>
+
+<!-- ─── 4. SERVICES ─── -->
+<section class="sec services" id="services">
+  <div class="services-inner">
+    <div class="services-top">
+      <h2 class="services-h">Our services</h2>
+      <a href="prices.html" class="services-link">View full price list →</a>
+    </div>
+    <p class="services-sub">No hidden charges. No forced upselling. Transparent prices on every job.</p>
+
+    <!-- Mobile list -->
+    <div class="svc-list">
+      <div class="svc-row"><div><div class="svc-name">General aircon servicing</div><div class="svc-desc">Full clean + ΔT proof + report</div></div><div><div class="svc-price">from $50</div><div class="svc-more"><a href="general-servicing.html">Learn more</a></div></div></div>
+      <div class="svc-row"><div><div class="svc-name">Chemical wash</div><div class="svc-desc">Deep clean with bio-enzyme agents</div></div><div><div class="svc-price">from $80</div><div class="svc-more"><a href="chemical-wash.html">Learn more</a></div></div></div>
+      <div class="svc-row"><div><div class="svc-name">Chemical overhaul</div><div class="svc-desc">Full dismantle, clean, reassemble</div></div><div><div class="svc-price">from $130</div><div class="svc-more"><a href="chemical-overhaul.html">Learn more</a></div></div></div>
+      <div class="svc-row"><div><div class="svc-name">KoolJet wash <span class="tag-new">New</span></div><div class="svc-desc">High-pressure condenser clean</div></div><div><div class="svc-price">from $60</div><div class="svc-more"><a href="kooljet.html">Learn more</a></div></div></div>
+      <div class="svc-row"><div><div class="svc-name">Installation</div><div class="svc-desc">All brands · HDB to landed</div></div><div><div class="svc-price">from $300</div><div class="svc-more"><a href="installation.html">Learn more</a></div></div></div>
+      <div class="svc-row"><div><div class="svc-name">Commercial maintenance</div><div class="svc-desc">Offices, retail and F&amp;B</div></div><div><div class="svc-price" style="font-size:13px">Get a quote</div><div class="svc-more"><a href="commercial.html">Learn more</a></div></div></div>
+    </div>
+
+    <!-- Desktop card grid -->
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-card-icon">❄️</div><div class="svc-card-name">General aircon servicing</div><div class="svc-card-desc">Full clean + ΔT proof + report</div><div class="svc-card-price">from $50</div><a href="general-servicing.html" class="svc-card-link">Learn more →</a></div>
+      <div class="svc-card"><div class="svc-card-icon">💧</div><div class="svc-card-name">Chemical wash</div><div class="svc-card-desc">Deep clean with bio-enzyme agents</div><div class="svc-card-price">from $80</div><a href="chemical-wash.html" class="svc-card-link">Learn more →</a></div>
+      <div class="svc-card"><div class="svc-card-icon">🔧</div><div class="svc-card-name">Chemical overhaul</div><div class="svc-card-desc">Full dismantle, clean, reassemble</div><div class="svc-card-price">from $130</div><a href="chemical-overhaul.html" class="svc-card-link">Learn more →</a></div>
+      <div class="svc-card"><div class="svc-card-icon">💦</div><div class="svc-card-name">KoolJet wash <span class="tag-new">New</span></div><div class="svc-card-desc">High-pressure condenser clean</div><div class="svc-card-price">from $60</div><a href="kooljet.html" class="svc-card-link">Learn more →</a></div>
+      <div class="svc-card"><div class="svc-card-icon">⚙️</div><div class="svc-card-name">Aircon installation</div><div class="svc-card-desc">All brands · HDB to landed</div><div class="svc-card-price">from $300</div><a href="installation.html" class="svc-card-link">Learn more →</a></div>
+      <div class="svc-card"><div class="svc-card-icon">🏢</div><div class="svc-card-name">Commercial maintenance</div><div class="svc-card-desc">Offices, retail and F&amp;B</div><div class="svc-card-price">Get a quote</div><a href="commercial.html" class="svc-card-link">Learn more →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 5. BRANDS ─── -->
+<section class="sec brands">
+  <div class="brands-inner">
+    <h2 class="brands-h">We service all major brands</h2>
+    <div class="brands-right">
+      <div class="brands-row">
+        <span class="brand-pill">Daikin</span>
+        <span class="brand-pill">Mitsubishi</span>
+        <span class="brand-pill">Samsung</span>
+        <span class="brand-pill">Panasonic</span>
+        <span class="brand-pill">LG</span>
+        <span class="brand-pill">Hitachi</span>
+        <span class="brand-pill">Fujitsu</span>
+        <span class="brand-pill">Sharp</span>
+        <span class="brand-pill">Toshiba</span>
+        <span class="brand-pill">Sanyo</span>
+      </div>
+      <div class="brands-note">Replace with brand logos once assets are available.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 6. TESTIMONIALS ─── -->
+<section class="sec testi">
+  <div class="testi-inner">
+    <div class="testi-top">
+      <h2 class="testi-h">What customers say</h2>
+      <div class="google-badge">
+        <div class="google-g">G</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--black)">⭐ 4.9 stars · [X] Google reviews</div>
+          <div style="font-size:11px;color:var(--muted)">See all reviews ↗</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-ph"><span class="review-ph-icon">📱</span><span class="review-ph-label">WhatsApp screenshot #1</span><span class="review-ph-meta">Customer praises before/after photos · [ Name · Area · Service ]</span></div>
+      <div class="review-ph"><span class="review-ph-icon">📱</span><span class="review-ph-label">WhatsApp screenshot #2</span><span class="review-ph-meta">Customer comments on colder aircon · [ Name · Area · Service ]</span></div>
+      <div class="review-ph"><span class="review-ph-icon">📱</span><span class="review-ph-label">WhatsApp screenshot #3</span><span class="review-ph-meta">Customer mentions referral or repeat · [ Name · Area · Service ]</span></div>
+    </div>
+    <div class="bca-strip">
+      <span style="font-size:22px">📜</span>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--black)">BCA Registered Contractor</div>
+        <div style="font-size:11px;color:var(--muted)">Verified on the Building and Construction Authority directory · Reg. No. [XXXXX]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 7. FAQ ─── -->
+<section class="sec faq">
+  <div class="faq-inner">
+    <div>
+      <!-- sidebar content — visible desktop only via CSS -->
+      <div class="faq-sidebar-h">Common questions</div>
+      <p class="faq-sidebar-sub">Can't find your answer? WhatsApp us and we'll reply within the hour.</p>
+      <!-- mobile heading -->
+      <h2 class="faq-h">Common questions</h2>
+      <p class="faq-sub">Can't find your answer? WhatsApp us — we reply within the hour.</p>
+      <a href="https://wa.me/6588150254" class="btn-outline faq-wa" target="_blank" rel="noopener" style="font-size:13px;padding:10px 18px">WhatsApp a question</a>
+      <a href="faq.html" class="faq-all">View all FAQs →</a>
+    </div>
+    <div>
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">How often should I service my aircon? <span class="faq-chev">›</span></div>
+        <div class="faq-a">Every 3 months for regular use. If you run your aircon daily or have elderly residents or young children at home, quarterly keeps your unit optimal and the air clean.</div>
+      </div>
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">Why is my aircon still not cold after servicing? <span class="faq-chev">›</span></div>
+        <div class="faq-a">If our ΔT reading shows the unit is still underperforming, we'll recommend a chemical wash or KoolJet — based on data, not guesswork. No pressure to upgrade.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is Delta T and why does it matter? <span class="faq-chev">›</span></div>
+        <div class="faq-a">ΔT is the temperature difference between the warm air going into your aircon and the cold air coming out. A healthy Singapore split unit should show 8–11°C. We measure before and after every service so you see the exact improvement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need to be home during the service? <span class="faq-chev">›</span></div>
+        <div class="faq-a">Someone should be home to let our technician in. You don't need to supervise the whole job — most customers go about their day. We'll send the WhatsApp report once it's done.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What if I have an issue after my service? <span class="faq-chev">›</span></div>
+        <div class="faq-a">WhatsApp us within 48 hours and we'll return at no charge, no questions asked. That's our service guarantee.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 8. FINAL CTA ─── -->
+<section class="sec cta">
+  <div class="cta-inner">
+    <div>
+      <h2 class="cta-h">Ready to experience the Kool difference?</h2>
+      <p class="cta-body">Book in under 2 minutes. Same-day slots often available. No payment needed upfront.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/6588150254" class="btn-wa" target="_blank" rel="noopener">
+          <svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.524 5.843L.054 23.445a.75.75 0 0 0 .918.931l5.733-1.498A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.66-.487-5.197-1.34l-.374-.217-3.877 1.015 1.032-3.772-.24-.386A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          WhatsApp us to book
+        </a>
+      </div>
+      <p class="cta-call">Or call +65 8815 0254</p>
+    </div>
+    <img class="cta-img"
+      src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=520&fit=crop&q=80"
+      alt="Family relaxing comfortably in cool Singapore home">
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">KooL</div>
+        <div class="footer-tagline">Cool Air, Cool Life</div>
+        <div class="footer-contact">73 Upper Paya Lebar Road, Singapore<br>+65 8815 0254<br>hello@kool.com.sg</div>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <div class="footer-col-h">Services</div>
+          <a href="general-servicing.html" class="footer-link">General servicing</a>
+          <a href="chemical-wash.html" class="footer-link">Chemical wash</a>
+          <a href="chemical-overhaul.html" class="footer-link">Chemical overhaul</a>
+          <a href="kooljet.html" class="footer-link">KoolJet wash</a>
+          <a href="installation.html" class="footer-link">Installation</a>
+          <a href="commercial.html" class="footer-link">Commercial</a>
+        </div>
+        <div>
+          <div class="footer-col-h">Company</div>
+          <a href="about.html" class="footer-link">About us</a>
+          <a href="prices.html" class="footer-link">Our prices</a>
+          <a href="sleep-better.html" class="footer-link">Sleep Better</a>
+          <a href="referral.html" class="footer-link">Referral programme</a>
+          <a href="articles.html" class="footer-link">Articles</a>
+          <a href="faq.html" class="footer-link">FAQ</a>
+        </div>
+        <div>
+          <div class="footer-col-h">Contact</div>
+          <a href="https://wa.me/6588150254" class="footer-link" target="_blank" rel="noopener">WhatsApp us</a>
+          <a href="tel:+6588150254" class="footer-link">Call us</a>
+          <a href="mailto:hello@kool.com.sg" class="footer-link">Email us</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 Kool Aircon Pte. Ltd. · BCA Registered · bizSAFE Level 2 · Reg. No. [XXXXX]</div>
+      <a href="privacy.html" style="color:#444">Privacy policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('mobMenu').classList.toggle('open');
+}
+document.querySelectorAll('.mob-menu a').forEach(function(a){
+  a.addEventListener('click',function(){ document.getElementById('mobMenu').classList.remove('open'); });
+});
+function toggleFaq(el){
+  var item=el.parentElement;
+  var ans=item.querySelector('.faq-a');
+  var open=item.classList.contains('open');
+  item.classList.toggle('open',!open);
+  ans.style.display=open?'none':'block';
+}
+// Init: show first two answers open
+document.querySelectorAll('.faq-item.open .faq-a').forEach(function(a){ a.style.display='block'; });
+</script>
+</body>
+</html>
