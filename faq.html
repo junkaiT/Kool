@@ -63,6 +63,20 @@ a{text-decoration:none;color:inherit}
   .footer-bottom{display:flex;justify-content:space-between}
 }
 
+
+/* ── Services dropdown ── */
+.nav-dropdown{position:relative;display:inline-flex;align-items:center}
+.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.10);min-width:210px;z-index:200;padding:6px 0}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-item{display:block;padding:9px 18px;font-size:13px;color:var(--grey);font-weight:500;white-space:nowrap}
+.nav-dropdown-item:hover{color:var(--black);background:var(--bg)}
+.nav-dropdown-divider{height:1px;background:var(--border);margin:4px 0}
+/* Mobile services accordion */
+.mob-svc-toggle{font-size:15px;font-weight:600;color:var(--dark);padding:14px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;width:100%;text-align:left;font-family:inherit}
+.mob-svc-menu{display:none;flex-direction:column;background:var(--bg)}
+.mob-svc-menu.open{display:flex}
+.mob-svc-menu a{font-size:14px;font-weight:500;color:var(--grey);padding:11px 20px 11px 32px;border-bottom:1px solid var(--border)}
+.mob-svc-menu a:hover{color:var(--black)}
 </style>
 </head>
 <body>
@@ -73,7 +87,18 @@ a{text-decoration:none;color:inherit}
       <div><div class="logo-name">KooL</div><div class="logo-sub">Cool Air, Cool Life</div></div>
     </a>
     <nav class="nav-links"><a href="index.html" class="nav-link">Home</a>
-<a href="#" class="nav-link">Services ▾</a>
+<div class="nav-dropdown" id="svcDropdown">
+        <a href="#" class="nav-link" onclick="toggleSvcDropdown(event)">Services ▾</a>
+        <div class="nav-dropdown-menu" id="svcMenu">
+          <a href="general-servicing.html" class="nav-dropdown-item">❄️ General Servicing</a>
+          <a href="chemical-wash.html" class="nav-dropdown-item">💧 Chemical Wash</a>
+          <a href="chemical-overhaul.html" class="nav-dropdown-item">🔧 Chemical Overhaul</a>
+          <a href="kooljet.html" class="nav-dropdown-item">💦 KoolJet Wash</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="installation.html" class="nav-dropdown-item">⚙️ Installation</a>
+          <a href="commercial.html" class="nav-dropdown-item">🏢 Commercial</a>
+        </div>
+      </div>
 <a href="prices.html" class="nav-link">Prices</a>
 <a href="articles.html" class="nav-link">Articles</a>
 <a href="about.html" class="nav-link">About</a>
@@ -83,7 +108,15 @@ a{text-decoration:none;color:inherit}
   </div>
   <div class="mob-menu" id="mobMenu">
     <a href="index.html">Home</a>
-<a href="#">Services ▾</a>
+<button class="mob-svc-toggle" onclick="toggleMobSvc(this)">Services <span>▾</span></button>
+<div class="mob-svc-menu" id="mobSvcMenu">
+  <a href="general-servicing.html">❄️ General Servicing</a>
+  <a href="chemical-wash.html">💧 Chemical Wash</a>
+  <a href="chemical-overhaul.html">🔧 Chemical Overhaul</a>
+  <a href="kooljet.html">💦 KoolJet Wash</a>
+  <a href="installation.html">⚙️ Installation</a>
+  <a href="commercial.html">🏢 Commercial</a>
+</div>
 <a href="prices.html">Prices</a>
 <a href="articles.html">Articles</a>
 <a href="about.html">About</a>
@@ -186,6 +219,9 @@ a{text-decoration:none;color:inherit}
 </footer>
 <script>
 function toggleMenu(){document.getElementById('mobMenu').classList.toggle('open')}
+function toggleSvcDropdown(e){e.preventDefault();document.getElementById('svcMenu').classList.toggle('open')}
+function toggleMobSvc(btn){var menu=document.getElementById('mobSvcMenu');menu.classList.toggle('open');btn.querySelector('span').textContent=menu.classList.contains('open')?'▴':'▾'}
+document.addEventListener('click',function(e){var drop=document.getElementById('svcDropdown');var menu=document.getElementById('svcMenu');if(menu&&drop&&!drop.contains(e.target)){menu.classList.remove('open')}})
 document.querySelectorAll('.mob-menu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('mobMenu').classList.remove('open')})});
 function toggleFaq(el){var item=el.parentElement;var ans=item.querySelector('.faq-a');var open=item.classList.contains('open');item.classList.toggle('open',!open);ans.style.display=open?'none':'block'}
 document.querySelectorAll('.faq-item.open .faq-a').forEach(function(a){a.style.display='block'});
