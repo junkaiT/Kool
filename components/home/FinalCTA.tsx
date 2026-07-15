@@ -1,11 +1,14 @@
+import Image from "next/image";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { WHATSAPP_DISPLAY } from "@/lib/site";
 
 export function FinalCTA() {
   return (
     <section className="border-b border-border bg-bg px-[18px] py-8 md:px-0 md:py-16">
       <div className="max-w-[1280px] mx-auto md:px-10 md:grid md:grid-cols-2 md:gap-14 md:items-center">
+        <div className="relative rounded-xl overflow-hidden h-[220px] md:h-[280px] mb-4 md:mb-0 md:order-2">
+          <Image src="/images/home/final-cta.png" alt="Kool Aircon technician" fill className="object-cover" />
+        </div>
         <div>
           <h2 className="text-[21px] md:text-3xl font-extrabold text-black leading-[1.25] mb-2 tracking-[-0.3px]">
             Your aircon could be colder by tonight.
@@ -17,9 +20,6 @@ export function FinalCTA() {
             <WhatsAppButton>Book on WhatsApp</WhatsAppButton>
           </div>
           <p className="text-xs text-muted mt-2.5 md:text-left">Or call {WHATSAPP_DISPLAY} · Mon–Sun, 8am–8pm</p>
-        </div>
-        <div className="hidden md:block rounded-xl overflow-hidden h-[280px]">
-          <ImagePlaceholder height="100%" />
         </div>
       </div>
     </section>

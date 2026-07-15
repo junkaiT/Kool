@@ -1,18 +1,20 @@
+import Image from "next/image";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Button } from "@/components/Button";
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 
 export function Hero() {
   return (
     <section className="border-b border-border">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        className="w-full h-[220px] object-cover md:hidden"
-        src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=440&fit=crop&q=80"
-        alt="Aircon technician Singapore"
-      />
       <div className="md:max-w-[1280px] md:mx-auto md:px-10 md:py-16 md:grid md:grid-cols-2 md:gap-14 md:items-center">
-        <div className="px-[18px] pt-[22px] pb-[26px] md:p-0">
+        <div className="relative h-[220px] md:h-[360px] md:order-2 md:rounded-xl overflow-hidden">
+          <Image
+            src="/images/home/hero-desktop.png"
+            alt="Aircon technician Singapore"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="px-[18px] pt-[22px] pb-[26px] md:p-0 md:order-1">
           <div className="text-[11px] text-muted font-medium tracking-[0.5px] mb-2.5">
             Fast. Affordable. Transparent.
           </div>
@@ -29,9 +31,6 @@ export function Hero() {
               Our Services
             </Button>
           </div>
-        </div>
-        <div className="hidden md:block">
-          <ImagePlaceholder height="360px" className="rounded-xl" />
         </div>
       </div>
     </section>

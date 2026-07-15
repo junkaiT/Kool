@@ -4,30 +4,39 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static marketing website for Kool Aircon, a Singapore aircon servicing/installation company. There is no build system, package manager, framework, or server — just standalone `.html` files meant to be opened directly or hosted as static files (e.g. GitHub Pages).
+A marketing + booking website for Kool Aircon, a Singapore aircon servicing/installation company, built as a **Next.js 16 (App Router) / React 19 / TypeScript / Tailwind CSS 4** app.
+
+The site was originally a set of standalone static HTML files (still kept for reference under `mockups/`) and was rebuilt into this componentized Next.js app. Don't follow patterns from `mockups/*.html` when editing live pages — those files are frozen design references, not part of the build.
 
 ## Development workflow
 
-- No install/build/lint/test commands exist — there is no `package.json`. Edit HTML files directly and open them in a browser to preview.
-- Git history shows this repo is normally edited via GitHub's web "Add files via upload" flow, not a typical local commit workflow — don't assume CI, PR checks, or branch protections are in place.
+- `npm run dev` — start the dev server
+- `npm run build` — production build
+- `npm run start` — run a production build
+- `npm run lint` — ESLint (flat config in `eslint.config.mjs`)
+- No test suite exists.
+- Path alias `@/*` maps to the repo root (see `tsconfig.json`), e.g. `@/lib/site`, `@/components/Nav`.
 
 ## Architecture
 
-- **One fully self-contained HTML file per page** (`index.html`, `about.html`, `prices.html`, `faq.html`, `articles.html`, `referral.html`, and the service pages `general-servicing.html`, `chemical-wash.html`, `chemical-overhaul.html`, `kooljet.html`, `installation.html`, `commercial.html`). Each file inlines its own `<style>` block and a small vanilla-JS `<script>` block at the end — there are no shared `.css`/`.js` files.
-- **The header nav, mobile menu, footer, and WhatsApp CTA buttons are duplicated verbatim across every page.** There is no templating or includes mechanism. When changing the nav, footer, phone number, WhatsApp link, or address, you must find-and-replace across *all* HTML files, not just one.
-- Shared boilerplate to watch for when making sitewide changes:
-  - WhatsApp contact link: `https://wa.me/6588150254` (also shown as `+65 8815 0254`)
-  - Email: `hello@kool.com.sg`
-  - Address: `73 Upper Paya Lebar Road, Singapore`
-  - Services dropdown/footer links to the six service pages, `prices.html`, `about.html`, `referral.html`, `articles.html`, `faq.html`
-  - A `privacy.html` link appears in every footer but that file does not exist in the repo yet.
-- Per-page `<style>` blocks are near-duplicates of each other (same CSS variable palette, same class names like `.nav`, `.hero`, `.faq-item`, `.btn-wa`) with page-specific sections added/removed. When editing shared visual patterns (e.g. FAQ accordion behavior, mobile nav toggle), check whether the same JS/CSS block appears in other pages and needs the same fix.
-- Common inline JS patterns repeated per page: `toggleMenu()` (mobile nav), `toggleSvcDropdown()` / `toggleMobSvc()` (services dropdown), `toggleFaq()` (FAQ accordion expand/collapse).
-- Design system conventions used throughout (CSS custom properties defined per-page in `:root`): `--blue`, `--teal`, `--dark`, `--grey`, `--wa` (WhatsApp green), etc. Mobile-first CSS with a `@media(min-width:900px)` breakpoint for desktop layout.
-- `.img-ph` is a placeholder-image component (dashed border box with "Replace with real image URL in content sheet") used wherever a real photo has not been supplied yet — treat these as intentional TODOs, not bugs.
+- **App Router pages** live under `app/`, one folder per route (`app/about/page.tsx`, `app/prices/page.tsx`, etc.). `app/layout.tsx` wraps every page with the shared `Nav` and `Footer` components and sets global metadata/fonts.
+- **Shared site data lives in one place**: [lib/site.ts](lib/site.ts) exports `WHATSAPP_NUMBER`, `WHATSAPP_URL`, `PHONE_TEL`, `EMAIL`, `ADDRESS`, `SERVICES`, `NAV_LINKS`, `FOOTER_COMPANY_LINKS`. When changing the phone number, WhatsApp link, email, address, or nav/footer links, edit this file — do **not** hunt for duplicated strings across pages like the old static-HTML version required.
+- **Nav and footer are single components**, not duplicated per page: [components/Nav.tsx](components/Nav.tsx) (desktop nav, services dropdown, mobile menu) and `components/Footer.tsx`. Fix nav/footer behavior once, here.
+- **The six service pages (`general-servicing`, `chemical-wash`, `chemical-overhaul`, `kooljet`, `installation`, `commercial`) are one template driven by data**, not six separate HTML files:
+  - [components/service/ServicePageTemplate.tsx](components/service/ServicePageTemplate.tsx) renders the page shell (hero, pricing panel, "when it matters", "what's included", "how it works", FAQ, related services, final CTA).
+  - Each service's content is a data object in `data/services/<slug>.ts` typed by `ServicePageData` in [data/services/types.ts](data/services/types.ts).
+  - To edit service copy or pricing, edit the data file, not the template. To change the shared layout/structure of all service pages, edit the template.
+- **Booking flow** (`app/book/page.tsx`, client component) is a multi-step form that talks to an external "OpenClaw" booking API for date/slot availability, configured via `NEXT_PUBLIC_OPENCLAW_URL` in `.env.local` (see `.env.example`). If that env var is unset, the page shows a "booking availability isn't connected yet" fallback state.
+  - [lib/booking.ts](lib/booking.ts) holds the local price table (`getLocalPrice`, mirrors the CRM's pricing table) used as a fallback/estimate before the remote API returns an authoritative price, plus shared types (`ServiceCode`, `Slot`, `DateAvailability`, `SlotsResponse`).
+- **Reusable UI components** live in `components/`: `Button`, `WhatsAppButton`, `FaqAccordion` (accordion state via `useState<Set<number>>`), `ImagePlaceholder` (placeholder box for photos not yet supplied — treat as an intentional TODO, not a bug), `NumberedStep`, `PricingCard`, `Logo`, plus `components/home/*` (homepage sections: `Hero`, `ServicesSection`, `Testimonials`, `TrustBar`, `WhyKool`, `BrandsMarquee`, `HomeFAQ`, `FinalCTA`) and `components/service/*` (`ProofTabs`, `StatsBar`, `ServicePageTemplate`).
+- **Styling**: Tailwind CSS 4 utility classes inline in JSX (no more per-page `<style>` blocks). Design tokens (colors) are CSS custom properties defined in [app/globals.css](app/globals.css) under `:root` and mapped into Tailwind's theme via `@theme inline` — e.g. `--color-blue`, `--color-teal`, `--color-wa` (WhatsApp green), `--color-bg`, `--color-border`, `--color-muted`. Use the corresponding Tailwind classes (`bg-blue`, `text-grey`, `border-border`, etc.) rather than hardcoding hex values. The custom breakpoint is `md` = 900px (mobile-first).
 
 ## Images
 
-- `images/` contains brand logos (Daikin, Mitsubishi, Samsung, Panasonic, LG, Fujitsu, Sharp, Toshiba, Sanyo, Midea).
-- These are referenced in `index.html`'s brand marquee **via absolute GitHub raw URLs** (`https://raw.githubusercontent.com/junkaiT/Kool/main/images/<Brand>.png`), not relative paths — so they only render correctly once pushed to the `junkaiT/Kool` GitHub repo's `main` branch, not when previewing `index.html` from a local checkout offline.
-- Other hero/content images across pages are hotlinked from Unsplash or left as `.img-ph` placeholders.
+- `images/` holds source brand logos (Daikin, Mitsubishi, Samsung, Panasonic, LG, Fujitsu, Sharp, Toshiba, Sanyo, Midea); `public/images/` holds the copies actually served by Next.js — keep both in sync if you add/replace a logo.
+- Other hero/content images are hotlinked from Unsplash or left as `ImagePlaceholder` components where a real photo hasn't been supplied yet.
+
+## Repo conventions
+
+- This repo was historically edited via GitHub's web "Add files via upload" flow, but the Next.js rebuild was committed as a single local commit — don't assume CI, PR checks, or branch protections are in place.
+- `mockups/*.html` are static, standalone reference files (inline styles/scripts, no shared boilerplate) kept for design reference only. Do not edit them expecting it to affect the live site, and do not copy their duplicated-nav/footer pattern into new live pages.

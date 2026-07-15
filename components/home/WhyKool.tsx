@@ -1,23 +1,23 @@
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
+import Image from "next/image";
 
 const PILLARS = [
   {
     num: "Proof of Servicing",
     h: "See the proof your aircon is performing better",
     body: "We measure the cold air output before and after every service. Real numbers — not just our word for it. Most services show a saving of $20–30/month on electricity, and a noticeably colder aircon from day one.",
-    image: "Pillar 1 image",
+    image: "/images/home/pillar-1.png",
   },
   {
     num: "Check Our Work",
     h: "See exactly what was done, room by room.",
     body: "Receive a WhatsApp report within 20 minutes of every service — before and after photos of every unit, labelled by room, plus any issues found and what we recommend. No jargon, no surprises.",
-    image: "Pillar 2 image",
+    image: "/images/home/pillar-2.png",
   },
   {
     num: "No Nasty Chemicals",
     h: "Certified safe for elderly, children, and pets. Zero harsh chemicals.",
     body: "Most aircon companies use cheap, harsh alkaline chemicals. We offer certified bio-enzyme agents as standard on all servicing — non-toxic, biodegradable, and safe for your whole household.",
-    image: null,
+    image: "/images/home/pillar-3.png",
   },
 ];
 
@@ -46,8 +46,8 @@ export function WhyKool() {
               <div className="text-sm md:text-[15px] font-bold text-black mb-1.5 leading-[1.3]">{p.h}</div>
               <p className="text-xs md:text-[13px] text-grey leading-[1.6]">{p.body}</p>
               {p.image && (
-                <div className="mt-3">
-                  <ImagePlaceholder label={p.image} height="180px" />
+                <div className="mt-3 relative h-[180px] rounded-lg overflow-hidden">
+                  <Image src={p.image} alt={p.h} fill className="object-cover" />
                 </div>
               )}
             </div>
