@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 
@@ -9,18 +10,21 @@ const SLIDES = [
     label: "Proof of Servicing",
     h: "See the proof your aircon is performing better",
     body: "We measure the cold air output before and after every service. Real numbers — not just our word for it. Most services show a saving of $20–30/month on electricity, and a noticeably colder aircon from day one.",
+    image: "/images/services/chemical-wash/anemometer-2.png",
   },
   {
     tab: "02 · Check Our Work",
     label: "Check Our Work",
     h: "See exactly what was done, room by room.",
     body: "Receive a WhatsApp report within 20 minutes of every service — before and after photos of every unit, labelled by room, plus any issues found and what we recommend. No jargon, no surprises.",
+    image: "/images/home/pillar-2.png",
   },
   {
     tab: "03 · No Nasty Chemicals",
     label: "No Nasty Chemicals",
     h: "Certified safe for elderly, children, and pets. Zero harsh chemicals.",
     body: "Most aircon companies use cheap, harsh alkaline chemicals. We offer certified bio-enzyme agents as standard on all servicing — non-toxic, biodegradable, and safe for your whole household.",
+    image: "/images/home/pillar-3.png",
   },
 ];
 
@@ -146,8 +150,12 @@ export function ProofTabs() {
                   </div>
                 )}
               </div>
-              <div className="md:flex-none md:w-[260px]">
-                <ImagePlaceholder height="auto" className="aspect-[2/1]" />
+              <div className="relative aspect-[2/1] md:flex-none md:w-[260px]">
+                {SLIDES[active].image ? (
+                  <Image src={SLIDES[active].image} alt={SLIDES[active].label} fill className="object-cover rounded-lg" />
+                ) : (
+                  <ImagePlaceholder height="100%" />
+                )}
               </div>
             </div>
           </div>

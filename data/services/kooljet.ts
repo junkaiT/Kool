@@ -35,15 +35,39 @@ export const kooljet: ServicePageData = {
   ],
   included: [
     {
-      h: "Full protective cover setup",
-      body: "Your unit and surrounding area are fully covered before any water is used. No mess, no water damage to your walls or furniture.",
+      h: "Wind Flow Measurement — Your Baseline",
+      body: "Before we touch anything, we measure the wind flow of your unit. This tells us exactly how well your aircon is performing right now — and gives us a number to beat.",
+      image: "/images/services/general-servicing/anemometer-1.png",
     },
     {
-      h: "Jet wash of filters, coils, blower, and drainage tray",
-      body: "Every internal component flushed with water — reaching compacted dirt and grime that hand cleaning cannot dislodge.",
+      h: "Protective Setup",
+      body: "We set up a protective cover around your unit and place a collection bag to catch all the dirty water. Nothing drips down your wall or pools on your floor.",
     },
-    { h: "Dirty water collection", body: "All dirty water flushed out and collected and properly disposed." },
-    { h: "Full reassembly and operational test", body: "Unit reassembled, tested, and confirmed cold before we leave." },
+    {
+      h: "Jetwash — Filters & Panels",
+      body: "Filters and panels are jetwashed clean — removing built-up dust and debris that vacuuming alone cannot dislodge.",
+    },
+    {
+      h: "Jetwash — Blower & Drainage Trays",
+      body: "The blower wheel and drainage tray are jetwashed individually, reaching compacted grime that hand cleaning and standard servicing physically cannot shift.",
+    },
+    {
+      h: "Jetwash — Fan Coil",
+      body: "We jetwash the fan coil fins directly, flushing out compacted dirt and debris from deep inside. The result is noticeably cleaner airflow and improved cooling.",
+    },
+    {
+      h: "Drainage Tray & Pipe Vacuum",
+      body: "The drainage tray and condensate pipe are fully flushed and vacuumed. Blocked drainage is one of the most common causes of water leaks — this step clears it completely.",
+    },
+    {
+      h: "Drying & Internal Wipe Down",
+      body: "All internal surfaces are wiped clean and dried before reassembly. Drying properly before putting the unit back together prevents moisture from being trapped inside.",
+    },
+    {
+      h: "Final Wind Flow Measurement — Proof It Worked",
+      body: "We measure wind flow output again. You see the exact improvement in black and white — before and after, every single visit. This reading goes directly into your WhatsApp report.",
+      image: "/images/services/general-servicing/anemometer-2.png",
+    },
   ],
   howItWorks: [
     { h: "Booking confirmed", body: "WhatsApp us your address and number of units — we'll confirm a slot within the hour." },

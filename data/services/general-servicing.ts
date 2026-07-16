@@ -46,24 +46,28 @@ export const generalServicing: ServicePageData = {
   ],
   included: [
     {
-      h: "Wind flow measurement",
-      body: "A diagnostic before we begin.",
+      h: "Wind Flow Measurement — Your Baseline",
+      body: "Before we touch anything, we measure the wind flow of your unit. This tells us exactly how well your aircon is performing right now — and gives us a number to beat.",
       image: "/images/services/general-servicing/anemometer-1.png",
     },
     {
-      h: "Clean and check filters, panels and blower wheel",
+      h: "Filter, Panel & Blower Wheel Clean",
+      body: "We remove and clean your air filter, wipe down the front panel and cover, and vacuum and brush the blower wheel — the spinning component that pushes cold air into your room. Dust buildup here is one of the most common reasons aircons stop feeling cold.",
       image: "/images/services/general-servicing/blower-wheel.png",
     },
     {
-      h: "Flush drainage tray",
+      h: "Drainage Tray Flush",
+      body: "We flush your drainage tray and vacuum the condensate pipe. A blocked drain is the number one cause of water leaking from your aircon — this step prevents it.",
       image: "/images/services/general-servicing/drainage-flush.png",
     },
     {
-      h: "Tighten electrical connections and fan motor bearing",
+      h: "Electrical Check & Fan Motor Tighten",
+      body: "We check and tighten all electrical connections and the fan motor bearing. Loose connections reduce efficiency over time and can cause faults — catching them early is cheaper than a repair later.",
       image: "/images/services/general-servicing/inspection.png",
     },
     {
-      h: "Final Wind Flow Measurement",
+      h: "Final Wind Flow Measurement — Proof It Worked",
+      body: "We measure wind flow output again. You see the exact improvement in black and white — before and after, every single visit. This reading goes directly into your WhatsApp report.",
       image: "/images/services/general-servicing/anemometer-2.png",
     },
   ],

@@ -41,36 +41,43 @@ export const chemicalWash: ServicePageData = {
   ],
   included: [
     {
-      h: "Wind flow measurement",
-      body: "A diagnostic before we begin.",
+      h: "Wind Flow Measurement — Your Baseline",
+      body: "Before we touch anything, we measure the wind flow of your unit. This tells us exactly how well your aircon is performing right now — and gives us a number to beat.",
       image: "/images/services/chemical-wash/anemometer-1.png",
     },
     {
-      h: "Set up",
+      h: "Protective Setup",
+      body: "We set up a protective cover around your unit and place a collection bag to catch all the dirty water. Nothing drips down your wall or pools on your floor.",
       image: "/images/services/chemical-wash/set-up.png",
     },
     {
-      h: "Clean filters, panels and cooling coil",
+      h: "Clean Filters with Cleaning Agent",
+      body: "Filters are soaked and scrubbed to remove built-up dust and bacteria.",
       image: "/images/services/chemical-wash/filter-clean.png",
     },
     {
-      h: "Clean and check blower wheel",
+      h: "Deep Clean Blower and Drainage Trays",
+      body: "The blower wheel is removed and scrubbed. This is the component most chemical washes miss — it's deep inside the unit and covered in mould that a standard service simply can't reach.",
       image: "/images/services/chemical-wash/component-clean.png",
     },
     {
-      h: "Clean evaporator",
+      h: "Deep Clean Fan Coil",
+      body: "We apply our cleaning compound directly to the fan coil and flush it through with clean water. This breaks down mould and bacteria.",
       image: "/images/services/chemical-wash/evaporator-clean.png",
     },
     {
-      h: "Flush drainage tray and vacuum drain pipe",
+      h: "Drainage Tray & Pipe Vacuum",
+      body: "The drainage tray and condensate pipe are fully flushed and vacuumed. Blocked drainage is one of the most common causes of water leaks — this step clears it completely.",
       image: "/images/services/general-servicing/drainage-flush.png",
     },
     {
-      h: "Drying",
+      h: "Drying & Internal Wipe Down",
+      body: "All internal surfaces are wiped clean and dried before reassembly. Reassembling a wet unit traps moisture and encourages mould to return faster — drying properly extends the results of the wash.",
       image: "/images/services/chemical-wash/drying.png",
     },
     {
-      h: "Final Wind Flow Measurement",
+      h: "Final Wind Flow Measurement — Proof It Worked",
+      body: "We measure wind flow output again. You see the exact improvement in black and white — before and after, every single visit. This reading goes directly into your WhatsApp report.",
       image: "/images/services/chemical-wash/anemometer-2.png",
     },
   ],

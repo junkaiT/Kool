@@ -140,7 +140,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
       {/* What's included */}
       <section className="border-b border-border px-[18px] py-6 md:px-0 md:py-12">
         <div className="max-w-[1280px] mx-auto md:px-10">
-          <h2 className="text-lg font-extrabold text-black mb-3.5 tracking-[-0.2px]">What&apos;s included</h2>
+          <h2 className="text-lg font-extrabold text-black mb-3.5 tracking-[-0.2px]">Our Process</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-3.5">
             {data.included.map((step, i) => (
               <div key={step.h} className="bg-white border border-border rounded-[10px] overflow-hidden">

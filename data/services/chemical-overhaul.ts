@@ -5,6 +5,7 @@ export const chemicalOverhaul: ServicePageData = {
   slug: "chemical-overhaul",
   breadcrumbLabel: "Chemical overhaul",
   title: "Chemical Overhaul",
+  heroImage: "/images/services/chemical-overhaul/hero.png",
   heroBody:
     "Our most thorough service — reserved for units that need more than a chemical wash can fix. We fully dismantle every component, chemically treat and wash each part individually, then rebuild the unit from scratch. As close to a factory reset as your aircon can get without replacing it entirely.",
   bestFor: "Best for: Severely neglected units · Persistent issues after a chemical wash · Units not serviced in over a year",
@@ -34,27 +35,54 @@ export const chemicalOverhaul: ServicePageData = {
   ],
   included: [
     {
-      h: "Full dismantle of fan coil unit",
-      body: "Every component is removed individually — not just flushed in place. This is what separates a chemical overhaul from every other service.",
+      h: "Wind Flow Measurement — Your Baseline",
+      body: "Before we touch anything, we measure the wind flow of your unit. This tells us exactly how well your aircon is performing right now — and gives us a number to beat.",
+      image: "/images/services/chemical-wash/anemometer-1.png",
     },
     {
-      h: "Deep clean and scrub blower wheel",
-      body: "The blower wheel is the hardest component to clean without a full dismantle. Removed, scrubbed, and cleaned thoroughly — impossible to do properly any other way.",
+      h: "Protective Setup",
+      body: "We set up protective covers and water collection before any cleaning begins. No mess, no water damage to your walls or furniture.",
+      image: "/images/services/chemical-overhaul/protection.png",
     },
     {
-      h: "Chemical treatment of air filters and evaporators",
-      body: "Filters are soaked and treated with our certified bio-enzyme solution, removing buildup that vacuuming alone cannot shift.",
+      h: "Full Unit Dismantle",
+      body: "Every component is individually removed — front cover, blower wheel, water tray, filters, and drainage system. Nothing is flushed in place. This is what separates a chemical overhaul from every other service, and the only way to clean certain components properly.",
+      image: "/images/services/chemical-overhaul/hero.png",
     },
-    { h: "Clean and wash water tray", body: "Removed, cleaned, and flushed individually before reassembly." },
     {
-      h: "Thorough water wash of all components",
-      body: "Every part washed thoroughly with clean water after chemical treatment, ensuring no residue remains before the unit is rebuilt.",
+      h: "Clean Filters with Cleaning Agent",
+      body: "Filters are soaked and scrubbed to remove built-up dust and bacteria.",
+      image: "/images/services/chemical-wash/filter-clean.png",
     },
-    { h: "Wipe clean all parts and components", body: "Every component wiped down individually before reassembly." },
-    { h: "Full reassembly", body: "The entire unit rebuilt from scratch and inspected before testing." },
     {
-      h: "Electrical check and outdoor unit inspection",
-      body: "Connections checked and tightened. Outdoor unit inspected. Any issues flagged in your WhatsApp report.",
+      h: "Deep Clean Blower and Drainage Trays",
+      body: "The blower wheel is removed and scrubbed. This is the component most chemical washes miss — it's deep inside the unit and covered in mould that a standard service simply can't reach.",
+      image: "/images/services/chemical-wash/component-clean.png",
+    },
+    {
+      h: "Deep Clean Fan Coil",
+      body: "We apply our cleaning compound directly to the fan coil and flush it through with clean water. This breaks down mould and bacteria.",
+      image: "/images/services/chemical-overhaul/fancoil-clean.png",
+    },
+    {
+      h: "Drainage Tray & Pipe Vacuum",
+      body: "The drainage tray and condensate pipe are fully flushed and vacuumed. Blocked drainage is one of the most common causes of water leaks — this step clears it completely.",
+      image: "/images/services/general-servicing/drainage-flush.png",
+    },
+    {
+      h: "Drying & Internal Wipe Down",
+      body: "All internal surfaces are wiped clean and dried before reassembly. Reassembling a wet unit traps moisture and encourages mould to return faster — drying properly extends the results of the wash.",
+      image: "/images/services/chemical-overhaul/dry.png",
+    },
+    {
+      h: "Full Reassembly",
+      body: "The entire unit is rebuilt from scratch — every component reattached, sealed, and inspected before testing. Not a partial reattachment — a complete rebuild.",
+      image: "/images/services/chemical-overhaul/reassembly.png",
+    },
+    {
+      h: "Final Wind Flow Measurement — Proof It Worked",
+      body: "We measure wind flow output again. You see the exact improvement in black and white — before and after, every single visit. This reading goes directly into your WhatsApp report.",
+      image: "/images/services/chemical-wash/anemometer-2.png",
     },
   ],
   howItWorks: [
