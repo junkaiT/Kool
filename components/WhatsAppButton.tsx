@@ -16,9 +16,14 @@ export function WhatsAppButton({
   className = "",
 }: WhatsAppButtonProps) {
   return (
-    <Button href={WHATSAPP_URL} variant={variant} target="_blank" rel="noopener" className={className}>
-      {showIcon && <WhatsAppIcon />}
-      {children}
-    </Button>
+    <div className="flex flex-wrap gap-2 items-center">
+      <Button href={WHATSAPP_URL} variant={variant} target="_blank" rel="noopener" className={className}>
+        {showIcon && <WhatsAppIcon />}
+        {children}
+      </Button>
+      <Button href="/book" variant="outline" className={className}>
+        or Check Slots Online Now
+      </Button>
+    </div>
   );
 }

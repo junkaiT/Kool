@@ -81,7 +81,13 @@ export default function BookPage() {
         units: String(units),
         phone: phone.replace(/\D/g, ""),
       });
-      const res = await fetch(`${OPENCLAW_URL}/booking/slots?${params}`);
+      const res = await fetch(`${OPENCLAW_URL}/booking/slots?${params}`, {
+        method: "GET",
+        headers: {
+          "ngrok-skip-browser-warning": "true",
+          "Content-Type": "application/json",
+        },
+      });
       const data: SlotsResponse = await res.json();
 
       if (data.error || data.noZone) {

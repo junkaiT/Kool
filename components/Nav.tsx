@@ -32,7 +32,7 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-[100] bg-white border-b border-border">
-      <div className="max-w-[1280px] mx-auto px-10 h-[60px] flex items-center justify-between gap-6">
+      <div className="max-w-[1280px] mx-auto px-10 min-h-[60px] flex items-center justify-between gap-6">
         <Logo />
 
         <nav className="hidden md:flex flex-1 justify-center gap-0.5">
