@@ -5,6 +5,7 @@ export const generalServicing: ServicePageData = {
   slug: "general-servicing",
   breadcrumbLabel: "General servicing",
   title: "General Servicing",
+  heroImage: "/images/services/general-servicing/hero.png",
   heroBody:
     "Think of this as your aircon's regular health check. We clean everything that's accessible — filters, panels, cooling coil, drainage tray, and blower wheel — without dismantling the unit. Fast, thorough, and done quarterly.",
   bestFor: "Best for: Regular maintenance · Rental maintenance",
@@ -45,34 +46,25 @@ export const generalServicing: ServicePageData = {
   ],
   included: [
     {
-      icon: "🔧",
-      h: "Clean filters, panels and cooling coil",
-      body: "All accessible surfaces cleaned and inspected — the fastest way to restore airflow and cooling performance.",
+      h: "Wind flow measurement",
+      body: "A diagnostic before we begin.",
+      image: "/images/services/general-servicing/anemometer-1.png",
     },
     {
-      icon: "💧",
-      h: "Clean and check blower wheel",
-      body: "Dust buildup on the blower wheel restricts airflow. Cleaned and checked on every visit.",
+      h: "Clean and check filters, panels and blower wheel",
+      image: "/images/services/general-servicing/blower-wheel.png",
     },
     {
-      icon: "💨",
-      h: "Flush drainage tray and vacuum drain pipe",
-      body: "Prevents water leaks. We flush and vacuum the full condensate system every visit.",
+      h: "Flush drainage tray",
+      image: "/images/services/general-servicing/drainage-flush.png",
     },
     {
-      icon: "🌡️",
-      h: "Check outdoor condenser and refrigerant level",
-      body: "Inspected for blockages and dirt buildup. Refrigerant levels checked to confirm the system is operating correctly.",
-    },
-    {
-      icon: "🔩",
-      h: "Check compressor pressure where necessary",
-      body: "If readings suggest an issue, we flag it clearly in your service report with a recommendation.",
-    },
-    {
-      icon: "⚡",
       h: "Tighten electrical connections and fan motor bearing",
-      body: "Loose connections reduce efficiency and can cause faults. Checked and tightened on every visit.",
+      image: "/images/services/general-servicing/inspection.png",
+    },
+    {
+      h: "Final Wind Flow Measurement",
+      image: "/images/services/general-servicing/anemometer-2.png",
     },
   ],
   howItWorks: [

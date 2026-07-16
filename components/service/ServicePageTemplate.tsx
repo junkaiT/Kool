@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { NumberedSteps } from "@/components/NumberedStep";
 import { ProofTabs } from "@/components/service/ProofTabs";
 import { StatsBar } from "@/components/service/StatsBar";
-import { WHATSAPP_DISPLAY } from "@/lib/site";
+import { WHATSAPP_DISPLAY, FINAL_CTA_IMAGE } from "@/lib/site";
 import type { ServicePageData } from "@/data/services/types";
 
 const CHIPS = ["Fast Booking", "Experienced Technicians", "Service Guarantee", "No Hard Selling"];
@@ -37,7 +38,13 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
               {data.title}
             </h1>
             <div className="mb-3.5 rounded-lg overflow-hidden md:hidden">
-              <ImagePlaceholder height="180px" />
+              {data.heroImage ? (
+                <div className="relative aspect-[2/1]">
+                  <Image src={data.heroImage} alt={data.title} fill className="object-cover" />
+                </div>
+              ) : (
+                <ImagePlaceholder height="auto" className="aspect-[2/1]" />
+              )}
             </div>
             <p className="text-[13px] md:text-sm text-grey leading-[1.65] mb-3.5">
               {data.heroBody}
@@ -96,7 +103,13 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
           </div>
 
           <div className="hidden md:block rounded-xl overflow-hidden">
-            <ImagePlaceholder height="180px" />
+            {data.heroImage ? (
+              <div className="relative aspect-[2/1]">
+                <Image src={data.heroImage} alt={data.title} fill className="object-cover" />
+              </div>
+            ) : (
+              <ImagePlaceholder height="auto" className="aspect-[2/1]" />
+            )}
           </div>
         </div>
       </section>
@@ -126,34 +139,36 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
 
       {/* What's included */}
       <section className="border-b border-border px-[18px] py-6 md:px-0 md:py-12">
-        <div className="max-w-[1280px] mx-auto md:px-10 md:grid md:grid-cols-2 md:gap-12">
-          <div>
-            <h2 className="text-lg font-extrabold text-black mb-3 tracking-[-0.2px]">What&apos;s included</h2>
-            {data.included.map((item, i) => (
-              <div
-                key={item.h}
-                className={`flex items-start gap-3 py-2.5 ${
-                  i < data.included.length - 1 ? "border-b border-border" : ""
-                }`}
-              >
-                <span className="text-[19px] shrink-0 mt-0.5">{item.icon}</span>
-                <div>
-                  <div className="text-[13px] font-bold text-black mb-[3px]">{item.h}</div>
-                  <p className="text-xs text-grey leading-[1.55]">{item.body}</p>
+        <div className="max-w-[1280px] mx-auto md:px-10">
+          <h2 className="text-lg font-extrabold text-black mb-3.5 tracking-[-0.2px]">What&apos;s included</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-3.5">
+            {data.included.map((step, i) => (
+              <div key={step.h} className="bg-white border border-border rounded-[10px] overflow-hidden">
+                <div className="relative aspect-[2/1]">
+                  {step.image ? (
+                    <Image src={step.image} alt={step.h} fill className="object-cover" />
+                  ) : (
+                    <ImagePlaceholder height="100%" className="rounded-none" />
+                  )}
+                </div>
+                <div className="p-3.5 flex gap-3 items-start">
+                  <div className="shrink-0 w-7 h-7 rounded-full bg-teal text-white font-bold text-xs flex items-center justify-center">
+                    {i + 1}
+                  </div>
+                  <div>
+                    <div className="text-[13px] font-bold text-black mb-1">{step.h}</div>
+                    <p className="text-xs text-grey leading-[1.55]">
+                      {step.body ?? <span className="italic text-muted">Copy coming soon.</span>}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
-            <div className="mt-2.5 px-3.5 py-2.5 bg-teal-bg border-l-[3px] border-teal rounded">
-              <div className="text-[11px] font-bold text-black mb-1">Also on every Kool service</div>
-              <div className="text-[11px] text-grey">
-                ΔT measurement · WhatsApp report · Bio-enzyme chemicals · 48-hr guarantee
-              </div>
-            </div>
           </div>
-          <div className="hidden md:block">
-            <ImagePlaceholder label="Image 1" height="180px" />
-            <div className="mt-3">
-              <ImagePlaceholder label="Image 2" height="180px" />
+          <div className="mt-3.5 px-3.5 py-2.5 bg-teal-bg border-l-[3px] border-teal rounded">
+            <div className="text-[11px] font-bold text-black mb-1">Also on every Kool service</div>
+            <div className="text-[11px] text-grey">
+              ΔT measurement · WhatsApp report · Bio-enzyme chemicals · 48-hr guarantee
             </div>
           </div>
         </div>
@@ -214,6 +229,9 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
 
       {/* Final CTA */}
       <section className="bg-bg px-[18px] py-6 md:px-0 md:py-12">
+        <div className="max-w-[1280px] mx-auto md:hidden relative rounded-xl overflow-hidden aspect-[2/1] mb-4">
+          <Image src={FINAL_CTA_IMAGE} alt="Kool Aircon technician" fill className="object-cover" />
+        </div>
         <div className="max-w-[1280px] mx-auto md:px-10 md:grid md:grid-cols-2 md:gap-10 md:items-center">
           <div>
             <h2 className="text-xl font-extrabold text-black mb-2 tracking-[-0.3px] md:text-[26px]">
@@ -223,7 +241,12 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
             <WhatsAppButton>Book on WhatsApp Now</WhatsAppButton>
             <p className="text-xs text-muted mt-2.5">Or call {WHATSAPP_DISPLAY}</p>
           </div>
-          <StatsBar className="mt-5 md:mt-0" />
+          <div>
+            <div className="hidden md:block relative rounded-xl overflow-hidden aspect-[2/1] mb-3">
+              <Image src={FINAL_CTA_IMAGE} alt="Kool Aircon technician" fill className="object-cover" />
+            </div>
+            <StatsBar className="mt-5 md:mt-0" />
+          </div>
         </div>
       </section>
     </main>

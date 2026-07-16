@@ -38,7 +38,7 @@ export default function AboutPage() {
             <p className="text-sm text-grey leading-[1.7] mt-2.5">He decided to build the service he'd been looking for.</p>
           </div>
           <div className="mt-5 md:mt-0 md:flex-none md:w-[400px]">
-            <ImagePlaceholder height="180px" />
+            <ImagePlaceholder height="auto" className="aspect-[2/1]" />
           </div>
         </div>
       </section>
@@ -61,7 +61,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="mt-5 md:mt-0 md:flex-none md:w-[400px]">
-            <ImagePlaceholder height="180px" />
+            <ImagePlaceholder height="auto" className="aspect-[2/1]" />
           </div>
         </div>
       </section>
@@ -98,7 +98,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="mt-5 md:mt-0 md:flex-none md:w-[400px]">
-            <ImagePlaceholder height="180px" />
+            <ImagePlaceholder height="auto" className="aspect-[2/1]" />
           </div>
         </div>
       </section>

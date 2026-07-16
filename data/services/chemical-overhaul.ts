@@ -34,30 +34,25 @@ export const chemicalOverhaul: ServicePageData = {
   ],
   included: [
     {
-      icon: "🔧",
       h: "Full dismantle of fan coil unit",
       body: "Every component is removed individually — not just flushed in place. This is what separates a chemical overhaul from every other service.",
     },
     {
-      icon: "💧",
       h: "Deep clean and scrub blower wheel",
       body: "The blower wheel is the hardest component to clean without a full dismantle. Removed, scrubbed, and cleaned thoroughly — impossible to do properly any other way.",
     },
     {
-      icon: "💨",
       h: "Chemical treatment of air filters and evaporators",
       body: "Filters are soaked and treated with our certified bio-enzyme solution, removing buildup that vacuuming alone cannot shift.",
     },
-    { icon: "⚡", h: "Clean and wash water tray", body: "Removed, cleaned, and flushed individually before reassembly." },
+    { h: "Clean and wash water tray", body: "Removed, cleaned, and flushed individually before reassembly." },
     {
-      icon: "💧",
       h: "Thorough water wash of all components",
       body: "Every part washed thoroughly with clean water after chemical treatment, ensuring no residue remains before the unit is rebuilt.",
     },
-    { icon: "🧹", h: "Wipe clean all parts and components", body: "Every component wiped down individually before reassembly." },
-    { icon: "🔩", h: "Full reassembly", body: "The entire unit rebuilt from scratch and inspected before testing." },
+    { h: "Wipe clean all parts and components", body: "Every component wiped down individually before reassembly." },
+    { h: "Full reassembly", body: "The entire unit rebuilt from scratch and inspected before testing." },
     {
-      icon: "⚡",
       h: "Electrical check and outdoor unit inspection",
       body: "Connections checked and tightened. Outdoor unit inspected. Any issues flagged in your WhatsApp report.",
     },

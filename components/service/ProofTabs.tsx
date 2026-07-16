@@ -147,7 +147,7 @@ export function ProofTabs() {
                 )}
               </div>
               <div className="md:flex-none md:w-[260px]">
-                <ImagePlaceholder height="180px" />
+                <ImagePlaceholder height="auto" className="aspect-[2/1]" />
               </div>
             </div>
           </div>

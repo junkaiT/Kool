@@ -33,21 +33,18 @@ export const commercial: ServicePageData = {
   ],
   included: [
     {
-      icon: "🔧",
       h: "Tailored scheduling.",
       body: "No fixed contract structure — we build a maintenance schedule around your unit count, usage pattern, and operating hours.",
     },
     {
-      icon: "💧",
       h: "Full written service reports.",
       body: "Every visit documented properly, unit by unit. Not a WhatsApp message — a formal service record you can file and reference.",
     },
     {
-      icon: "💨",
       h: "Priority breakdown response.",
       body: "Commercial clients go to the front of the queue. If something goes wrong outside a scheduled visit, we treat it as urgent.",
     },
-    { icon: "⚡", h: "Transparent pricing.", body: "A detailed quote before any work begins. No hidden costs, no surprises on the invoice." },
+    { h: "Transparent pricing.", body: "A detailed quote before any work begins. No hidden costs, no surprises on the invoice." },
   ],
   howItWorks: [
     { h: "Get in touch", body: "WhatsApp us your property type, unit count, system type, and current servicing frequency." },

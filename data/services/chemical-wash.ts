@@ -5,6 +5,7 @@ export const chemicalWash: ServicePageData = {
   slug: "chemical-wash",
   breadcrumbLabel: "Chemical wash",
   title: "Chemical Wash",
+  heroImage: "/images/services/chemical-wash/hero.png",
   heroBody:
     "Where general servicing cleans the surface, a chemical wash goes deeper. We remove the internal components, apply a certified bio-enzyme compound directly to the fan coil and drainage system — reaching the mould, bacteria, and grime that a standard service can't touch — then rinse, vacuum, and reassemble. You'll notice the difference in cooling and air quality immediately.",
   bestFor: "Best for: Poor cooling · Foul or musty odours · Unusual noise · First clean in 6+ months",
@@ -40,34 +41,37 @@ export const chemicalWash: ServicePageData = {
   ],
   included: [
     {
-      icon: "🔧",
-      h: "Remove and soak air filter in bio-enzyme solution",
-      body: "Deep soaking removes stubborn dirt and bacteria that vacuuming alone cannot shift.",
+      h: "Wind flow measurement",
+      body: "A diagnostic before we begin.",
+      image: "/images/services/chemical-wash/anemometer-1.png",
     },
     {
-      icon: "💧",
-      h: "Flush evaporator coil with bio-enzyme cleaning agent",
-      body: "The coil is where most mould and efficiency loss occurs. Flushed thoroughly with our certified bio-enzyme solution.",
+      h: "Set up",
+      image: "/images/services/chemical-wash/set-up.png",
     },
     {
-      icon: "💨",
-      h: "Flush and vacuum drainage tray and pipe",
-      body: "Blocked drainage causes water leaks. Fully flushed and vacuumed on every wash.",
+      h: "Clean filters, panels and cooling coil",
+      image: "/images/services/chemical-wash/filter-clean.png",
     },
     {
-      icon: "⚡",
-      h: "Check blower wheel, electrical connections, and outdoor unit",
-      body: "Full inspection included — any issues flagged in your WhatsApp report with a clear recommendation.",
+      h: "Clean and check blower wheel",
+      image: "/images/services/chemical-wash/component-clean.png",
     },
     {
-      icon: "🧹",
-      h: "Wipe clean all internal surfaces",
-      body: "Every accessible interior surface wiped down before reassembly.",
+      h: "Clean evaporator",
+      image: "/images/services/chemical-wash/evaporator-clean.png",
     },
     {
-      icon: "✅",
-      h: "Reassemble and test",
-      body: "The unit is fully reassembled, tested for correct operation, and confirmed cold before we leave.",
+      h: "Flush drainage tray and vacuum drain pipe",
+      image: "/images/services/general-servicing/drainage-flush.png",
+    },
+    {
+      h: "Drying",
+      image: "/images/services/chemical-wash/drying.png",
+    },
+    {
+      h: "Final Wind Flow Measurement",
+      image: "/images/services/chemical-wash/anemometer-2.png",
     },
   ],
   howItWorks: [

@@ -34,22 +34,18 @@ export const installation: ServicePageData = {
   ],
   included: [
     {
-      icon: "🔧",
       h: "Site assessment and unit recommendation",
       body: "Before anything is installed, we assess your space — room size, ceiling height, window placement, and usage pattern — and recommend the right BTU and model for each room. No overselling, no undersizing.",
     },
     {
-      icon: "💧",
       h: "Supply and installation of indoor and outdoor units",
       body: "All major brands available. Units positioned for optimal airflow and installed cleanly, with cored holes sealed after every job.",
     },
     {
-      icon: "💨",
       h: "Pipe and wiring run",
       body: "Properly insulated pipe runs, neatly trunked and concealed where possible. No exposed wiring, no shortcuts on insulation quality.",
     },
     {
-      icon: "⚡",
       h: "Drainage setup",
       body: "Correct gradient drainage installed from the start — one of the most common causes of post-installation water leaks is improper drainage slope. We get this right the first time.",
     },

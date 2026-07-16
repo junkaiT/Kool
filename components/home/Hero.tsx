@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="border-b border-border">
       <div className="md:max-w-[1280px] md:mx-auto md:px-10 md:py-16 md:grid md:grid-cols-2 md:gap-14 md:items-center">
-        <div className="relative h-[220px] md:h-[360px] md:order-2 md:rounded-xl overflow-hidden">
+        <div className="relative aspect-[2/1] md:order-2 md:rounded-xl overflow-hidden">
           <Image
             src="/images/home/hero-desktop.png"
             alt="Aircon technician Singapore"

@@ -5,6 +5,7 @@ export const PHONE_TEL = "+6588150254";
 export const EMAIL = "hello@kool.com.sg";
 export const ADDRESS = "73 Upper Paya Lebar Road, Singapore";
 export const COMPANY_TAGLINE = "Cool Air, Cool Life";
+export const FINAL_CTA_IMAGE = "/images/home/final-cta.png";
 
 export type Service = {
   slug: string;

@@ -35,17 +35,15 @@ export const kooljet: ServicePageData = {
   ],
   included: [
     {
-      icon: "🔧",
       h: "Full protective cover setup",
       body: "Your unit and surrounding area are fully covered before any water is used. No mess, no water damage to your walls or furniture.",
     },
     {
-      icon: "💧",
       h: "Jet wash of filters, coils, blower, and drainage tray",
       body: "Every internal component flushed with water — reaching compacted dirt and grime that hand cleaning cannot dislodge.",
     },
-    { icon: "💨", h: "Dirty water collection", body: "All dirty water flushed out and collected and properly disposed." },
-    { icon: "⚡", h: "Full reassembly and operational test", body: "Unit reassembled, tested, and confirmed cold before we leave." },
+    { h: "Dirty water collection", body: "All dirty water flushed out and collected and properly disposed." },
+    { h: "Full reassembly and operational test", body: "Unit reassembled, tested, and confirmed cold before we leave." },
   ],
   howItWorks: [
     { h: "Booking confirmed", body: "WhatsApp us your address and number of units — we'll confirm a slot within the hour." },

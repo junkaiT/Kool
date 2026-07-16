@@ -46,7 +46,7 @@ export function WhyKool() {
               <div className="text-sm md:text-[15px] font-bold text-black mb-1.5 leading-[1.3]">{p.h}</div>
               <p className="text-xs md:text-[13px] text-grey leading-[1.6]">{p.body}</p>
               {p.image && (
-                <div className="mt-3 relative h-[180px] rounded-lg overflow-hidden">
+                <div className="mt-3 relative aspect-[2/1] rounded-lg overflow-hidden">
                   <Image src={p.image} alt={p.h} fill className="object-cover" />
                 </div>
               )}

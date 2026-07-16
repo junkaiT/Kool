@@ -33,7 +33,7 @@ export function Testimonials() {
         <div className="flex flex-col md:flex-row gap-2.5 md:gap-4 mb-3.5 md:mb-4">
           {REVIEWS.map((r) => (
             <div key={r.label} className="bg-white border border-border rounded-[10px] overflow-hidden md:flex-1">
-              <ImagePlaceholder label={r.label} height="180px" />
+              <ImagePlaceholder label={r.label} height="auto" className="aspect-[2/1]" />
               <div className="px-3 py-2 text-[11px] text-muted">{r.caption}</div>
             </div>
           ))}

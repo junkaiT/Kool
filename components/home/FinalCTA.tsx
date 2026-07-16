@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { WHATSAPP_DISPLAY } from "@/lib/site";
+import { WHATSAPP_DISPLAY, FINAL_CTA_IMAGE } from "@/lib/site";
 
 export function FinalCTA() {
   return (
     <section className="border-b border-border bg-bg px-[18px] py-8 md:px-0 md:py-16">
       <div className="max-w-[1280px] mx-auto md:px-10 md:grid md:grid-cols-2 md:gap-14 md:items-center">
-        <div className="relative rounded-xl overflow-hidden h-[220px] md:h-[280px] mb-4 md:mb-0 md:order-2">
-          <Image src="/images/home/final-cta.png" alt="Kool Aircon technician" fill className="object-cover" />
+        <div className="relative rounded-xl overflow-hidden aspect-[2/1] mb-4 md:mb-0 md:order-2">
+          <Image src={FINAL_CTA_IMAGE} alt="Kool Aircon technician" fill className="object-cover" />
         </div>
         <div>
           <h2 className="text-[21px] md:text-3xl font-extrabold text-black leading-[1.25] mb-2 tracking-[-0.3px]">
