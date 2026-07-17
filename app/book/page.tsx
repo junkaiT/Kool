@@ -572,9 +572,7 @@ function SlotGrid({
                   isSelected ? "bg-blue border-blue text-white" : "bg-white border-border text-blue"
                 }`}
               >
-                <span className="text-base font-semibold block">
-                  {slot.start} – {slot.end}
-                </span>
+                <span className="text-base font-semibold block">{slot.start}</span>
                 {slot.block && (
                   <span className={`text-[11px] font-normal ${isSelected ? "text-white/80" : "text-grey"}`}>
                     {slot.block}
