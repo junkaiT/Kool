@@ -1,3 +1,7 @@
+// Archived: the live /about route was removed (app/about/page.tsx deleted) to
+// temporarily take the About page offline. This is the last version of that
+// page's content, kept here for reference/revival — not part of the build.
+
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 

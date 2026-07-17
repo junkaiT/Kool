@@ -5,6 +5,7 @@ export const installation: ServicePageData = {
   slug: "installation",
   breadcrumbLabel: "Aircon installation",
   title: "Aircon Installation",
+  heroImage: "/images/services/installation/hero.png",
   heroBody:
     "We handle everything from start to finish — assessing your space, recommending the right system and BTU for each room without overselling, and completing the installation neatly with minimal disruption to your home. Every installation ends with a full operational test and a WhatsApp report confirming everything is running as it should. All brands supported, HDB to landed.",
   bestFor: "Best for: New homes · Renovations · Replacing an old or faulty unit",
@@ -36,18 +37,22 @@ export const installation: ServicePageData = {
     {
       h: "Site assessment and unit recommendation",
       body: "Before anything is installed, we assess your space — room size, ceiling height, window placement, and usage pattern — and recommend the right BTU and model for each room. No overselling, no undersizing.",
+      image: "/images/services/installation/inspection.png",
     },
     {
       h: "Supply and installation of indoor and outdoor units",
       body: "All major brands available. Units positioned for optimal airflow and installed cleanly, with cored holes sealed after every job.",
+      image: "/images/services/installation/brands.png",
     },
     {
       h: "Pipe and wiring run",
       body: "Properly insulated pipe runs, neatly trunked and concealed where possible. No exposed wiring, no shortcuts on insulation quality.",
+      image: "/images/services/installation/pipe-installation.png",
     },
     {
       h: "Drainage setup",
       body: "Correct gradient drainage installed from the start — one of the most common causes of post-installation water leaks is improper drainage slope. We get this right the first time.",
+      image: "/images/services/general-servicing/drainage-flush.png",
     },
   ],
   howItWorks: [

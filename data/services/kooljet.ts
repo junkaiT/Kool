@@ -5,6 +5,7 @@ export const kooljet: ServicePageData = {
   slug: "kooljet",
   breadcrumbLabel: "KoolJet wash",
   title: "KoolJet Wash",
+  heroImage: "/images/services/kooljet/hero.png",
   heroBody:
     "A significant step up from a general servicing, without the full dismantle of a chemical wash. We remove the cover, drainage tray, and blower wheel, then use a high-pressure water jet to blast out dirt, dust, and debris that hand cleaning simply cannot reach — including compacted grime on the evaporator coil and drainage pipe. The result is noticeably cleaner airflow and improved cooling, done efficiently in a single visit.",
   bestFor:
@@ -42,26 +43,32 @@ export const kooljet: ServicePageData = {
     {
       h: "Protective Setup",
       body: "We set up a protective cover around your unit and place a collection bag to catch all the dirty water. Nothing drips down your wall or pools on your floor.",
+      image: "/images/services/kooljet/setup.png",
     },
     {
       h: "Jetwash — Filters & Panels",
       body: "Filters and panels are jetwashed clean — removing built-up dust and debris that vacuuming alone cannot dislodge.",
+      image: "/images/services/kooljet/hero.png",
     },
     {
       h: "Jetwash — Blower & Drainage Trays",
       body: "The blower wheel and drainage tray are jetwashed individually, reaching compacted grime that hand cleaning and standard servicing physically cannot shift.",
+      image: "/images/services/kooljet/components-clean.png",
     },
     {
       h: "Jetwash — Fan Coil",
       body: "We jetwash the fan coil fins directly, flushing out compacted dirt and debris from deep inside. The result is noticeably cleaner airflow and improved cooling.",
+      image: "/images/services/kooljet/fancoil.png",
     },
     {
       h: "Drainage Tray & Pipe Vacuum",
       body: "The drainage tray and condensate pipe are fully flushed and vacuumed. Blocked drainage is one of the most common causes of water leaks — this step clears it completely.",
+      image: "/images/services/general-servicing/drainage-flush.png",
     },
     {
       h: "Drying & Internal Wipe Down",
       body: "All internal surfaces are wiped clean and dried before reassembly. Drying properly before putting the unit back together prevents moisture from being trapped inside.",
+      image: "/images/services/kooljet/drying.png",
     },
     {
       h: "Final Wind Flow Measurement — Proof It Worked",

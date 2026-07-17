@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Frozen reference files, not part of the build.
+    "mockups/**",
   ]),
 ]);
 

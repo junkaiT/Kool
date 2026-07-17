@@ -5,6 +5,7 @@ export const commercial: ServicePageData = {
   slug: "commercial",
   breadcrumbLabel: "Commercial maintenance",
   title: "Commercial Aircon Maintenance",
+  heroImage: "/images/services/commercial/hero.png",
   heroBody:
     "Scheduled maintenance contracts for offices, retail outlets, F&B businesses, and other commercial spaces. Island-wide coverage. BCA registered. We work around your operating hours.",
   pricing: {
@@ -35,16 +36,23 @@ export const commercial: ServicePageData = {
     {
       h: "Tailored scheduling.",
       body: "No fixed contract structure — we build a maintenance schedule around your unit count, usage pattern, and operating hours.",
+      image: "/images/services/commercial/partnership.png",
     },
     {
       h: "Full written service reports.",
       body: "Every visit documented properly, unit by unit. Not a WhatsApp message — a formal service record you can file and reference.",
+      image: "/images/services/commercial/reporting.png",
     },
     {
       h: "Priority breakdown response.",
       body: "Commercial clients go to the front of the queue. If something goes wrong outside a scheduled visit, we treat it as urgent.",
+      image: "/images/services/commercial/priority.png",
     },
-    { h: "Transparent pricing.", body: "A detailed quote before any work begins. No hidden costs, no surprises on the invoice." },
+    {
+      h: "Transparent pricing.",
+      body: "A detailed quote before any work begins. No hidden costs, no surprises on the invoice.",
+      image: "/images/services/commercial/transparency.png",
+    },
   ],
   howItWorks: [
     { h: "Get in touch", body: "WhatsApp us your property type, unit count, system type, and current servicing frequency." },

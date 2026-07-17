@@ -21,8 +21,9 @@ export function WhatsAppButton({
         {showIcon && <WhatsAppIcon />}
         {children}
       </Button>
+      <span className="text-xs text-muted">or</span>
       <Button href="/book" variant="outline" className={className}>
-        or Check Slots Online Now
+        Check Slots Online
       </Button>
     </div>
   );
