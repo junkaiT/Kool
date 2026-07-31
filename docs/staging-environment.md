@@ -45,16 +45,44 @@ out here; execute this section in that session.
 
 **Current recommendation (revised): manual sheet-swap, not a second OpenClaw workspace.**
 There are no live customers on the system yet, so the risk of a single shared backend
-instance is low enough that a full second running instance isn't worth building yet. Instead:
+instance is low enough that a full second running instance isn't worth building yet.
 
-1. Create the staging Google Sheets now: File → Make a copy of the "Aircon CRM Database"
-   sheet and the "Kool Aircon Technician App" workbook, prefix `STAGING_`. Free, immediate,
-   same Drive quota.
-2. When testing a change, temporarily swap the Sheet ID in `9_Settings` over to the staging
-   copy.
-3. Swap it back to the production Sheet ID when done testing.
-4. This is manual and requires discipline (don't forget to swap back), but it's free and
+**Correction (2026-07-31): the swap is a code edit, not a `9_Settings` row.** Read
+`crm/sheets.js` directly (mirrored in the Shared Drive) to confirm — the Sheet IDs are
+hardcoded module constants, not a settings-table lookup (which would be circular anyway: you
+can't read "which sheet to use" from inside the sheet you're deciding whether to use):
+
+```js
+const SPREADSHEET_ID = '1YSU2zdeijOyp4KZYxav6ASoLLNst6IrPZ5Vo2lB05p4';
+const TECH_APP_SPREADSHEET_ID = '1Oa8szd_6Zy9lAkZHpwq_aH6zKGSUcAjlXjZsKOkW258';
+```
+
+Every other module (`crm.js`, `booking.js`, `module3.js`, `index.ts`, etc.) calls into
+`sheets.js`'s exported functions rather than referencing a spreadsheet ID directly — confirmed
+by searching the Shared Drive source for the literal ID, which only appears in `sheets.js`
+among the code files. So exactly **one file, two constants** need to change per swap.
+
+Staging copies already exist (created 2026-07-30, full data verified):
+- `STAGING_Aircon CRM Database` → `1CH51ZXQWRUcRxPawObRGuBUvqwkrqrsxPcZjSWngdMg`
+- `STAGING_Kool Aircon Technician App` → `1TnvGa-P-ek1kOVJZ3X-Xwxa63sAQnlKVBnfraXtXkg8`
+
+The swap procedure (for the kool-crm session — editing the Drive-mirrored copy of `sheets.js`
+alone does **not** deploy it; per this system's own deploy-pattern notes, "a Shared Drive
+upload being reconciled does not mean deployed" — this must go through the real deploy
+script):
+
+1. In `crm/sheets.js` on the live server, change `SPREADSHEET_ID` and
+   `TECH_APP_SPREADSHEET_ID` to the `STAGING_` IDs above.
+2. Deploy via the normal deploy process.
+3. Test (e.g. add a distinguishing test row to the `STAGING_` sheet first, then confirm a
+   command/the browser `/ui` reflects it, and confirm nothing lands in the production sheet).
+4. Change the two constants back to the production IDs and deploy again.
+5. This is manual and requires discipline (don't forget to swap back), but it's free and
    needs no second OpenClaw workspace, no second ngrok tunnel, and no second Telegram bot.
+
+**Nice-to-have for later, not blocking**: making these two constants read from an environment
+variable (`process.env.SPREADSHEET_ID || '<prod-id>'`) would turn future swaps into a
+one-line env/restart change instead of an edit-and-redeploy cycle each way.
 
 **When to graduate to a fully isolated second OpenClaw instance** (separate Sheet + Drive
 folder + Calendar + Telegram bot + ngrok tunnel, as originally scoped): once there's real
@@ -63,8 +91,8 @@ section at that point rather than building the full isolation pre-emptively.
 
 Because there's only ever one running OpenClaw instance and one `NEXT_PUBLIC_OPENCLAW_URL`
 (section 1), the website side of a test run needs no configuration at all — just do the
-`9_Settings` swap above before testing bookings through the (single, always-production-URL)
-site, and swap back after.
+`sheets.js` constant swap above (deployed) before testing bookings through the (single,
+always-production-URL) site, and swap back after.
 
 ## 3. Technician app — for the kool-crm session / manual GitHub setup
 
@@ -90,15 +118,15 @@ already agreed in the earlier Xero-invoicing handoff spec, kept here so this doc
 Change ready
      |
      v
-kool-crm:    swap 9_Settings' Sheet ID to the STAGING_ copy
+kool-crm:    edit sheets.js's two ID constants to the STAGING_ copies, deploy
 kool-aircon: no change needed — same site, same OpenClaw URL, always
 tech app:    (only once it has staging infra) land on staging GitHub Pages repo
      |
      v
-Test through the live site as normal — it's now reading/writing the STAGING_ sheet
+Test through the live site as normal — it's now reading/writing the STAGING_ sheets
      |
      v
-Swap 9_Settings' Sheet ID back to production
+Edit sheets.js's two ID constants back to production, deploy again
      |
      v
 Promote the actual code change: kool-aircon merges to `main` (Vercel auto-deploys);
