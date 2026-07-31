@@ -34,9 +34,9 @@ to the same single running OpenClaw instance. What changes between "testing" and
 is which Google Sheet *that instance* is currently reading from — handled entirely in section
 2, not here.
 
-A `staging` git branch exists (pushed to `origin`) purely as an ordinary "work in progress
-before merging to main" convention, if useful — it does not need any Vercel environment
-variable configuration, and there's nothing else to set up here.
+There is no dedicated `staging` git branch — it added no value once the environment-variable
+split turned out to be unnecessary, so it's been deleted. Ordinary feature branches (which
+Vercel already previews automatically) are enough.
 
 ## 2. CRM/booking backend ("OpenClaw"/kool-crm) — for the kool-crm session
 
