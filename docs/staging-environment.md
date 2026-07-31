@@ -1,43 +1,42 @@
 # Staging environment: whole-stack runbook
 
-**Goal:** every change — frontend or backend — lands on staging first, gets verified there,
-then gets promoted to live. **Constraint:** no additional cost anywhere in this setup.
+**Goal:** every change to the CRM/booking backend lands on staging data first, gets verified
+there, then gets promoted to live. **Constraint:** no additional cost anywhere in this setup.
+
+**Correction (2026-07-31): Vercel/the website is not a real "environment" and doesn't need
+one.** The public site (`kool-aircon`, this repo) is stateless — it holds no data of its own,
+it just renders UI and calls out to the OpenClaw booking API. The thing that actually needs a
+production/staging split is wherever real data lives, which is entirely on the **OpenClaw/CRM
+side** (the Google Sheets). This doc originally set up a separate Vercel "staging" branch with
+its own scoped environment variable, as if the website itself needed a parallel environment —
+that was unnecessary complexity and has been corrected below.
 
 The live system spans three pieces, only one of which (`kool-aircon`, this repo) is checked
 out in the session that wrote this doc. The other two live in different codebases/sessions;
 this doc gives them a precise, zero-cost spec to execute against rather than assuming access
 to do it directly.
 
-| # | Piece | Lives in | Owner for staging setup |
+| # | Piece | Lives in | Has its own data needing a staging/prod split? |
 |---|---|---|---|
-| 1 | Public site | `kool-aircon` (this repo), Vercel | This repo — done below |
-| 2 | CRM/booking backend ("OpenClaw"/kool-crm) | Separate Claude Code session, OVH/Docker | kool-crm session — manual sheet-swap for now, see section 2 |
-| 3 | Technician app | `junkaiT/KoolAir-Aircon-App`, GitHub Pages | kool-crm session / manual GitHub setup |
+| 1 | Public site | `kool-aircon` (this repo), Vercel | No — stateless, see section 1 |
+| 2 | CRM/booking backend ("OpenClaw"/kool-crm) | Separate Claude Code session, OVH/Docker | **Yes — this is the real staging boundary**, see section 2 |
+| 3 | Technician app | `junkaiT/KoolAir-Aircon-App`, GitHub Pages | Only indirectly, via the Drive/Calendar it points at |
 
-## 1. Public site (`kool-aircon`) — done
+## 1. Public site (`kool-aircon`) — no staging environment needed
 
 Vercel's GitHub integration (already connected — `kool-pi.vercel.app` auto-deploys `main`)
-builds a **Preview Deployment** for every non-production branch at no extra cost on any plan,
-including Hobby. A persistent `staging` branch gets a **stable** preview URL that doesn't
-change between pushes, unlike ephemeral per-commit preview URLs — that's what makes it usable
-as a bookmarkable staging site.
+builds a **Preview Deployment** automatically for every branch and PR, at no cost on any plan.
+That's a convenient way to eyeball a website code change before merging — it is **not** a
+parallel "environment" with its own data, because the site has no data of its own.
 
-**Status: the `staging` branch already exists and is pushed to `origin`.** It currently mirrors
-`main` exactly. Vercel should already have picked it up and started building a preview
-deployment for it (check the Vercel dashboard's Deployments tab, filtered to the `staging`
-branch, for the generated URL).
+`NEXT_PUBLIC_OPENCLAW_URL` never needs a second, staging-scoped value: the site always talks
+to the same single running OpenClaw instance. What changes between "testing" and "production"
+is which Google Sheet *that instance* is currently reading from — handled entirely in section
+2, not here.
 
-**Manual step still needed (Vercel dashboard — not executable from a coding session, needs
-your own Vercel login):**
-- Project Settings → Environment Variables → add `NEXT_PUBLIC_OPENCLAW_URL` scoped to the
-  **Preview** environment (leave the existing **Production** value, used by `main`, untouched).
-  Point the Preview value at the staging OpenClaw backend URL once step 2 exists. Until then,
-  the staging preview correctly falls back to the "booking availability isn't connected yet"
-  state on `/book` — expected, not a bug.
-
-**Going forward:** feature branches merge into `staging` first → verify on the `staging`
-preview URL against the rest of the staging stack (below) → merge `staging` into `main` to
-promote to production.
+A `staging` git branch exists (pushed to `origin`) purely as an ordinary "work in progress
+before merging to main" convention, if useful — it does not need any Vercel environment
+variable configuration, and there's nothing else to set up here.
 
 ## 2. CRM/booking backend ("OpenClaw"/kool-crm) — for the kool-crm session
 
@@ -62,12 +61,10 @@ folder + Calendar + Telegram bot + ngrok tunnel, as originally scoped): once the
 production traffic that can't be interrupted by a manual sheet-swap window. Revisit this
 section at that point rather than building the full isolation pre-emptively.
 
-Until a staging OpenClaw URL exists (i.e. until the graduation point above), `kool-aircon`'s
-Vercel **Preview** environment variable (section 1) has nothing separate to point at — the
-`staging` branch preview will keep showing the "booking availability isn't connected yet"
-fallback, or can point at the same production OpenClaw URL if testing against real
-availability is more useful in the meantime (paired with the manual sheet-swap discipline
-above so test bookings land in the staging Sheet, not the production one).
+Because there's only ever one running OpenClaw instance and one `NEXT_PUBLIC_OPENCLAW_URL`
+(section 1), the website side of a test run needs no configuration at all — just do the
+`9_Settings` swap above before testing bookings through the (single, always-production-URL)
+site, and swap back after.
 
 ## 3. Technician app — for the kool-crm session / manual GitHub setup
 
@@ -93,17 +90,19 @@ already agreed in the earlier Xero-invoicing handoff spec, kept here so this doc
 Change ready
      |
      v
-kool-aircon: land on `staging` branch  ---->  Vercel Preview URL (stable, staging env vars)
-kool-crm:    land on the shared OpenClaw instance, but swap 9_Settings' Sheet ID to the
-             STAGING_ copy first, test, then swap it back
-tech app:    land on staging GitHub Pages repo -> staging Drive/Calendar
+kool-crm:    swap 9_Settings' Sheet ID to the STAGING_ copy
+kool-aircon: no change needed — same site, same OpenClaw URL, always
+tech app:    (only once it has staging infra) land on staging GitHub Pages repo
      |
      v
-Verify end-to-end against the staging Sheet + staging tech-app site
+Test through the live site as normal — it's now reading/writing the STAGING_ sheet
      |
      v
-Promote: kool-aircon `staging` -> `main` (Vercel auto-deploys production)
-         kool-crm / tech app: promote via whatever the kool-crm session defines
+Swap 9_Settings' Sheet ID back to production
+     |
+     v
+Promote the actual code change: kool-aircon merges to `main` (Vercel auto-deploys);
+kool-crm / tech app promote via whatever the kool-crm session defines
 ```
 
 ## 6. Open items to resolve
