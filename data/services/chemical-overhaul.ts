@@ -20,7 +20,7 @@ export const chemicalOverhaul: ServicePageData = {
     {
       icon: "⚠️",
       h: "Your aircon still isn't performing after a chemical wash",
-      body: "If your ΔT reading remains below 6°C after a chemical wash, the problem goes deeper than the coil surface. The blower wheel or internal components have a level of compacted buildup that chemical flushing alone can't dislodge. The only way to clean these properly is to fully dismantle the unit, treat each component individually, and reassemble it from scratch. A chemical overhaul at this stage isn't an upgrade — it's the correct fix.",
+      body: "If your aircon still isn't performing well after a chemical wash, the problem goes deeper than the coil surface. The blower wheel or internal components have a level of compacted buildup that chemical flushing alone can't dislodge. The only way to clean these properly is to fully dismantle the unit, treat each component individually, and reassemble it from scratch. A chemical overhaul at this stage isn't an upgrade — it's the correct fix.",
     },
     {
       icon: "🕐",
@@ -34,11 +34,6 @@ export const chemicalOverhaul: ServicePageData = {
     },
   ],
   included: [
-    {
-      h: "Wind Flow Measurement — Your Baseline",
-      body: "Before we touch anything, we measure the wind flow of your unit. This tells us exactly how well your aircon is performing right now — and gives us a number to beat.",
-      image: "/images/services/chemical-wash/anemometer-1.png",
-    },
     {
       h: "Protective Setup",
       body: "We set up protective covers and water collection before any cleaning begins. No mess, no water damage to your walls or furniture.",
@@ -79,17 +74,12 @@ export const chemicalOverhaul: ServicePageData = {
       body: "The entire unit is rebuilt from scratch — every component reattached, sealed, and inspected before testing. Not a partial reattachment — a complete rebuild.",
       image: "/images/services/chemical-overhaul/reassembly.png",
     },
-    {
-      h: "Final Wind Flow Measurement — Proof It Worked",
-      body: "We measure wind flow output again. You see the exact improvement in black and white — before and after, every single visit. This reading goes directly into your WhatsApp report.",
-      image: "/images/services/chemical-wash/anemometer-2.png",
-    },
   ],
   howItWorks: [
     { h: "Booking confirmed", body: "WhatsApp us your address, unit model, and unit count for an exact quote." },
-    { h: "Technician arrives & assesses", body: "ΔT reading and inspection to confirm a full overhaul is the right fix." },
+    { h: "Technician arrives & assesses", body: "Full inspection to confirm a full overhaul is the right fix." },
     { h: "Full dismantle & rebuild", body: "Every component removed, chemically treated, washed, and reassembled from scratch." },
-    { h: "WhatsApp report sent", body: "Before/after photos, ΔT results, and confirmation the unit is running as it should." },
+    { h: "Job wrapped up", body: "Final check done, and confirmation the unit is running as it should." },
   ],
   faqHeading: "Questions about chemical overhaul",
   faq: [
@@ -100,7 +90,7 @@ export const chemicalOverhaul: ServicePageData = {
     { q: "How long does it take?", a: "About 60–90 minutes per unit. Full dismantle and reassembly takes longer than any other service." },
     {
       q: "Will it make my aircon as good as new?",
-      a: "In most cases yes — our ΔT reading after the overhaul will confirm performance is restored. If refrigerant or compressor issues are present, we'll advise you clearly.",
+      a: "In most cases yes — most customers notice a clear improvement in cooling right away. If refrigerant or compressor issues are present, we'll advise you clearly.",
     },
     {
       q: "How is the price determined?",

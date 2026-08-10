@@ -31,7 +31,7 @@ export const chemicalWash: ServicePageData = {
     {
       icon: "🕐",
       h: "Your aircon still isn't cold after a general service",
-      body: "If your ΔT reading remains low after a recent service, the coil has a deeper layer of compacted grime restricting heat exchange. Surface cleaning won't fix this — the coil needs to be chemically flushed to restore proper cooling performance. This is one of the most common reasons customers come to us after being disappointed by another company's service.",
+      body: "If your aircon still isn't cold after a recent service, the coil likely has a deeper layer of compacted grime restricting heat exchange. Surface cleaning won't fix this — the coil needs to be chemically flushed to restore proper cooling performance. This is one of the most common reasons customers come to us after being disappointed by another company's service.",
     },
     {
       icon: "📅",
@@ -40,11 +40,6 @@ export const chemicalWash: ServicePageData = {
     },
   ],
   included: [
-    {
-      h: "Wind Flow Measurement — Your Baseline",
-      body: "Before we touch anything, we measure the wind flow of your unit. This tells us exactly how well your aircon is performing right now — and gives us a number to beat.",
-      image: "/images/services/chemical-wash/anemometer-1.png",
-    },
     {
       h: "Protective Setup",
       body: "We set up a protective cover around your unit and place a collection bag to catch all the dirty water. Nothing drips down your wall or pools on your floor.",
@@ -75,17 +70,12 @@ export const chemicalWash: ServicePageData = {
       body: "All internal surfaces are wiped clean and dried before reassembly. Reassembling a wet unit traps moisture and encourages mould to return faster — drying properly extends the results of the wash.",
       image: "/images/services/chemical-wash/drying.png",
     },
-    {
-      h: "Final Wind Flow Measurement — Proof It Worked",
-      body: "We measure wind flow output again. You see the exact improvement in black and white — before and after, every single visit. This reading goes directly into your WhatsApp report.",
-      image: "/images/services/chemical-wash/anemometer-2.png",
-    },
   ],
   howItWorks: [
     { h: "Booking confirmed", body: "WhatsApp us your address, unit count, and the issue you're noticing." },
-    { h: "Technician arrives & assesses", body: "ΔT reading taken and the coil inspected before any chemical is applied." },
+    { h: "Technician arrives & assesses", body: "The coil is inspected before any chemical is applied." },
     { h: "Bio-enzyme wash performed", body: "Components removed, flushed with bio-enzyme solution, rinsed, and reassembled." },
-    { h: "WhatsApp report sent", body: "Before/after photos, ΔT results, and any follow-up recommendations sent after the visit." },
+    { h: "Job wrapped up", body: "Final check done, and the area is cleaned up before we leave." },
   ],
   faqHeading: "Questions about chemical wash",
   faq: [
@@ -96,7 +86,7 @@ export const chemicalWash: ServicePageData = {
     { q: "How long does a chemical wash take?", a: "About 45–60 minutes per unit. The bio-enzyme solution needs time to work before rinsing." },
     {
       q: "Will it fix my aircon not being cold?",
-      a: "In most cases where poor cooling is caused by dirt, grime, or mould buildup on the coil — yes, a chemical wash will make a noticeable difference, and our ΔT reading before and after will show you exactly how much. But if your aircon still isn't performing after the wash, we don't just pack up and leave. We run a full diagnostic on the spot — checking refrigerant levels, compressor pressure, and electrical components — to identify the root cause. We'll tell you exactly what the issue is, what it will cost to fix, and what we recommend. No pressure to proceed, no charge for the diagnostic.",
+      a: "In most cases where poor cooling is caused by dirt, grime, or mould buildup on the coil — yes, a chemical wash will make a noticeable difference to how cold your aircon runs. But if your aircon still isn't performing after the wash, we don't just pack up and leave. We run a full diagnostic on the spot — checking refrigerant levels, compressor pressure, and electrical components — to identify the root cause. We'll tell you exactly what the issue is, what it will cost to fix, and what we recommend. No pressure to proceed, no charge for the diagnostic.",
     },
     {
       q: "How often should I do a chemical wash?",

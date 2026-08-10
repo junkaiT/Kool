@@ -1,6 +1,4 @@
 const TRUST_ITEMS = [
-  { icon: "⭐", val: "4.9 stars on Google", lbl: "1000 + verified reviews" },
-  { icon: "👍", val: "90% recommend", lbl: "Facebook reviews" },
   { icon: "🕐", val: "10 years", lbl: "experienced company" },
   { icon: "🛡", val: "BCA registered", lbl: "bizSAFE Level 2 certified" },
 ];
@@ -8,7 +6,7 @@ const TRUST_ITEMS = [
 export function TrustBar() {
   return (
     <div className="bg-bg border-b border-border md:bg-transparent md:border-none">
-      <div className="grid grid-cols-2 gap-2 px-[18px] py-3.5 md:max-w-[1280px] md:mx-auto md:grid-cols-4 md:gap-4 md:px-10 md:py-7">
+      <div className="grid grid-cols-2 gap-2 px-[18px] py-3.5 md:max-w-[1280px] md:mx-auto md:gap-4 md:px-10 md:py-7">
         {TRUST_ITEMS.map((item) => (
           <div
             key={item.lbl}

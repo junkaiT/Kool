@@ -7,16 +7,12 @@ const GENERAL_FAQ = [
     a: "Every 3 months for a general service or KoolJet wash. Every 6 months for a chemical wash. Once a year for a chemical overhaul — or sooner if a chemical wash hasn't resolved the issue. If you run your aircon more than 8 hours a day, or have elderly residents or young children at home, stick to the shorter intervals.",
   },
   {
-    q: "How do you check if my aircon is operating efficiently?",
-    a: "ΔT is the temperature difference between the warm air going into your aircon and the cold air coming out. A healthy Singapore split unit should show 8–11°C. We measure it before and after every service so you can see in black and white whether your aircon improved — and by how much. No other aircon company in Singapore makes this standard.",
-  },
-  {
     q: "Why is my aircon not cold even after servicing?",
-    a: "A few common reasons: mould or bacteria buildup deep in the coil that a standard service can't reach, blocked airflow from a clogged filter, a dirty outdoor condenser, or low refrigerant levels. Our ΔT reading after every service tells us exactly where the problem lies — if the unit is still underperforming, we'll tell you why and recommend the right fix. No guesswork, no upselling.",
+    a: "A few common reasons: mould or bacteria buildup deep in the coil that a standard service can't reach, blocked airflow from a clogged filter, a dirty outdoor condenser, or low refrigerant levels. If the unit is still underperforming after a service, we'll tell you why and recommend the right fix. No guesswork, no upselling.",
   },
   {
     q: "Do I need to be home during the service?",
-    a: "Someone should be home to let our technician in. You don't need to supervise — most customers go about their day. We'll send the WhatsApp report when done.",
+    a: "Someone should be home to let our technician in. You don't need to supervise — most customers go about their day.",
   },
   {
     q: "What if I have an issue after my service?",
@@ -32,7 +28,7 @@ const GENERAL_FAQ = [
   },
   {
     q: "Will the service fix my aircon not being cold?",
-    a: "Before we recommend any service, we run a diagnostic first — checking your ΔT reading, refrigerant levels, compressor pressure, and unit condition. This tells us exactly what's causing the problem and what will fix it. We'll explain what we found, what we recommend, and what it will cost — before any work begins. You decide whether to proceed. No pressure, no charge for the diagnostic.\n\nIf we recommend a service and carry it out, the ΔT reading before and after will confirm whether performance has improved. If the issue runs deeper than the service can address, we'll tell you honestly and advise on the right next step.",
+    a: "Before we recommend any service, we run a diagnostic first — checking refrigerant levels, compressor pressure, and unit condition. This tells us exactly what's causing the problem and what will fix it. We'll explain what we found, what we recommend, and what it will cost — before any work begins. You decide whether to proceed. No pressure, no charge for the diagnostic.\n\nIf we recommend a service and carry it out and the issue runs deeper than the service can address, we'll tell you honestly and advise on the right next step.",
   },
   {
     q: "What brands do you install?",
@@ -71,7 +67,7 @@ const GENERAL_FAQ = [
 const PRICING_FAQ = [
   {
     q: "Are there any hidden charges?",
-    a: "No. Our quoted price is always nett and includes the WhatsApp report and bio-enzyme cleaning agents. Any additional costs — such as replacement parts — are communicated and agreed before we proceed. We never start work you haven't approved.",
+    a: "No. Our quoted price is always nett and includes bio-enzyme cleaning agents. Any additional costs — such as replacement parts — are communicated and agreed before we proceed. We never start work you haven't approved.",
   },
   { q: "Do you charge for travel?", a: "No travel charge anywhere in Singapore." },
   { q: "How do I pay?", a: "PayNow after the service is completed. No upfront payment required." },

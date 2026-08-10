@@ -57,7 +57,7 @@ const CARDS: PricingCardData[] = [
   {
     icon: "⚙️",
     name: "Aircon installation",
-    desc: "We handle everything from start to finish — assessing your space, recommending the right system and BTU for each room without overselling, and completing the installation neatly with minimal disruption to your home. Every installation ends with a full operational test and a WhatsApp report confirming everything is running as it should. All brands supported, HDB to landed.",
+    desc: "We handle everything from start to finish — assessing your space, recommending the right system and BTU for each room without overselling, and completing the installation neatly with minimal disruption to your home. Every installation ends with a full operational test to confirm everything is running as it should. All brands supported, HDB to landed.",
     bestFor: "Best for: New homes · Renovations · Replacing an old or faulty unit",
     rows: [{ label: "Starting from", price: "From $300 — WhatsApp for exact quote" }],
     href: "/installation",
@@ -101,9 +101,8 @@ export default function PricesPage() {
             Honest prices. No surprises.
           </h1>
           <p className="text-sm text-grey leading-[1.65] mb-[18px]">
-            No hidden fees, no hard selling. All services include a full WhatsApp report and our 48-hour
-            satisfaction guarantee. If you're unsure which service you need, WhatsApp us and we'll advise you
-            honestly.
+            No hidden fees, no hard selling. All services include our 48-hour satisfaction guarantee. If you're
+            unsure which service you need, WhatsApp us and we'll advise you honestly.
           </p>
           <div className="flex flex-wrap gap-2">
             {INCLUDED_CHIPS.map((chip) => (

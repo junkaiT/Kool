@@ -4,7 +4,6 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { NumberedSteps } from "@/components/NumberedStep";
-import { ProofTabs } from "@/components/service/ProofTabs";
 import { StatsBar } from "@/components/service/StatsBar";
 import { WHATSAPP_DISPLAY, FINAL_CTA_IMAGE } from "@/lib/site";
 import type { ServicePageData } from "@/data/services/types";
@@ -114,7 +113,9 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      <ProofTabs />
+      {/* ProofTabs is temporarily hidden pre-launch — 2 of its 3 tabs lean on
+          claims we can't back up yet (wind-flow device, WhatsApp report).
+          Component is untouched at components/service/ProofTabs.tsx. */}
 
       {/* When it matters */}
       <section className="border-b border-border py-6 md:py-12">
@@ -168,7 +169,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
           <div className="mt-3.5 px-3.5 py-2.5 bg-teal-bg border-l-[3px] border-teal rounded">
             <div className="text-[11px] font-bold text-black mb-1">Also on every Kool service</div>
             <div className="text-[11px] text-grey">
-              ΔT measurement · WhatsApp report · Bio-enzyme chemicals · 48-hr guarantee
+              Bio-enzyme chemicals · 48-hr guarantee
             </div>
           </div>
         </div>

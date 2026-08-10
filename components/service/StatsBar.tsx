@@ -1,8 +1,4 @@
-const STATS = [
-  { val: "4.9★", lbl: "Google Reviews" },
-  { val: "10+ yrs", lbl: "Experience" },
-  { val: "90%", lbl: "Facebook Recommended" },
-];
+const STATS = [{ val: "10+ yrs", lbl: "Experience" }];
 
 export function StatsBar({ className = "" }: { className?: string }) {
   return (

@@ -7,7 +7,7 @@ export const installation: ServicePageData = {
   title: "Aircon Installation",
   heroImage: "/images/services/installation/hero.png",
   heroBody:
-    "We handle everything from start to finish — assessing your space, recommending the right system and BTU for each room without overselling, and completing the installation neatly with minimal disruption to your home. Every installation ends with a full operational test and a WhatsApp report confirming everything is running as it should. All brands supported, HDB to landed.",
+    "We handle everything from start to finish — assessing your space, recommending the right system and BTU for each room without overselling, and completing the installation neatly with minimal disruption to your home. Every installation ends with a full operational test to confirm everything is running as it should. All brands supported, HDB to landed.",
   bestFor: "Best for: New homes · Renovations · Replacing an old or faulty unit",
   pricing: {
     label: "Pricing",
@@ -25,12 +25,12 @@ export const installation: ServicePageData = {
     {
       icon: "🕐",
       h: "Your existing unit is beyond repair",
-      body: "Every aircon has a lifespan. When repair costs start approaching the cost of a new unit, or when a unit simply can't be restored to adequate performance, replacement is the more economical long-term decision. If our ΔT reading confirms a unit is no longer recoverable, we'll tell you honestly — and quote for a like-for-like replacement or recommend a more efficient upgrade where it makes sense.",
+      body: "Every aircon has a lifespan. When repair costs start approaching the cost of a new unit, or when a unit simply can't be restored to adequate performance, replacement is the more economical long-term decision. If our inspection confirms a unit is no longer recoverable, we'll tell you honestly — and quote for a like-for-like replacement or recommend a more efficient upgrade where it makes sense.",
     },
     {
       icon: "📅",
       h: "Upgrading to a more energy-efficient model",
-      body: "Older aircon units consume significantly more electricity than modern inverter systems. If your unit is more than 8 to 10 years old, upgrading to a higher-tick model could reduce your electricity bill meaningfully over the coming years — often offsetting the cost of installation within 2 to 3 years. We handle the full process: dismantling and responsible disposal of your old unit, installation of the new one, and a post-installation ΔT check to confirm everything is running as it should.",
+      body: "Older aircon units consume significantly more electricity than modern inverter systems. If your unit is more than 8 to 10 years old, upgrading to a higher-tick model could reduce your electricity bill meaningfully over the coming years — often offsetting the cost of installation within 2 to 3 years. We handle the full process: dismantling and responsible disposal of your old unit, installation of the new one, and a post-installation check to confirm everything is running as it should.",
     },
   ],
   included: [
@@ -59,7 +59,7 @@ export const installation: ServicePageData = {
     { h: "Booking confirmed", body: "WhatsApp us your unit type, room count, and any brand preferences for a quote." },
     { h: "Site assessment", body: "We assess your space and recommend the right BTU, model, and placement for each room." },
     { h: "Installation performed", body: "Units, pipe runs, wiring, and drainage installed cleanly by our technicians." },
-    { h: "WhatsApp report sent", body: "Operational test results confirming the system is running as it should." },
+    { h: "Job wrapped up", body: "Operational test done to confirm the system is running as it should." },
   ],
   faqHeading: "Questions about aircon installation",
   faq: [

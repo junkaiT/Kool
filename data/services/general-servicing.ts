@@ -46,11 +46,6 @@ export const generalServicing: ServicePageData = {
   ],
   included: [
     {
-      h: "Wind Flow Measurement — Your Baseline",
-      body: "Before we touch anything, we measure the wind flow of your unit. This tells us exactly how well your aircon is performing right now — and gives us a number to beat.",
-      image: "/images/services/general-servicing/anemometer-1.png",
-    },
-    {
       h: "Filter, Panel & Blower Wheel Clean",
       body: "We remove and clean your air filter, wipe down the front panel and cover, and vacuum and brush the blower wheel — the spinning component that pushes cold air into your room. Dust buildup here is one of the most common reasons aircons stop feeling cold.",
       image: "/images/services/general-servicing/blower-wheel.png",
@@ -65,17 +60,12 @@ export const generalServicing: ServicePageData = {
       body: "We check and tighten all electrical connections and the fan motor bearing. Loose connections reduce efficiency over time and can cause faults — catching them early is cheaper than a repair later.",
       image: "/images/services/general-servicing/inspection.png",
     },
-    {
-      h: "Final Wind Flow Measurement — Proof It Worked",
-      body: "We measure wind flow output again. You see the exact improvement in black and white — before and after, every single visit. This reading goes directly into your WhatsApp report.",
-      image: "/images/services/general-servicing/anemometer-2.png",
-    },
   ],
   howItWorks: [
     { h: "Booking confirmed", body: "WhatsApp us your address and unit count — we'll confirm a slot within the hour." },
-    { h: "Technician arrives & assesses", body: "We take an initial ΔT reading so you have a before-and-after comparison." },
+    { h: "Technician arrives & assesses", body: "We inspect your unit and confirm the service scope before starting." },
     { h: "Service performed", body: "Filters, panels, coil, drainage and blower wheel cleaned per the checklist above." },
-    { h: "WhatsApp report sent", body: "Photos, ΔT results, and any recommendations sent within 20 minutes of finishing." },
+    { h: "Job wrapped up", body: "We do a final check and clean up before we leave." },
   ],
   faqHeading: "Questions about general servicing",
   faq: [
@@ -85,11 +75,11 @@ export const generalServicing: ServicePageData = {
     },
     {
       q: "How long does a general service take per unit?",
-      a: "About 30–45 minutes per unit including the ΔT measurement. A 3-unit home typically takes 2 hours.",
+      a: "About 30–45 minutes per unit. A 3-unit home typically takes 2 hours.",
     },
     {
       q: "Do I need to be home?",
-      a: "Someone should be home to let us in. You don't need to supervise — we'll send the WhatsApp report when done.",
+      a: "Someone should be home to let us in. You don't need to supervise while we work.",
     },
     {
       q: "What's the difference between this and a chemical wash?",

@@ -20,7 +20,7 @@ const HOME_SERVICES: HomeService[] = [
     desktopName: "General aircon servicing",
     mobileBest: "Best for: Regular maintenance · Rental maintenance",
     mobilePrice: "From $19 / unit",
-    desktopDesc: "Full clean + ΔT proof + report",
+    desktopDesc: "Full clean of filters, coil and drainage",
     desktopPrice: "from $50",
   },
   {

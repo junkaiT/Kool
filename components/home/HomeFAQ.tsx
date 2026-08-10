@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     q: "Do I need to be home during the service?",
-    a: "Someone needs to be home to let our technician in, but you don't need to supervise. Most customers carry on with their day. You'll receive a full WhatsApp report — with before and after photos of every unit — within 20 minutes of the service being completed.",
+    a: "Someone needs to be home to let our technician in, but you don't need to supervise. Most customers carry on with their day.",
   },
   {
     q: "What if I have an issue after my service?",

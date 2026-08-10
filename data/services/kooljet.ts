@@ -36,11 +36,6 @@ export const kooljet: ServicePageData = {
   ],
   included: [
     {
-      h: "Wind Flow Measurement — Your Baseline",
-      body: "Before we touch anything, we measure the wind flow of your unit. This tells us exactly how well your aircon is performing right now — and gives us a number to beat.",
-      image: "/images/services/general-servicing/anemometer-1.png",
-    },
-    {
       h: "Protective Setup",
       body: "We set up a protective cover around your unit and place a collection bag to catch all the dirty water. Nothing drips down your wall or pools on your floor.",
       image: "/images/services/kooljet/setup.png",
@@ -70,17 +65,12 @@ export const kooljet: ServicePageData = {
       body: "All internal surfaces are wiped clean and dried before reassembly. Drying properly before putting the unit back together prevents moisture from being trapped inside.",
       image: "/images/services/kooljet/drying.png",
     },
-    {
-      h: "Final Wind Flow Measurement — Proof It Worked",
-      body: "We measure wind flow output again. You see the exact improvement in black and white — before and after, every single visit. This reading goes directly into your WhatsApp report.",
-      image: "/images/services/general-servicing/anemometer-2.png",
-    },
   ],
   howItWorks: [
     { h: "Booking confirmed", body: "WhatsApp us your address and number of units — we'll confirm a slot within the hour." },
     { h: "Technician arrives & sets up", body: "Protective covers placed around the unit and surrounding area before any water is used." },
     { h: "High-pressure jet wash performed", body: "Filters, coils, blower and drainage tray flushed clean, then reassembled." },
-    { h: "WhatsApp report sent", body: "Before/after photos and ΔT results sent shortly after the visit." },
+    { h: "Job wrapped up", body: "Final check done, and the area is cleaned up before we leave." },
   ],
   faqHeading: "Questions about kooljet wash",
   faq: [
@@ -94,7 +84,7 @@ export const kooljet: ServicePageData = {
     },
     {
       q: "How long does it take?",
-      a: "Approximately 45 to 60 minutes per unit, including setup, protective covering, the wash itself, drainage pipe vacuum, reassembly, and our post-service ΔT check.",
+      a: "Approximately 45 to 60 minutes per unit, including setup, protective covering, the wash itself, drainage pipe vacuum, and reassembly.",
     },
     {
       q: "Will it make a mess in my home?",
