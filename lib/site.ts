@@ -1,7 +1,7 @@
-export const WHATSAPP_NUMBER = "15556708135";
-export const WHATSAPP_DISPLAY = "+1 (555) 670-8135";
+export const WHATSAPP_NUMBER = "6588152868";
+export const WHATSAPP_DISPLAY = "+65 8815 2868";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
-export const PHONE_TEL = "+15556708135";
+export const PHONE_TEL = "+6588152868";
 export const EMAIL = "hello@kool.com.sg";
 export const ADDRESS = "73 Upper Paya Lebar Road, Singapore";
 export const COMPANY_TAGLINE = "Cool Air, Cool Life";
