@@ -54,7 +54,9 @@ export function PricingCard({ data }: { data: PricingCardData }) {
         <Link href={data.href} className="text-xs text-blue">
           Learn more →
         </Link>
-        <WhatsAppButton className="text-xs px-4 py-2.5 whitespace-nowrap">Book on WhatsApp</WhatsAppButton>
+        <WhatsAppButton equalWidth className="text-xs px-4 py-2.5 whitespace-nowrap">
+          Book on WhatsApp
+        </WhatsAppButton>
       </div>
     </div>
   );

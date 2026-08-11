@@ -31,7 +31,7 @@ export function Button({ href, variant = "wa", children, className = "", ...rest
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} {...rest}>
       {children}
     </Link>
   );
