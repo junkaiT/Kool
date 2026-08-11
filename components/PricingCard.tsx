@@ -14,7 +14,7 @@ export type PricingCardData = {
 
 export function PricingCard({ data }: { data: PricingCardData }) {
   return (
-    <div className="bg-white border border-border rounded-[10px] p-4">
+    <div className="bg-white border border-border rounded-[10px] p-4 h-full flex flex-col">
       <div className="flex items-start gap-3 mb-3">
         <div className="text-[22px] shrink-0">{data.icon}</div>
         <div>
@@ -50,7 +50,7 @@ export function PricingCard({ data }: { data: PricingCardData }) {
         ))}
       </div>
       {data.note && <p className="text-[11px] text-muted my-2">{data.note}</p>}
-      <div className="flex justify-between items-center mt-3.5 gap-2.5">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center mt-auto pt-3.5 gap-2.5">
         <Link href={data.href} className="text-xs text-blue">
           Learn more →
         </Link>
