@@ -12,6 +12,17 @@ export const pricingGuide: ArticleData = {
   readTime: "6 min read",
   intro:
     "Aircon servicing prices in Singapore vary more than most homeowners expect, and not always for clear reasons. Some of that variation is legitimate: a chemical wash is a different job from a general clean, and the price should reflect that. Some of it isn't: quotes that look cheap on a Google ad and then grow once a technician is at your door. Here's what each type of service actually costs, what drives the difference, and how to tell whether a quote is fair.",
+  priceComparison: {
+    heading: "How Kool's prices compare to the Singapore market",
+    intro:
+      "Based on typical single-unit pricing published by providers across Singapore in 2026. Most providers, including Kool, charge less per unit once you're booking multiple units in the same visit — the figures below reflect a first/single unit.",
+    rows: [
+      { service: "General servicing", economy: "$20 – $45", kool: "$50", premium: "$70 – $120" },
+      { service: "Chemical wash", economy: "$80 – $100", kool: "$80", premium: "$100 – $150" },
+      { service: "Chemical overhaul", economy: "$120 – $150", kool: "$130 – $160", premium: "$180 – $350" },
+    ],
+    note: "Pricing under roughly $25/unit for a general service is often a sign of a shortened or incomplete clean — a genuine service takes 15–20 minutes per unit minimum. Kool sits between that corner-cutting end of the market and premium branded pricing: a full, unhurried clean using certified bio-enzyme agents, without the premium mark-up.",
+  },
   sections: [
     {
       h: "General servicing: from $19 per unit",

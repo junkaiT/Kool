@@ -43,6 +43,50 @@ export function ArticlePageTemplate({ data }: { data: ArticleData }) {
 
           <p className="text-sm md:text-base text-grey leading-[1.75] mb-6 whitespace-pre-line">{data.intro}</p>
 
+          {data.priceComparison && (
+            <div className="mb-8 bg-bg border border-border rounded-[10px] p-4 md:p-5">
+              <h2 className="text-lg md:text-xl font-extrabold text-black mb-1.5 tracking-[-0.2px]">
+                {data.priceComparison.heading}
+              </h2>
+              {data.priceComparison.intro && (
+                <p className="text-xs md:text-[13px] text-grey leading-[1.6] mb-4">{data.priceComparison.intro}</p>
+              )}
+              <div className="overflow-x-auto -mx-1">
+                <table className="w-full text-left border-collapse min-w-[480px]">
+                  <thead>
+                    <tr>
+                      <th className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px] pb-2 pr-3 border-b border-border">
+                        Service
+                      </th>
+                      <th className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px] pb-2 px-3 border-b border-border">
+                        Economy / mass-market
+                      </th>
+                      <th className="text-[11px] font-semibold text-teal uppercase tracking-[0.5px] pb-2 px-3 border-b-2 border-teal">
+                        Kool Aircon
+                      </th>
+                      <th className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px] pb-2 pl-3 border-b border-border">
+                        Premium / branded
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.priceComparison.rows.map((row) => (
+                      <tr key={row.service} className="border-b border-border last:border-b-0">
+                        <td className="text-[13px] font-semibold text-black py-2.5 pr-3">{row.service}</td>
+                        <td className="text-[13px] text-grey py-2.5 px-3">{row.economy}</td>
+                        <td className="text-[13px] font-bold text-black py-2.5 px-3 bg-teal-bg">{row.kool}</td>
+                        <td className="text-[13px] text-grey py-2.5 pl-3">{row.premium}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {data.priceComparison.note && (
+                <p className="text-[11px] text-muted italic mt-3 leading-[1.5]">{data.priceComparison.note}</p>
+              )}
+            </div>
+          )}
+
           {data.sections.map((s, i) => (
             <div key={s.h}>
               <div className="mb-6">
