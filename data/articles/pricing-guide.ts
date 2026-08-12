@@ -21,7 +21,6 @@ export const pricingGuide: ArticleData = {
       { service: "Chemical wash", economy: "$90 – $150", kool: "$220", premium: "$360 – $500" },
       { service: "Chemical overhaul", economy: "$330 – $390", kool: "$390 – $480", premium: "$480 – $650" },
     ],
-    note: "Some providers advertise chemical wash as low as $30–$50 per unit — usually a quicker, non-dismantle clean using cheaper alkaline chemicals rather than a full bio-enzyme treatment. Kool's $220 for 3 units sits in the middle of the market, not at either extreme. Chemical overhaul is fairly commoditized industry-wide — most providers cluster close to $390 for 3 standard units — which is also where Kool's pricing starts, scaling up for higher-BTU units.",
   },
   sections: [
     {

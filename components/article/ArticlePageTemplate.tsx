@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { WHATSAPP_DISPLAY, FINAL_CTA_IMAGE } from "@/lib/site";
+import { WHATSAPP_DISPLAY, WHATSAPP_URL, FINAL_CTA_IMAGE } from "@/lib/site";
 import { ARTICLES } from "@/data/articles";
 import type { ArticleData } from "@/data/articles/types";
 import { JsonLd } from "@/components/JsonLd";
@@ -52,7 +52,14 @@ export function ArticlePageTemplate({ data }: { data: ArticleData }) {
           <div className="rounded-xl overflow-hidden mb-5">
             {data.heroImage ? (
               <div className="relative aspect-[2/1]">
-                <Image src={data.heroImage} alt={data.title} fill className="object-cover" />
+                <Image
+                  src={data.heroImage}
+                  alt={data.title}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 760px"
+                  className="object-cover"
+                />
               </div>
             ) : (
               <ImagePlaceholder height="auto" className="aspect-[2/1]" />
@@ -70,29 +77,52 @@ export function ArticlePageTemplate({ data }: { data: ArticleData }) {
                 <p className="text-xs md:text-[13px] text-grey leading-[1.6] mb-4">{data.priceComparison.intro}</p>
               )}
               <div className="overflow-x-auto -mx-1">
-                <table className="w-full text-left border-collapse min-w-[560px]">
+                <table className="w-full text-left border-collapse table-fixed min-w-[600px]">
+                  <colgroup>
+                    <col style={{ width: "24%" }} />
+                    <col style={{ width: "25%" }} />
+                    <col style={{ width: "26%" }} />
+                    <col style={{ width: "25%" }} />
+                  </colgroup>
                   <thead>
                     <tr>
-                      <th className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px] pb-2 pr-3 border-b border-border align-bottom">
+                      <th className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px] pb-2.5 pr-3 border-b border-border align-bottom">
                         Service
                       </th>
-                      <th className="pb-2 px-3 border-b border-border align-bottom">
-                        <div className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px]">
+                      <th className="pb-2.5 px-3 pt-2 border-b border-red-200 align-bottom bg-red-50/70 rounded-t-[8px]">
+                        <div className="text-[11px] font-semibold text-red-700 uppercase tracking-[0.5px]">
                           Economy / mass-market
                         </div>
-                        <div className="text-[10px] font-normal normal-case tracking-normal text-muted mt-0.5">
+                        <div className="text-[10px] font-normal normal-case tracking-normal text-red-500/80 mt-0.5">
                           $ · cheap, speed is key
                         </div>
                       </th>
-                      <th className="pb-2 px-3 border-b-2 border-teal align-bottom">
-                        <div className="text-[11px] font-semibold text-teal uppercase tracking-[0.5px]">
+                      <th className="pb-2.5 px-3 pt-2 border-b-2 border-blue align-bottom bg-teal-bg rounded-t-[8px]">
+                        <div className="flex items-center gap-1 text-[11px] font-extrabold text-blue uppercase tracking-[0.5px]">
+                          <svg width="12" height="12" viewBox="0 0 30 30" fill="none" className="shrink-0">
+                            <path
+                              d="M5 22 Q4 15 9 10 Q11 8 15 9 Q10 14 10 19 Q10 23 12 24 Q8 25 5 22Z"
+                              fill="#5BAD92"
+                              opacity="0.9"
+                            />
+                            <path
+                              d="M9 26 Q7 18 13 12 Q15 10 19 11 Q14 17 14 22 Q14 26 17 27 Q12 28 9 26Z"
+                              fill="#5BAD92"
+                              opacity="0.65"
+                            />
+                            <path
+                              d="M14 28 Q12 20 18 14 Q20 12 24 13 Q19 19 19 24 Q19 28 22 29 Q17 30 14 28Z"
+                              fill="#5BAD92"
+                              opacity="0.4"
+                            />
+                          </svg>
                           Kool Aircon
                         </div>
-                        <div className="text-[10px] font-normal normal-case tracking-normal text-muted mt-0.5">
-                          Value & service
+                        <div className="text-[10px] font-semibold normal-case tracking-normal text-teal mt-0.5">
+                          ✓ Value &amp; service
                         </div>
                       </th>
-                      <th className="pb-2 pl-3 border-b border-border align-bottom">
+                      <th className="pb-2.5 pl-3 pr-1 pt-2 border-b border-border align-bottom">
                         <div className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px]">
                           Premium / branded
                         </div>
@@ -105,18 +135,17 @@ export function ArticlePageTemplate({ data }: { data: ArticleData }) {
                   <tbody>
                     {data.priceComparison.rows.map((row) => (
                       <tr key={row.service} className="border-b border-border last:border-b-0">
-                        <td className="text-[13px] font-semibold text-black py-2.5 pr-3">{row.service}</td>
-                        <td className="text-[13px] text-grey py-2.5 px-3">{row.economy}</td>
-                        <td className="text-[13px] font-bold text-black py-2.5 px-3 bg-teal-bg">{row.kool}</td>
-                        <td className="text-[13px] text-grey py-2.5 pl-3">{row.premium}</td>
+                        <td className="text-[13px] font-semibold text-black py-3 pr-3">{row.service}</td>
+                        <td className="text-[13px] font-semibold text-red-600 py-3 px-3 bg-red-50/40">
+                          {row.economy}
+                        </td>
+                        <td className="text-[13px] font-extrabold text-blue py-3 px-3 bg-teal-bg">{row.kool}</td>
+                        <td className="text-[13px] text-grey py-3 pl-3 pr-1">{row.premium}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              {data.priceComparison.note && (
-                <p className="text-[11px] text-muted italic mt-3 leading-[1.5]">{data.priceComparison.note}</p>
-              )}
             </div>
           )}
 
@@ -124,7 +153,15 @@ export function ArticlePageTemplate({ data }: { data: ArticleData }) {
             <div key={s.h}>
               <div className="mb-6">
                 <h2 className="text-lg md:text-xl font-extrabold text-black mb-2.5 tracking-[-0.2px]">{s.h}</h2>
-                <p className="text-sm md:text-base text-grey leading-[1.75] whitespace-pre-line">{s.body}</p>
+                <p className="text-sm md:text-base text-grey leading-[1.75] whitespace-pre-line mb-3">{s.body}</p>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-wa hover:underline"
+                >
+                  💬 Interested? WhatsApp us →
+                </a>
               </div>
               {i === 0 && (
                 <div className="rounded-xl overflow-hidden mb-6">
