@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { WHATSAPP_NUMBER } from "@/lib/site";
+import { trackBookingComplete, trackWhatsAppClick } from "@/lib/analytics";
 import {
   getLocalPrice,
   SVC_LABELS,
@@ -139,6 +140,7 @@ export default function BookPage() {
     ].join("\n");
 
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    trackBookingComplete({ value: price, service: service || undefined, units });
     setSuccess(true);
     setTimeout(() => window.open(waUrl, "_blank"), 400);
   }
@@ -153,6 +155,7 @@ export default function BookPage() {
       "",
       "Can you help me find availability? Thank you!",
     ].join("\n");
+    trackWhatsAppClick({ context: "more_availability" });
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
   }
 

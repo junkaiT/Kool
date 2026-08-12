@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { Analytics } from "@/components/Analytics";
 import { BUSINESS_NAME } from "@/lib/site";
 import {
   DEFAULT_OG_IMAGE,
@@ -67,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
+        <Analytics />
         <JsonLd data={[organizationSchema(), webSiteSchema(), localBusinessSchema()]} />
         <Nav />
         {children}
