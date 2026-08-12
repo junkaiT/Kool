@@ -15,13 +15,13 @@ export const pricingGuide: ArticleData = {
   priceComparison: {
     heading: "How Kool's prices compare to the Singapore market",
     intro:
-      "Based on typical single-unit pricing published by providers across Singapore in 2026. Most providers, including Kool, charge less per unit once you're booking multiple units in the same visit — the figures below reflect a first/single unit.",
+      "Based on typical per-unit pricing for a 3-aircon home — the most common household size in Singapore — across providers in 2026. Most providers, including Kool, price per unit lower again once you go beyond 3 units in the same visit.",
     rows: [
-      { service: "General servicing", economy: "$20 – $45", kool: "$50", premium: "$70 – $120" },
-      { service: "Chemical wash", economy: "$80 – $100", kool: "$80", premium: "$100 – $150" },
-      { service: "Chemical overhaul", economy: "$120 – $150", kool: "$130 – $160", premium: "$180 – $350" },
+      { service: "General servicing", economy: "$20 – $35", kool: "$25", premium: "$55 – $95" },
+      { service: "Chemical wash", economy: "$70 – $90", kool: "$73", premium: "$85 – $130" },
+      { service: "Chemical overhaul", economy: "$110 – $140", kool: "$130 – $160", premium: "$170 – $320" },
     ],
-    note: "Pricing under roughly $25/unit for a general service is often a sign of a shortened or incomplete clean — a genuine service takes 15–20 minutes per unit minimum. Kool sits between that corner-cutting end of the market and premium branded pricing: a full, unhurried clean using certified bio-enzyme agents, without the premium mark-up.",
+    note: "Pricing under roughly $25/unit for a general service is often a sign of a shortened or incomplete clean — a genuine service takes 15–20 minutes per unit minimum. Kool's general servicing and chemical wash rates sit at the accessible end of the market even at this volume, because our multi-unit pricing is genuinely competitive — not because we cut corners. Chemical overhaul doesn't get a volume discount anywhere in the market (it's priced by BTU, not unit count), which is why Kool lands squarely in the middle there.",
   },
   sections: [
     {

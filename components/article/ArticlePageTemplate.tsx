@@ -5,12 +5,30 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { WHATSAPP_DISPLAY, FINAL_CTA_IMAGE } from "@/lib/site";
 import { ARTICLES } from "@/data/articles";
 import type { ArticleData } from "@/data/articles/types";
+import { JsonLd } from "@/components/JsonLd";
+import { articleSchema, breadcrumbSchema } from "@/lib/seo";
 
 export function ArticlePageTemplate({ data }: { data: ArticleData }) {
   const related = ARTICLES.filter((a) => a.slug !== data.slug);
+  const path = `/articles/${data.slug}`;
 
   return (
     <main>
+      <JsonLd
+        data={[
+          articleSchema({
+            title: data.title,
+            description: data.excerpt,
+            path,
+            image: data.heroImage,
+            publishedDate: data.publishedDate,
+          }),
+          breadcrumbSchema([
+            { name: "Articles", path: "/articles" },
+            { name: data.title, path },
+          ]),
+        ]}
+      />
       {/* Breadcrumb */}
       <div className="bg-bg border-b border-border py-2.5 text-[11px] text-muted">
         <div className="max-w-[1280px] mx-auto px-[18px] md:px-10 flex gap-1.5 items-center">
@@ -52,20 +70,35 @@ export function ArticlePageTemplate({ data }: { data: ArticleData }) {
                 <p className="text-xs md:text-[13px] text-grey leading-[1.6] mb-4">{data.priceComparison.intro}</p>
               )}
               <div className="overflow-x-auto -mx-1">
-                <table className="w-full text-left border-collapse min-w-[480px]">
+                <table className="w-full text-left border-collapse min-w-[560px]">
                   <thead>
                     <tr>
-                      <th className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px] pb-2 pr-3 border-b border-border">
+                      <th className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px] pb-2 pr-3 border-b border-border align-bottom">
                         Service
                       </th>
-                      <th className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px] pb-2 px-3 border-b border-border">
-                        Economy / mass-market
+                      <th className="pb-2 px-3 border-b border-border align-bottom">
+                        <div className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px]">
+                          Economy / mass-market
+                        </div>
+                        <div className="text-[10px] font-normal normal-case tracking-normal text-muted mt-0.5">
+                          $ · cheap, speed is key
+                        </div>
                       </th>
-                      <th className="text-[11px] font-semibold text-teal uppercase tracking-[0.5px] pb-2 px-3 border-b-2 border-teal">
-                        Kool Aircon
+                      <th className="pb-2 px-3 border-b-2 border-teal align-bottom">
+                        <div className="text-[11px] font-semibold text-teal uppercase tracking-[0.5px]">
+                          Kool Aircon
+                        </div>
+                        <div className="text-[10px] font-normal normal-case tracking-normal text-muted mt-0.5">
+                          Value & service
+                        </div>
                       </th>
-                      <th className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px] pb-2 pl-3 border-b border-border">
-                        Premium / branded
+                      <th className="pb-2 pl-3 border-b border-border align-bottom">
+                        <div className="text-[11px] font-semibold text-muted uppercase tracking-[0.5px]">
+                          Premium / branded
+                        </div>
+                        <div className="text-[10px] font-normal normal-case tracking-normal text-muted mt-0.5">
+                          $$$ · paying for the brand
+                        </div>
                       </th>
                     </tr>
                   </thead>
