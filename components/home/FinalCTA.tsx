@@ -19,7 +19,7 @@ export function FinalCTA() {
           <div className="flex gap-3 flex-wrap">
             <WhatsAppButton>Book on WhatsApp</WhatsAppButton>
           </div>
-          <p className="text-xs text-muted mt-2.5 md:text-left">Or call {WHATSAPP_DISPLAY} · Mon–Sun, 8am–8pm</p>
+          <p className="text-xs text-muted mt-2.5 md:text-left">Or call {WHATSAPP_DISPLAY} · Mon–Sun, 9am–9pm</p>
         </div>
       </div>
     </section>

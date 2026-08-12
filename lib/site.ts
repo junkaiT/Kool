@@ -1,4 +1,7 @@
 export const BUSINESS_NAME = "Kool Aircon";
+// The Google Business Profile is listed under this name. Surfaced as
+// schema.org `alternateName` so Google links the site's brand to the GBP.
+export const ALTERNATE_NAME = "Kool & Kleen Aircon Servicing";
 export const WHATSAPP_NUMBER = "6588152868";
 export const WHATSAPP_DISPLAY = "+65 8815 2868";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;

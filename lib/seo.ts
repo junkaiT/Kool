@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   ADDRESS_PARTS,
+  ALTERNATE_NAME,
   BUSINESS_NAME,
   EMAIL,
   FACEBOOK_URL,
@@ -105,6 +106,7 @@ export function localBusinessSchema() {
     "@type": ["HVACBusiness", "LocalBusiness"],
     "@id": `${SITE_URL}/#business`,
     name: BUSINESS_NAME,
+    alternateName: ALTERNATE_NAME,
     url: SITE_URL,
     image: absoluteUrl(DEFAULT_OG_IMAGE),
     logo: absoluteUrl(LOGO_IMAGE),
@@ -133,8 +135,8 @@ export function localBusinessSchema() {
           "Saturday",
           "Sunday",
         ],
-        opens: "08:00",
-        closes: "20:00",
+        opens: "09:00",
+        closes: "21:00",
       },
     ],
     sameAs: [FACEBOOK_URL, GOOGLE_BUSINESS_URL],
@@ -151,6 +153,7 @@ export function organizationSchema() {
     "@type": "Organization",
     "@id": `${SITE_URL}/#organization`,
     name: BUSINESS_NAME,
+    alternateName: ALTERNATE_NAME,
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
