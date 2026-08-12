@@ -15,13 +15,13 @@ export const pricingGuide: ArticleData = {
   priceComparison: {
     heading: "How Kool's prices compare to the Singapore market",
     intro:
-      "Based on typical per-unit pricing for a 3-aircon home — the most common household size in Singapore — across providers in 2026. Most providers, including Kool, price per unit lower again once you go beyond 3 units in the same visit.",
+      "Total price to service 3 aircon units in one visit — the most common household size in Singapore — based on typical rates published by providers across Singapore in 2026.",
     rows: [
-      { service: "General servicing", economy: "$20 – $35", kool: "$25", premium: "$55 – $95" },
-      { service: "Chemical wash", economy: "$70 – $90", kool: "$73", premium: "$85 – $130" },
-      { service: "Chemical overhaul", economy: "$110 – $140", kool: "$130 – $160", premium: "$170 – $320" },
+      { service: "General servicing", economy: "$60 – $105", kool: "$75", premium: "$165 – $285" },
+      { service: "Chemical wash", economy: "$210 – $270", kool: "$220", premium: "$255 – $390" },
+      { service: "Chemical overhaul", economy: "$330 – $420", kool: "$390 – $480", premium: "$510 – $960" },
     ],
-    note: "Pricing under roughly $25/unit for a general service is often a sign of a shortened or incomplete clean — a genuine service takes 15–20 minutes per unit minimum. Kool's general servicing and chemical wash rates sit at the accessible end of the market even at this volume, because our multi-unit pricing is genuinely competitive — not because we cut corners. Chemical overhaul doesn't get a volume discount anywhere in the market (it's priced by BTU, not unit count), which is why Kool lands squarely in the middle there.",
+    note: "Chemical overhaul's total is a range because it's priced by BTU rather than a flat per-unit rate — WhatsApp us your unit model for an exact number. Kool's general servicing and chemical wash totals sit toward the accessible end of the market even at 3 units, because our multi-unit pricing is genuinely competitive — not because we cut corners. Overhaul doesn't get the same volume discount anywhere in the market, which is why Kool's total lands squarely in the middle there.",
   },
   sections: [
     {
