@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import { PricingCard, type PricingCardData } from "@/components/PricingCard";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { WHATSAPP_DISPLAY } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Aircon Servicing Prices Singapore",
+  description:
+    "Transparent aircon servicing prices in Singapore. General servicing from $50, chemical wash from $80, KoolJet wash $60/unit, installation from $300. No hidden fees, no travel charge, nett pricing.",
+  path: "/prices",
+});
 
 const INCLUDED_CHIPS = ["Fast Booking", "Experienced Technicians", "Service Guarantee", "No Hard Selling"];
 

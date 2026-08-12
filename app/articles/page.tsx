@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { ARTICLES } from "@/data/articles";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Aircon Tips & Guides",
+  description:
+    "Practical guides on aircon servicing, pricing, and maintenance for Singapore homes — how often to service, what a service involves, and what you should actually pay.",
+  path: "/articles",
+});
 
 export default function ArticlesPage() {
   return (

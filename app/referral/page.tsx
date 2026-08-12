@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { NumberedSteps } from "@/components/NumberedStep";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Refer a Friend, Earn $20",
+  description:
+    "Refer a friend to Kool Aircon and earn $20 credit when they book. Your friend gets $10 off their first aircon service. No limit on referrals.",
+  path: "/referral",
+});
 
 const STEPS = [
   {

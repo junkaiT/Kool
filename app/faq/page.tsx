@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { JsonLd } from "@/components/JsonLd";
+import { faqPageSchema, pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Aircon Servicing FAQ",
+  description:
+    "Answers to common questions about aircon servicing in Singapore — how often to service, chemical wash vs general service, installation, pricing, payment, and booking.",
+  path: "/faq",
+});
 
 const GENERAL_FAQ = [
   {
@@ -88,7 +98,7 @@ const BOOKING_FAQ = [
   },
   {
     q: "How do I book?",
-    a: "WhatsApp us at +65 8815 0254. Tell us your address, number of units, and preferred service. We'll confirm within the hour.",
+    a: "WhatsApp us at +65 8815 2868. Tell us your address, number of units, and preferred service. We'll confirm within the hour.",
   },
   {
     q: "Do you serve my area?",
@@ -110,6 +120,7 @@ function FaqCategory({ heading, items, bg }: { heading: string; items: typeof GE
 export default function FaqPage() {
   return (
     <main>
+      <JsonLd data={faqPageSchema([...GENERAL_FAQ, ...PRICING_FAQ, ...BOOKING_FAQ])} />
       <section className="border-b border-border px-[18px] pt-8 pb-6">
         <div className="max-w-[1280px] mx-auto md:px-10">
           <div className="text-[11px] font-bold text-teal uppercase tracking-[1.5px] mb-2.5">FAQ</div>

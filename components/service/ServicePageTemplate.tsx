@@ -7,14 +7,27 @@ import { NumberedSteps } from "@/components/NumberedStep";
 import { StatsBar } from "@/components/service/StatsBar";
 import { WHATSAPP_DISPLAY, FINAL_CTA_IMAGE } from "@/lib/site";
 import type { ServicePageData } from "@/data/services/types";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/seo";
 
 const CHIPS = ["Fast Booking", "Experienced Technicians", "Service Guarantee", "No Hard Selling"];
 
 export function ServicePageTemplate({ data }: { data: ServicePageData }) {
   const { pricing } = data;
+  const path = `/${data.slug}`;
 
   return (
     <main>
+      <JsonLd
+        data={[
+          serviceSchema({ name: data.title, description: data.heroBody, path }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: data.breadcrumbLabel, path },
+          ]),
+          ...(data.faq.length ? [faqPageSchema(data.faq)] : []),
+        ]}
+      />
       {/* Breadcrumb */}
       <div className="bg-bg border-b border-border py-2.5 text-[11px] text-muted">
         <div className="max-w-[1280px] mx-auto px-[18px] md:px-10 flex gap-1.5 items-center">
@@ -39,7 +52,14 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
             <div className="mb-3.5 rounded-lg overflow-hidden md:hidden">
               {data.heroImage ? (
                 <div className="relative aspect-[2/1]">
-                  <Image src={data.heroImage} alt={data.title} fill className="object-cover" />
+                  <Image
+                    src={data.heroImage}
+                    alt={`${data.title} in Singapore — Kool Aircon`}
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
               ) : (
                 <ImagePlaceholder height="auto" className="aspect-[2/1]" />

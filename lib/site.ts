@@ -1,11 +1,32 @@
+export const BUSINESS_NAME = "Kool Aircon";
 export const WHATSAPP_NUMBER = "6588152868";
 export const WHATSAPP_DISPLAY = "+65 8815 2868";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const PHONE_TEL = "+6588152868";
 export const EMAIL = "hello@kool.com.sg";
-export const ADDRESS = "73 Upper Paya Lebar Road, Singapore";
+
+// Registered office address. NOTE: this is a registered/virtual office (SBF Center),
+// not a customer-facing storefront. Keep this in sync with the Google Business Profile
+// once that's set up — a mobile service business is usually listed as a service-area
+// business, so the address shown there may differ from this registered one.
+export const ADDRESS = "160 Robinson Road, #14-04 Singapore Business Federation Center, Singapore 068914";
+// Structured parts for schema.org PostalAddress (see lib/seo.ts).
+export const ADDRESS_PARTS = {
+  streetAddress: "160 Robinson Road, #14-04 Singapore Business Federation Center",
+  addressLocality: "Singapore",
+  postalCode: "068914",
+  addressCountry: "SG",
+} as const;
+
+// Public profiles — used for schema.org `sameAs` and profile cleanup.
+export const FACEBOOK_URL = "https://www.facebook.com/koolairconservices/";
+export const GOOGLE_BUSINESS_URL = "https://share.google/dYLzahRyim6DPlyNR";
+
 export const COMPANY_TAGLINE = "Cool Air, Cool Life";
 export const FINAL_CTA_IMAGE = "/images/home/final-cta.png";
+// Brand logo, exported from the inline <Logo> mark. Used for schema.org
+// Organization/LocalBusiness `logo`. Swap for a raster PNG if one is produced.
+export const LOGO_IMAGE = "/logo.svg";
 // TODO: swap for our specific listing/reviews page on AirconServices.sg once it's live —
 // currently points at their homepage since our profile is still being set up.
 export const AIRCON_SERVICES_URL = "https://airconservices.sg";
