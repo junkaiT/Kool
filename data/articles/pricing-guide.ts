@@ -17,11 +17,11 @@ export const pricingGuide: ArticleData = {
     intro:
       "Total price to service 3 aircon units in one visit — the most common household size in Singapore — based on typical rates published by providers across Singapore in 2026.",
     rows: [
-      { service: "General servicing", economy: "$60 – $105", kool: "$75", premium: "$165 – $285" },
-      { service: "Chemical wash", economy: "$210 – $270", kool: "$220", premium: "$255 – $390" },
-      { service: "Chemical overhaul", economy: "$330 – $420", kool: "$390 – $480", premium: "$510 – $960" },
+      { service: "General servicing", economy: "$65", kool: "$75", premium: "$165" },
+      { service: "Chemical wash", economy: "$90 – $150", kool: "$220", premium: "$360 – $500" },
+      { service: "Chemical overhaul", economy: "$330 – $390", kool: "$390 – $480", premium: "$480 – $650" },
     ],
-    note: "Chemical overhaul's total is a range because it's priced by BTU rather than a flat per-unit rate — WhatsApp us your unit model for an exact number. Kool's general servicing and chemical wash totals sit toward the accessible end of the market even at 3 units, because our multi-unit pricing is genuinely competitive — not because we cut corners. Overhaul doesn't get the same volume discount anywhere in the market, which is why Kool's total lands squarely in the middle there.",
+    note: "Some providers advertise chemical wash as low as $30–$50 per unit — usually a quicker, non-dismantle clean using cheaper alkaline chemicals rather than a full bio-enzyme treatment. Kool's $220 for 3 units sits in the middle of the market, not at either extreme. Chemical overhaul is fairly commoditized industry-wide — most providers cluster close to $390 for 3 standard units — which is also where Kool's pricing starts, scaling up for higher-BTU units.",
   },
   sections: [
     {
