@@ -1,5 +1,15 @@
 import Link from "next/link";
-import { ADDRESS, COMPANY_TAGLINE, EMAIL, FOOTER_COMPANY_LINKS, PHONE_TEL, SERVICES, WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/lib/site";
+import {
+  ADDRESS,
+  AIRCON_SERVICES_URL,
+  COMPANY_TAGLINE,
+  EMAIL,
+  FOOTER_COMPANY_LINKS,
+  PHONE_TEL,
+  SERVICES,
+  WHATSAPP_DISPLAY,
+  WHATSAPP_URL,
+} from "@/lib/site";
 
 const linkClass = "block text-xs text-[#666] leading-[2.3] hover:text-white";
 const headingClass = "text-[11px] font-semibold text-[#aaa] uppercase tracking-wider mb-2.5";
@@ -48,6 +58,9 @@ export function Footer() {
               </a>
               <a href={`mailto:${EMAIL}`} className={linkClass}>
                 Email us
+              </a>
+              <a href={AIRCON_SERVICES_URL} target="_blank" rel="noopener" className={linkClass}>
+                Find us on AirconServices.sg
               </a>
             </div>
           </div>

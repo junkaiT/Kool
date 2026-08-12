@@ -6,6 +6,10 @@ const FAQS = [
   {
     q: "How often should I service my aircon?",
     a: "Every 3 months for a general service — this keeps your unit running efficiently and the air clean. If you notice foul smells or reduced cooling, book a chemical wash — ideally every 6 months. For units that haven't been serviced in over a year or have persistent issues, a chemical overhaul once a year will restore performance. Not sure which you need? WhatsApp us and we'll advise honestly.",
+    citation: {
+      label: "How Often Should You Service Your Aircon in Singapore? — AirconServices.sg",
+      url: "https://airconservices.sg/blog/how-often-service-aircon-singapore",
+    },
   },
   {
     q: "Why is my aircon still not cold after servicing?",

@@ -2,7 +2,12 @@ import type { Step } from "@/components/NumberedStep";
 
 export type WhenCard = { icon: string; h: string; body: string };
 export type IncludedStep = { h: string; body?: string; image?: string };
-export type FaqItem = { q: string; a: string };
+export type FaqItem = {
+  q: string;
+  a: string;
+  /** Optional external "further reading" link shown below the answer. */
+  citation?: { label: string; url: string };
+};
 export type RelatedCard = { name: string; desc: string; href: string };
 
 export type PricingRow = { label: string; price: string };

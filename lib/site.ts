@@ -6,6 +6,9 @@ export const EMAIL = "hello@kool.com.sg";
 export const ADDRESS = "73 Upper Paya Lebar Road, Singapore";
 export const COMPANY_TAGLINE = "Cool Air, Cool Life";
 export const FINAL_CTA_IMAGE = "/images/home/final-cta.png";
+// TODO: swap for our specific listing/reviews page on AirconServices.sg once it's live —
+// currently points at their homepage since our profile is still being set up.
+export const AIRCON_SERVICES_URL = "https://airconservices.sg";
 
 export type Service = {
   slug: string;

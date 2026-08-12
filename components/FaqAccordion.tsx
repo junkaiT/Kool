@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 
-export type FaqItem = { q: string; a: string };
+export type FaqItem = {
+  q: string;
+  a: string;
+  /** Optional external "further reading" link shown below the answer. */
+  citation?: { label: string; url: string };
+};
 
 export function FaqAccordion({ items, defaultOpen = [0] }: { items: FaqItem[]; defaultOpen?: number[] }) {
   const [openSet, setOpenSet] = useState<Set<number>>(new Set(defaultOpen));
@@ -36,7 +41,19 @@ export function FaqAccordion({ items, defaultOpen = [0] }: { items: FaqItem[]; d
               </span>
             </div>
             {open && (
-              <div className="text-[13px] text-grey leading-[1.65] mt-2 whitespace-pre-line">{item.a}</div>
+              <div className="text-[13px] text-grey leading-[1.65] mt-2 whitespace-pre-line">
+                {item.a}
+                {item.citation && (
+                  <a
+                    href={item.citation.url}
+                    target="_blank"
+                    rel="noopener"
+                    className="block text-blue mt-1.5"
+                  >
+                    Further reading: {item.citation.label} →
+                  </a>
+                )}
+              </div>
             )}
           </div>
         );

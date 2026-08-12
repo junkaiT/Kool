@@ -5,6 +5,10 @@ const GENERAL_FAQ = [
   {
     q: "How often should I service my aircon?",
     a: "Every 3 months for a general service or KoolJet wash. Every 6 months for a chemical wash. Once a year for a chemical overhaul — or sooner if a chemical wash hasn't resolved the issue. If you run your aircon more than 8 hours a day, or have elderly residents or young children at home, stick to the shorter intervals.",
+    citation: {
+      label: "How Often Should You Service Your Aircon in Singapore? — AirconServices.sg",
+      url: "https://airconservices.sg/blog/how-often-service-aircon-singapore",
+    },
   },
   {
     q: "Why is my aircon not cold even after servicing?",
@@ -25,6 +29,10 @@ const GENERAL_FAQ = [
   {
     q: "What is the difference between a general service, chemical wash, KoolJet wash, and chemical overhaul?",
     a: "A general service cleans everything accessible without dismantling the unit — filters, coil, drainage, blower wheel. A KoolJet wash goes further using high-pressure water jets to blast out compacted dirt that hand cleaning can't shift. A chemical wash removes internal components and flushes them with bio-enzyme solution — the right fix for mould, bacteria, and persistent odours. A chemical overhaul fully dismantles every component, treats each one individually, and rebuilds the unit from scratch. Not sure which you need? WhatsApp us and we'll advise honestly.",
+    citation: {
+      label: "The Complete Guide to Aircon Servicing in Singapore — AirconServices.sg",
+      url: "https://airconservices.sg/blog/aircon-servicing-singapore",
+    },
   },
   {
     q: "Will the service fix my aircon not being cold?",
