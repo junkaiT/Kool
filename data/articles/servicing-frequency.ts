@@ -6,6 +6,8 @@ export const servicingFrequency: ArticleData = {
   category: "Servicing & Maintenance",
   excerpt:
     "There isn't one right answer for every home. Here's how to set a servicing schedule based on how you actually use your aircon.",
+  heroImage: "/images/articles/how-often-to-service-your-aircon/hero.png",
+  midImage: "/images/articles/how-often-to-service-your-aircon/mid.png",
   publishedDate: "11 Aug 2026",
   readTime: "5 min read",
   intro:

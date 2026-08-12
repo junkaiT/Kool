@@ -6,6 +6,8 @@ export const pricingGuide: ArticleData = {
   category: "Pricing",
   excerpt:
     "A breakdown of what general servicing, chemical wash, chemical overhaul, and KoolJet actually cost in Singapore, and what changes the price.",
+  heroImage: "/images/articles/aircon-servicing-prices-singapore/hero.png",
+  midImage: "/images/articles/aircon-servicing-prices-singapore/mid.png",
   publishedDate: "11 Aug 2026",
   readTime: "6 min read",
   intro:

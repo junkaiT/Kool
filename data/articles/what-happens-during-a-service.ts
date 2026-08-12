@@ -6,6 +6,8 @@ export const whatHappensDuringAService: ArticleData = {
   category: "Servicing & Maintenance",
   excerpt:
     "From the moment a technician arrives to the final check before they leave, here's what a general service, chemical wash, and chemical overhaul each actually involve.",
+  heroImage: "/images/articles/what-happens-during-an-aircon-service/hero.png",
+  midImage: "/images/articles/what-happens-during-an-aircon-service/mid.png",
   publishedDate: "11 Aug 2026",
   readTime: "6 min read",
   intro:
