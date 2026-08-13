@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import {
   GA_ID,
   GOOGLE_ADS_ID,
+  META_PIXEL_ID,
   analyticsEnabled,
   pageview,
   trackPhoneClick,
@@ -13,8 +14,9 @@ import {
 } from "@/lib/analytics";
 
 /**
- * Loads gtag.js (GA4 + Google Ads) and wires site-wide tracking:
- *  - a GA4 page_view on every client-side route change
+ * Loads gtag.js (GA4 + Google Ads) and the Meta Pixel, and wires site-wide
+ * tracking:
+ *  - a page_view (GA4 + Meta) on every client-side route change
  *  - a delegated click listener that catches WhatsApp (wa.me) and phone (tel:)
  *    links anywhere on the site, so individual buttons don't need touching.
  *
@@ -47,23 +49,53 @@ export function Analytics() {
 
   if (!analyticsEnabled) return null;
 
-  const bootstrapId = GA_ID || GOOGLE_ADS_ID;
+  const googleId = GA_ID || GOOGLE_ADS_ID;
 
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${bootstrapId}`}
-        strategy="afterInteractive"
-      />
-      <Script id="gtag-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          ${GA_ID ? `gtag('config', '${GA_ID}', { send_page_view: false });` : ""}
-          ${GOOGLE_ADS_ID ? `gtag('config', '${GOOGLE_ADS_ID}');` : ""}
-        `}
-      </Script>
+      {googleId && (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${googleId}`}
+            strategy="afterInteractive"
+          />
+          <Script id="gtag-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              ${GA_ID ? `gtag('config', '${GA_ID}', { send_page_view: false });` : ""}
+              ${GOOGLE_ADS_ID ? `gtag('config', '${GOOGLE_ADS_ID}');` : ""}
+            `}
+          </Script>
+        </>
+      )}
+
+      {META_PIXEL_ID && (
+        <>
+          {/* Meta Pixel base code — inits only; PageView is fired from the
+              route-change effect above so SPA navigations are counted once. */}
+          <Script id="meta-pixel" strategy="afterInteractive">
+            {`
+              !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+              n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+              document,'script','https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '${META_PIXEL_ID}');
+            `}
+          </Script>
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+              alt=""
+            />
+          </noscript>
+        </>
+      )}
     </>
   );
 }
