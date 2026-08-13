@@ -16,6 +16,10 @@ const FAQS = [
     a: "A few common reasons: mould or bacteria build-up deep in the coils that a standard service can't reach, blocked airflow from a dirty or damaged filter, low refrigerant levels, or a failing compressor. After every service if the unit is still underperforming, we'll tell you why and recommend the right fix, whether that's a chemical wash, a KoolJet, or a refrigerant top-up. No guesswork, no upselling.",
   },
   {
+    q: "Why is my aircon leaking?",
+    a: "A blocked drainage pipe is by far the most common cause — dust and grime build up over time and stop condensate water draining away properly. Other causes include a damaged overflow pan, a leaking condenser coil, a dirty filter restricting airflow, low refrigerant, or occasionally improper installation. WhatsApp us and we'll diagnose the actual cause on site before recommending a fix.",
+  },
+  {
     q: "Why do most aircon companies use alkaline chemicals — and should I be worried?",
     a: "Most companies use cheap alkaline-based chemicals because they're inexpensive and fast-acting. The problem is they're harsh — they can irritate the respiratory system, are dangerous around children and elderly residents, and degrade your aircon's components over time. At Kool, we offer certified bio-enzyme agents instead — non-toxic, biodegradable, and safe for the whole household. It costs us more, but it's the right thing to do.",
   },

@@ -1,52 +1,44 @@
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
-
-const REVIEWS = [
-  { label: "Screenshot 1", caption: "Customer praises before/after photos · [Name · Area · Service]" },
-  { label: "Screenshot 2", caption: "Customer comments on colder aircon · [Name · Area · Service]" },
-  { label: "Screenshot 3", caption: "Customer mentions referral or repeat · [Name · Area · Service]" },
+const TESTIMONIALS = [
+  {
+    quote:
+      "We have tried their aircon servicing and was overall satisfied with the technician who was prompt and friendly. He explained our aircon issues and we decided to sign up the annual servicing package with them.",
+    name: "Ben Khoo",
+  },
+  {
+    quote:
+      "This is our first time engaging Kool and we were happy with their professional service. They are patient to explain the issues. Our aircon does not seem to be cold at times and was told airflow of the condenser has issues due to the fan. They have done the chemical wash for us and we are glad the problem had been resolved now.",
+    name: "Serene Yeo",
+  },
+  {
+    quote:
+      "Kool had help to service all our office aircon units as their price was overall competitive and quality not compromised. They did a wonderful job. They went the extra mile to trouble shoot our aircon issues as it was not cold and there are noises — this could be due to long term usage and we have not done servicing for years. A wonderful servicing team indeed!",
+    name: "Amy Wong",
+  },
+  {
+    quote:
+      "This is our first time engaging Kool and we find their service efficient and they manage to resolve my aircon issues. My aircon was not cool for many days and they manage to resolve the problem.",
+    name: "Steven Tan",
+  },
 ];
 
 export function Testimonials() {
   return (
     <section className="border-b border-border bg-bg px-[18px] py-7 md:px-0 md:py-14">
       <div className="max-w-[1280px] mx-auto md:px-10">
-        <div className="mb-4 md:flex md:justify-between md:items-end md:mb-6">
-          <div>
-            <div className="text-[11px] font-bold text-teal uppercase tracking-[1.5px] mb-2.5">
-              What customers say
-            </div>
-            <h2 className="text-xl md:text-[26px] font-extrabold text-black tracking-[-0.3px] mb-3.5 md:mb-0">
-              What customers say
-            </h2>
+        <div className="mb-4 md:mb-6">
+          <div className="text-[11px] font-bold text-teal uppercase tracking-[1.5px] mb-2.5">
+            What customers say
           </div>
-          <div className="bg-white border border-border rounded-lg px-3.5 py-2.5 flex items-center gap-2.5 mb-3.5 md:mb-0">
-            <div className="w-7 h-7 rounded-full bg-[#4285f4] flex items-center justify-center text-[13px] font-bold text-white shrink-0">
-              G
-            </div>
-            <div>
-              <div className="text-[13px] font-bold text-black">⭐ 4.9 stars · [X] Google reviews</div>
-              <div className="text-[11px] text-muted">See all reviews ↗</div>
-            </div>
-          </div>
+          <h2 className="text-xl md:text-[26px] font-extrabold text-black tracking-[-0.3px]">What customers say</h2>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-2.5 md:gap-4 mb-3.5 md:mb-4">
-          {REVIEWS.map((r) => (
-            <div key={r.label} className="bg-white border border-border rounded-[10px] overflow-hidden md:flex-1">
-              <ImagePlaceholder label={r.label} height="auto" className="aspect-[2/1]" />
-              <div className="px-3 py-2 text-[11px] text-muted">{r.caption}</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-4">
+          {TESTIMONIALS.map((t) => (
+            <div key={t.name} className="bg-white border border-border rounded-[10px] p-4">
+              <p className="text-[13px] text-grey leading-[1.65] mb-2.5">&ldquo;{t.quote}&rdquo;</p>
+              <div className="text-[12px] font-bold text-black">— {t.name}</div>
             </div>
           ))}
-        </div>
-
-        <div className="bg-white border border-border rounded-[9px] px-4 py-3.5 flex items-center gap-3">
-          <span className="text-[22px]">📜</span>
-          <div>
-            <div className="text-[13px] font-bold text-black">BCA Registered Contractor</div>
-            <div className="text-[11px] text-muted">
-              Verified on the Building and Construction Authority directory · Reg. No. [XXXXX]
-            </div>
-          </div>
         </div>
       </div>
     </section>

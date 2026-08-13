@@ -71,7 +71,7 @@ export const generalServicing: ServicePageData = {
   faq: [
     {
       q: "How often should I service my aircon?",
-      a: "Every 3 months for regular use. If you run it daily or have elderly or young children at home, quarterly keeps performance and air quality at their best.",
+      a: "Every 3 months for regular use — or monthly filter cleaning between services if there's an infant at home, for the best air quality. If you run it daily or have elderly residents or young children at home, lean toward the shorter end of that range.",
       citation: {
         label: "How Often Should You Service Your Aircon in Singapore? — AirconServices.sg",
         url: "https://airconservices.sg/blog/how-often-service-aircon-singapore",

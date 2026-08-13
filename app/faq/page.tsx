@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata({
 const GENERAL_FAQ = [
   {
     q: "How often should I service my aircon?",
-    a: "Every 3 months for a general service or KoolJet wash. Every 6 months for a chemical wash. Once a year for a chemical overhaul — or sooner if a chemical wash hasn't resolved the issue. If you run your aircon more than 8 hours a day, or have elderly residents or young children at home, stick to the shorter intervals.",
+    a: "Every 3 months for a general service or KoolJet wash. Every 6 months for a chemical wash. Once a year for a chemical overhaul — or sooner if a chemical wash hasn't resolved the issue. If you run your aircon more than 8 hours a day, or have elderly residents or young children at home, stick to the shorter intervals — if there's an infant in the home, monthly filter cleaning between services is worth it for air quality.",
     citation: {
       label: "How Often Should You Service Your Aircon in Singapore? — AirconServices.sg",
       url: "https://airconservices.sg/blog/how-often-service-aircon-singapore",
@@ -22,7 +22,11 @@ const GENERAL_FAQ = [
   },
   {
     q: "Why is my aircon not cold even after servicing?",
-    a: "A few common reasons: mould or bacteria buildup deep in the coil that a standard service can't reach, blocked airflow from a clogged filter, a dirty outdoor condenser, or low refrigerant levels. If the unit is still underperforming after a service, we'll tell you why and recommend the right fix. No guesswork, no upselling.",
+    a: "A few common reasons: mould or bacteria buildup deep in the coil that a standard service can't reach, blocked airflow from a clogged filter, a dirty outdoor condenser, low refrigerant levels, or — less commonly — a failing compressor. If the unit is still underperforming after a service, we'll tell you why and recommend the right fix. No guesswork, no upselling.",
+  },
+  {
+    q: "Why is my aircon leaking?",
+    a: "A blocked drainage pipe is by far the most common cause — dust and grime build up over time and stop condensate water draining away properly. Other causes include a damaged overflow pan, a leaking condenser coil, a dirty filter restricting airflow, low refrigerant, or occasionally improper installation. WhatsApp us and we'll diagnose the actual cause on site before recommending a fix.",
   },
   {
     q: "Do I need to be home during the service?",
