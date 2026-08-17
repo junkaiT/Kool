@@ -33,6 +33,8 @@ export const LOGO_IMAGE = "/logo.svg";
 // TODO: swap for our specific listing/reviews page on AirconServices.sg once it's live —
 // currently points at their homepage since our profile is still being set up.
 export const AIRCON_SERVICES_URL = "https://airconservices.sg";
+export const GOOGLE_REVIEW_URL =
+  "https://search.google.com/local/writereview?placeid=ChIJKcfsrSgyKKEROKUI5sv4NhA";
 
 export type Service = {
   slug: string;
@@ -62,4 +64,5 @@ export const FOOTER_COMPANY_LINKS = [
   { href: "/referral", label: "Referral programme" },
   { href: "/articles", label: "Articles" },
   { href: "/faq", label: "FAQ" },
+  { href: "/review", label: "Leave us a Review" },
 ];
