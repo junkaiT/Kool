@@ -5,6 +5,7 @@ import {
   COMPANY_TAGLINE,
   EMAIL,
   FOOTER_COMPANY_LINKS,
+  LEGAL_ENTITY_NAME,
   PHONE_TEL,
   SERVICES,
   WHATSAPP_DISPLAY,
@@ -67,7 +68,7 @@ export function Footer() {
         </div>
 
         <div className="pt-3.5 border-t border-[#222] text-[11px] text-[#444] leading-[1.8] md:flex md:justify-between">
-          <div>© 2025 Kool Aircon Pte. Ltd. · BCA Registered · bizSAFE Level 2 · Reg. No. [XXXXX]</div>
+          <div>© 2025 {LEGAL_ENTITY_NAME} · BCA Registered · bizSAFE Level 2 · Reg. No. [XXXXX]</div>
           <Link href="/privacy" className="text-[#444]">
             Privacy policy
           </Link>

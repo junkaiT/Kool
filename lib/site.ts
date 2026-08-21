@@ -1,4 +1,7 @@
 export const BUSINESS_NAME = "Kool Aircon";
+// Legal registered entity operating the Kool Aircon brand — distinct from the
+// trading/brand name above. Shown in the footer copyright line.
+export const LEGAL_ENTITY_NAME = "TGQCapital Pte. Ltd.";
 // The Google Business Profile is listed under this name. Surfaced as
 // schema.org `alternateName` so Google links the site's brand to the GBP.
 export const ALTERNATE_NAME = "Kool & Kleen Aircon Servicing";
