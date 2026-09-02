@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   ADDRESS,
   AIRCON_SERVICES_URL,
+  BUSINESS_NAME,
   COMPANY_TAGLINE,
   EMAIL,
   FOOTER_COMPANY_LINKS,
@@ -22,7 +23,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-5 mb-5 md:grid-cols-[2fr_1fr_1fr_1fr] md:gap-10 md:mb-7">
           <div>
             <div className="text-base font-extrabold text-blue mb-[3px]">KooL</div>
-            <div className="text-[9px] text-teal font-medium mb-3.5">{COMPANY_TAGLINE}</div>
+            <div className="text-[9px] text-teal font-medium mb-1">{COMPANY_TAGLINE}</div>
+            <div className="text-[10px] text-[#666] font-medium mb-3.5">{BUSINESS_NAME}</div>
             <div className="text-xs text-[#666] leading-[2] mb-5">
               {ADDRESS}
               <br />

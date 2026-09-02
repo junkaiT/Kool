@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { COMPANY_TAGLINE } from "@/lib/site";
+import { BUSINESS_NAME, COMPANY_TAGLINE } from "@/lib/site";
 
 export function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-2">
+    <Link href="/" className="flex items-center gap-2" aria-label={BUSINESS_NAME}>
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
         <path
           d="M5 22 Q4 15 9 10 Q11 8 15 9 Q10 14 10 19 Q10 23 12 24 Q8 25 5 22Z"

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Button } from "@/components/Button";
+import { BUSINESS_NAME } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -9,7 +10,7 @@ export function Hero() {
         <div className="relative aspect-[2/1] md:order-2 md:rounded-xl overflow-hidden">
           <Image
             src="/images/home/hero-desktop.png"
-            alt="Kool Aircon technician servicing an air conditioner in Singapore"
+            alt={`${BUSINESS_NAME} technician servicing an air conditioner in Singapore`}
             fill
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -18,7 +19,7 @@ export function Hero() {
         </div>
         <div className="px-[18px] pt-[22px] pb-[26px] md:p-0 md:order-1">
           <div className="text-[11px] text-muted font-medium tracking-[0.5px] mb-2.5">
-            Aircon Servicing in Singapore · Fast. Affordable. Transparent.
+            {BUSINESS_NAME} · Fast. Affordable. Transparent.
           </div>
           <h1 className="text-2xl md:text-[40px] font-extrabold text-black leading-[1.2] mb-3 md:mb-4 tracking-[-0.4px]">
             We guarantee your aircon is colder. No shortcuts. No mess.
