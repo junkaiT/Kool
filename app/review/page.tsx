@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import QRCode from "qrcode";
 import { GOOGLE_REVIEW_URL } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Leave Us a Review | Kool Aircon",
+export const metadata: Metadata = pageMetadata({
+  title: "Leave Us a Review",
   description:
     "Enjoyed our aircon service? Leave us a quick Google review — it takes less than a minute and means the world to our team.",
-};
+  path: "/review",
+});
 
 export default async function ReviewPage() {
   const qrDataUrl = await QRCode.toDataURL(GOOGLE_REVIEW_URL, {

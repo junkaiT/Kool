@@ -8,10 +8,14 @@ import { HomeFAQ } from "@/components/home/HomeFAQ";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { pageMetadata } from "@/lib/seo";
 
+// Homepage title includes the full brand name explicitly: Next.js's root
+// layout title.template doesn't apply to app/page.tsx, since it shares the
+// same route segment as the layout that defines it — only nested pages
+// inherit the "%s | Kool & Kleen Aircon Servicing" suffix automatically.
 export const metadata: Metadata = pageMetadata({
-  title: "Aircon Servicing Singapore — Fast, Affordable, Transparent",
+  title: "Kool & Kleen Aircon Servicing — Fast, Affordable & Transparent in Singapore",
   description:
-    "Kool Aircon: professional aircon servicing, chemical wash, KoolJet wash and installation across Singapore. Transparent pricing, same-day slots, 48-hour service guarantee. Book online or WhatsApp us.",
+    "Kool & Kleen Aircon Servicing — chemical wash, KoolJet wash, chemical overhaul and installation across Singapore. Transparent pricing, same-day slots, 48-hour service guarantee. Book online or WhatsApp us.",
   path: "/",
 });
 

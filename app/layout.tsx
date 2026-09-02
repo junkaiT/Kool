@@ -20,7 +20,7 @@ const inter = Inter({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const DEFAULT_TITLE = "Kool Aircon — Professional Aircon Servicing Singapore";
+const DEFAULT_TITLE = `${BUSINESS_NAME} — Professional Aircon Servicing Singapore`;
 const DEFAULT_DESCRIPTION =
   "Professional aircon servicing, chemical wash, KoolJet wash, chemical overhaul, installation and repair for homes and businesses across Singapore.";
 
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: DEFAULT_TITLE,
-    // Per-page titles render as "Prices | Kool Aircon", etc.
-    template: "%s | Kool Aircon",
+    // Per-page titles render as "Prices | Kool & Kleen Aircon Servicing", etc.
+    template: `%s | ${BUSINESS_NAME}`,
   },
   description: DEFAULT_DESCRIPTION,
   applicationName: BUSINESS_NAME,

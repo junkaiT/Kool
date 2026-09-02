@@ -1,10 +1,16 @@
-export const BUSINESS_NAME = "Kool Aircon";
-// Legal registered entity operating the Kool Aircon brand — distinct from the
-// trading/brand name above. Shown in the footer copyright line.
+// "Kool & Kleen Aircon Servicing" is the full/formal name (matches the Google
+// Business Profile) and the more distinctive, lower-competition search term —
+// used as the primary name for SEO purposes: page titles, Open Graph siteName,
+// and every schema.org `name` field. Everyday trading/casual copy across the
+// site (nav logo, body copy, testimonials) intentionally keeps using the short
+// form "Kool" / "Kool Aircon" — that split is deliberate, not an inconsistency.
+export const BUSINESS_NAME = "Kool & Kleen Aircon Servicing";
+// Legal registered entity operating the Kool Aircon brand — distinct from both
+// names above. Shown in the footer copyright line.
 export const LEGAL_ENTITY_NAME = "TGQCapital Pte. Ltd.";
-// The Google Business Profile is listed under this name. Surfaced as
-// schema.org `alternateName` so Google links the site's brand to the GBP.
-export const ALTERNATE_NAME = "Kool & Kleen Aircon Servicing";
+// The short trading name customers actually see day-to-day. Surfaced as
+// schema.org `alternateName` so Google links this name to the GBP/BUSINESS_NAME.
+export const ALTERNATE_NAME = "Kool Aircon";
 export const WHATSAPP_NUMBER = "6588152868";
 export const WHATSAPP_DISPLAY = "+65 8815 2868";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
