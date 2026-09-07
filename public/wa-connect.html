@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex, nofollow" />
+<title>WhatsApp Connect (internal)</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Arial, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #222; }
+  h1 { font-size: 20px; }
+  label { display: block; margin-top: 16px; font-weight: 600; font-size: 14px; }
+  input { width: 100%; padding: 8px; font-size: 14px; box-sizing: border-box; margin-top: 4px; }
+  button { margin-top: 20px; padding: 10px 20px; font-size: 15px; background: #1877f2; color: white; border: none; border-radius: 6px; cursor: pointer; }
+  #log { margin-top: 24px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 6px; padding: 12px; font-family: monospace; font-size: 12px; white-space: pre-wrap; max-height: 500px; overflow-y: auto; }
+  .note { color: #666; font-size: 13px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<h1>WhatsApp Business Platform — Connect</h1>
+<p class="note">Internal one-time setup tool. Launches Meta's WhatsApp Embedded Signup dialog for coexistence onboarding. Served over HTTPS because Meta blocks non-secure origins for Live apps.</p>
+
+<label for="configId">Configuration ID</label>
+<input type="text" id="configId" value="1375810391411456" />
+
+<button id="launchBtn">Connect WhatsApp</button>
+
+<div id="log">Waiting for interaction...
+</div>
+
+<script>
+  const APP_ID = '1729780851492366';
+  const logEl = document.getElementById('log');
+  const configInput = document.getElementById('configId');
+  const launchBtn = document.getElementById('launchBtn');
+
+  function log(msg, obj) {
+    const time = new Date().toLocaleTimeString();
+    let line = `[${time}] ${msg}`;
+    if (obj !== undefined) {
+      try { line += '\n' + JSON.stringify(obj, null, 2); } catch (e) { line += '\n' + String(obj); }
+    }
+    logEl.textContent += line + '\n\n';
+    logEl.scrollTop = logEl.scrollHeight;
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId: APP_ID,
+      autoLogAppEvents: true,
+      xfbml: true,
+      version: 'v21.0'
+    });
+    log('FB SDK initialized with App ID ' + APP_ID);
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  window.addEventListener('message', (event) => {
+    if (!event.origin.endsWith('facebook.com')) return;
+    try {
+      const data = JSON.parse(event.data);
+      if (data.type === 'WA_EMBEDDED_SIGNUP') {
+        log('WA_EMBEDDED_SIGNUP event received:', data);
+      } else {
+        log('Other message event from Facebook:', data);
+      }
+    } catch (e) {
+      log('Raw (non-JSON) message event from Facebook:', event.data);
+    }
+  });
+
+  function fbLoginCallback(response) {
+    log('FB.login callback fired:', response);
+    if (response.authResponse && response.authResponse.code) {
+      log('SUCCESS: got an authorization code. Do not share this code publicly.');
+    } else if (response.status === 'not_authorized' || !response.authResponse) {
+      log('No authorization code returned. Check the dialog window for what was actually shown/declined.');
+    }
+  }
+
+  launchBtn.addEventListener('click', () => {
+    const configId = configInput.value.trim();
+    if (!configId) return;
+    log('Launching FB.login with config_id=' + configId + ' and featureType=whatsapp_business_app_onboarding ...');
+    FB.login(fbLoginCallback, {
+      config_id: configId,
+      response_type: 'code',
+      override_default_response_type: true,
+      extras: {
+        featureType: 'whatsapp_business_app_onboarding',
+        setup: {}
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
