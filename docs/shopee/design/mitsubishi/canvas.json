@@ -1,0 +1,128 @@
+{
+  "artboards": [
+    {
+      "file": "CoverS1.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1024,
+      "h": 1024,
+      "title": "mit-s1-cover"
+    },
+    {
+      "file": "Main.dc.html",
+      "x": 1124,
+      "y": 0,
+      "w": 1024,
+      "h": 1024,
+      "title": "mit-s2-cover"
+    },
+    {
+      "file": "CoverS3.dc.html",
+      "x": 2248,
+      "y": 0,
+      "w": 1024,
+      "h": 1024,
+      "title": "mit-s3-cover"
+    },
+    {
+      "file": "CoverS4.dc.html",
+      "x": 3372,
+      "y": 0,
+      "w": 1024,
+      "h": 1024,
+      "title": "mit-s4-cover"
+    },
+    {
+      "file": "PromoS1.dc.html",
+      "x": 0,
+      "y": 1184,
+      "w": 1024,
+      "h": 1024,
+      "title": "mit-s1-promo"
+    },
+    {
+      "file": "PromoS2.dc.html",
+      "x": 1124,
+      "y": 1184,
+      "w": 1024,
+      "h": 1024,
+      "title": "mit-s2-promo"
+    },
+    {
+      "file": "PromoS3.dc.html",
+      "x": 2248,
+      "y": 1184,
+      "w": 1024,
+      "h": 1024,
+      "title": "mit-s3-promo"
+    },
+    {
+      "file": "PromoS4.dc.html",
+      "x": 3372,
+      "y": 1184,
+      "w": 1024,
+      "h": 1024,
+      "title": "mit-s4-promo"
+    },
+    {
+      "file": "SupplyOnly.dc.html",
+      "x": 0,
+      "y": 2368,
+      "w": 1024,
+      "h": 1024,
+      "title": "shared-02-supply-only"
+    },
+    {
+      "file": "InstallationIncluded.dc.html",
+      "x": 1124,
+      "y": 2368,
+      "w": 1024,
+      "h": 1024,
+      "title": "shared-03-installation-included"
+    },
+    {
+      "file": "Materials.dc.html",
+      "x": 2248,
+      "y": 2368,
+      "w": 1024,
+      "h": 1024,
+      "title": "shared-04-materials"
+    },
+    {
+      "file": "IndoorSizes.dc.html",
+      "x": 3372,
+      "y": 2368,
+      "w": 1024,
+      "h": 1024,
+      "title": "mit-05-indoor-range"
+    },
+    {
+      "file": "CostExtra.dc.html",
+      "x": 4496,
+      "y": 2368,
+      "w": 1024,
+      "h": 1024,
+      "title": "shared-06-what-may-cost-extra"
+    },
+    {
+      "file": "HowToOrder.dc.html",
+      "x": 5620,
+      "y": 2368,
+      "w": 1024,
+      "h": 1024,
+      "title": "shared-07-how-to-order"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "export-note",
+      "x": 0,
+      "y": -230,
+      "w": 900,
+      "text": "Shopee images for Mitsubishi Starmex. Row 1: covers (one per listing). Row 2: promotion images. Row 3: gallery pages shared across all four listings.\nExport each as PNG; the artboard name is the file name in the image list."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

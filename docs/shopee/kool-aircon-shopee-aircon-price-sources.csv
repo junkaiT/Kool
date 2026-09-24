@@ -1,0 +1,35 @@
+Parent SKU,Variation SKU,Product,Option,Placeholder Price,Source Seller,Source Listing,Note
+KA-MIT-S1,KA-MIT-S1-SUP,Mitsubishi Electric Starmex System 1 R32 Inverter Aircon 4 Ticks,Supply Only,779.44,AIRISM PTE LTD,https://shopee.sg/product/1395273646/27026709250,
+KA-MIT-S1,KA-MIT-S1-INS,Mitsubishi Electric Starmex System 1 R32 Inverter Aircon 4 Ticks,Installation Included,848.90,Asia Excel,https://shopee.sg/product/117152908/24388480504,Asia Excel 'from' price — entry BTU only
+KA-MIT-S2,KA-MIT-S2-SUP,Mitsubishi Electric Starmex System 2 R32 Inverter Aircon 5 Ticks,Supply Only,1700.20,AIRISM PTE LTD,https://shopee.sg/product/1395273646/24741617687,
+KA-MIT-S2,KA-MIT-S2-INS,Mitsubishi Electric Starmex System 2 R32 Inverter Aircon 5 Ticks,Installation Included,1849.00,Asia Excel,https://shopee.sg/product/117152908/22076179402,"Asia Excel 'from' price — only $149 above supply-only, likely entry combo; sense-check"
+KA-MIT-S3,KA-MIT-S3-SUP,Mitsubishi Electric Starmex System 3 R32 Inverter Aircon 5 Ticks,Supply Only,2420.20,AIRISM PTE LTD,https://shopee.sg/product/1395273646/25641609061,
+KA-MIT-S3,KA-MIT-S3-INS,Mitsubishi Electric Starmex System 3 R32 Inverter Aircon 5 Ticks,Installation Included,2659.90,NCSTORE,https://shopee.sg/product/448148904/9375356910,
+KA-MIT-S4,KA-MIT-S4-SUP,Mitsubishi Electric Starmex System 4 R32 Inverter Aircon 5 Ticks,Supply Only,2888.20,AIRISM PTE LTD,https://shopee.sg/product/1395273646/28326709459,
+KA-MIT-S4,KA-MIT-S4-INS,Mitsubishi Electric Starmex System 4 R32 Inverter Aircon 5 Ticks,Installation Included,3199.00,Asia Excel,https://shopee.sg/product/117152908/26869386031,Asia Excel 'from' price — entry BTU only
+KA-DAI-S1,KA-DAI-S1-SUP,Daikin iSmileEco+ System 1 R32 Inverter Aircon 4 Ticks,Supply Only,821.89,AIRISM PTE LTD,https://shopee.sg/product/1395273646/43353848940,AIRISM lists 4 or 5 ticks depending on model — confirm
+KA-DAI-S1,KA-DAI-S1-INS,Daikin iSmileEco+ System 1 R32 Inverter Aircon 4 Ticks,Installation Included,1061.44,mÖnStĘr923,https://shopee.sg/product/306377806/44459295922,
+KA-DAI-S2,KA-DAI-S2-SUP,Daikin iSmileEco+ System 2 R32 Inverter Aircon 5 Ticks,Supply Only,1875.20,AIRISM PTE LTD,https://shopee.sg/product/1395273646/42054507276,
+KA-DAI-S2,KA-DAI-S2-INS,Daikin iSmileEco+ System 2 R32 Inverter Aircon 5 Ticks,Installation Included,2450.00,Airflux Online Shop,https://shopee.sg/product/517275389/13017413554,
+KA-DAI-S3,KA-DAI-S3-SUP,Daikin iSmileEco+ System 3 R32 Inverter Aircon 5 Ticks,Supply Only,2258.20,AIRISM PTE LTD,https://shopee.sg/product/1395273646/26337569700,
+KA-DAI-S3,KA-DAI-S3-INS,Daikin iSmileEco+ System 3 R32 Inverter Aircon 5 Ticks,Installation Included,3470.00,Airflux Online Shop,https://shopee.sg/product/517275389/12617415892,"NCSTORE clearance $2,000 excluded — mixed old stock"
+KA-DAI-S4,KA-DAI-S4-SUP,Daikin iSmileEco+ System 4 R32 Inverter Aircon 5 Ticks,Supply Only,3050.20,AIRISM PTE LTD,https://shopee.sg/product/1395273646/42654497594,
+KA-DAI-S4,KA-DAI-S4-INS,Daikin iSmileEco+ System 4 R32 Inverter Aircon 5 Ticks,Installation Included,4330.00,Airflux Online Shop,https://shopee.sg/product/517275389/13317506186,
+KA-DAI-S5,KA-DAI-S5-SUP,Daikin iSmileEco+ System 5 R32 Inverter Aircon 5 Ticks,Supply Only,4067.20,AIRISM PTE LTD,https://shopee.sg/product/1395273646/40004537277,No installed System 5 price observed — supply only
+KA-PAN-S1,KA-PAN-S1-SUP,Panasonic XU Series System 1 R32 Inverter Aircon 5 Ticks,Supply Only,779.00,Asia Excel,not captured,Listing link not captured in crawl — find manually
+KA-PAN-S1,KA-PAN-S1-INS,Panasonic XU Series System 1 R32 Inverter Aircon 5 Ticks,Installation Included,1424.61,shop 165734283,https://shopee.sg/product/165734283/40513800956,Includes free site survey
+KA-PAN-S2,KA-PAN-S2-INS,Panasonic XU Series System 2 R32 Inverter Aircon 5 Ticks,Installation Included,2188.80,Commercestar Engineering,https://shopee.sg/product/239554013/18448118976,No supply-only System 2 price observed — installed only
+KA-PAN-S3,KA-PAN-S3-SUP,Panasonic XU Series System 3 R32 Inverter Aircon 5 Ticks,Supply Only,2195.20,AIRISM PTE LTD,https://shopee.sg/product/1395273646/26426792247,"NCSTORE 'Replacement' $1,890 is lower but excludes new piping — not used"
+KA-PAN-S3,KA-PAN-S3-INS,Panasonic XU Series System 3 R32 Inverter Aircon 5 Ticks,Installation Included,3250.00,Airflux Online Shop,https://shopee.sg/product/517275389/12217535582,
+KA-PAN-S4,KA-PAN-S4-SUP,Panasonic XU Series System 4 R32 Inverter Aircon 5 Ticks,Supply Only,2600.20,AIRISM PTE LTD,https://shopee.sg/product/1395273646/29276797067,
+KA-PAN-S4,KA-PAN-S4-INS,Panasonic XU Series System 4 R32 Inverter Aircon 5 Ticks,Installation Included,5289.00,shop 165734283,https://shopee.sg/product/165734283/41564961306,Only installed System 4 observed; high — likely premium combo
+KA-MID-S1,KA-MID-S1-12K,"Midea R32 Inverter System 1 Single Split Aircon 12,000 / 18,000 BTU","12,000 BTU/h",884.31,mÖnStĘr923,https://shopee.sg/product/306377806/4055621930,Model number and install basis not confirmed from listing
+KA-MID-S1,KA-MID-S1-18K,"Midea R32 Inverter System 1 Single Split Aircon 12,000 / 18,000 BTU","18,000 BTU/h",1366.16,mÖnStĘr923,https://shopee.sg/product/306377806/11300824126,Model number and install basis not confirmed from listing
+KA-MID-PG-S2,KA-MID-PG-S2-INS,Midea Prime Guard System 2 R32 Inverter Aircon 5 Ticks,Installation Included,1260.00,shop 775070709,https://shopee.sg/product/775070709/43462024972,Competitor bundles 'FREE installation' — cheapest installed system in the crawl
+KA-MID-PG-S3,KA-MID-PG-S3-INS,Midea Prime Guard System 3 R32 Inverter Aircon 5 Ticks,Installation Included,1588.00,shop 775070709,https://shopee.sg/product/775070709/26239631404,Competitor bundles 'FREE installation' — cheapest installed system in the crawl
+KA-MID-PG-S4,KA-MID-PG-S4-INS,Midea Prime Guard System 4 R32 Inverter Aircon 5 Ticks,Installation Included,2350.00,shop 775070709,https://shopee.sg/product/775070709/42262035368,Competitor bundles 'FREE installation' — cheapest installed system in the crawl
+KA-MID-MGP-S2,KA-MID-MGP-S2-INS,Midea MGP Series System 2 R32 Inverter Aircon 5 Ticks,Installation Included,1629.00,Asia Excel,https://shopee.sg/product/117152908/29405114593,Asia Excel 'from' price — entry BTU only
+KA-MID-MGP-S3,KA-MID-MGP-S3-INS,Midea MGP Series System 3 R32 Inverter Aircon 5 Ticks,Installation Included,2820.00,Airflux Online Shop,https://shopee.sg/product/517275389/49659942943,
+KA-MID-MGP-S4,KA-MID-MGP-S4-SUP,Midea MGP Series System 4 R32 Inverter Aircon 5 Ticks,Supply Only,2105.20,AIRISM PTE LTD,https://shopee.sg/product/1395273646/44055489497,Non-WiFi MGP
+KA-MID-AEP-S2,KA-MID-AEP-S2-INS,Midea All Easy Pro System 2 R32 Inverter Aircon 5 Ticks,Installation Included,1899.00,shop 355417115,https://shopee.sg/product/355417115/24333138772,Install basis not confirmed from listing title
+KA-MID-AEP-S4,KA-MID-AEP-S4-INS,Midea All Easy Pro System 4 R32 Inverter Aircon 5 Ticks,Installation Included,3300.00,shop 355417115,https://shopee.sg/product/355417115/48550808617,Install basis not confirmed from listing title
